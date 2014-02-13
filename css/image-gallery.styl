@@ -1,0 +1,2947 @@
+@import './common'
+@import './spacecraft-bgimg'
+
+/* self-clear floats */
+.group:after
+  content "."
+  display block
+  height 0
+  clear both
+  visibility hidden
+
+.gallery-heading 
+  h1
+    padding 20px 20 60px 20px
+
+#gallery-wrapper
+  box-shadow 0 0 1px 1px #B8B8B8
+  -moz-shadow 0 0 1px 1px #B8B8B8
+  -webkit-shadow 0 0 1px 1px #B8B8B8
+  margin 0 auto
+  width 100%
+
+#sidebar-container
+  //border-right 1px #CCC solid
+  //width 19.245647% 
+
+.sidebar
+  //background #E0E5EA /* shade of blue found on Mac Apps */
+  //background #F3F3F3
+  background -webkit-linear-gradient(top, white, #F4F4F4)
+  background linear-gradient(top, white, #F4F4F4)
+  border-right 1px #CCC solid
+  float left
+  //width 19.3203%
+  width 210px
+  //height 65%
+  height 780px
+
+#main-container
+  //width 80.754352% 
+  overflow auto
+  position relative
+
+.main
+  //width 80.5825% 
+  //min-height 65%
+  height 760px
+  //background url('../images/offwhite.png')
+  background white
+  overflow auto
+  float left
+  margin-top 20px
+
+/* Sort Panel Aa ~ Zz */
+.library-panel
+  position absolute
+  top 0px
+  left 0px
+  gradient-fill(#FFFFFF, #F4F4F4) 
+  width 100%
+  border-bottom 1px solid #CCC
+  z-index 11
+
+.sort-container
+  float right
+  color #777
+  margin-right 10px
+  p
+    display inline-block
+    font-style italic
+    margin-right 10px
+  .sort-a-btn, 
+  .sort-z-btn
+    display inline-block
+    padding 5px
+    background #EEE
+    border 1px solid #CCC
+    margin 5px 0
+    padding 0 10px
+    padding-top 2px
+    cursor pointer
+    text-shadow 0 1px 1px rgba(255, 255, 255, 0.75)
+  .sort-a-btn
+    rounded-corners(2px 0 0 2px)
+    margin-right -4px
+  .sort-z-btn
+    rounded-corners(0 2px 2px 0)
+  .selected
+    box-shadow inset 0 0 1px rgba(114, 125, 150, 0.4),inset 0 1px 0 rgba(114, 125, 150, 0.4),0 1px 0 rgba(255, 255, 255, 0.7)
+    background -webkit-linear-gradient(rgba(168, 176, 188, 0.4), rgba(168, 176, 188, 0.15))
+      
+      
+
+#selection-container
+  //background url('../images/furley_bg.png')
+  background #F6F6F6
+  border-top 1px solid #CCC
+  clear both
+  min-height 100px
+
+.expand-my-images,
+.expand-flickr,
+.expand-facebook,
+.expand-google
+  color #68757E
+  font-weight bold
+  text-transform uppercase
+  background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAICAMAAAAC2hU0AAAABGdBTUEAALGPC/xhBQAAAEVQTFRF5ejr8PL0iZSbys/TiZSb7vDy8PL02d3g8PL08PL0uL/D4OPm6uzu8PL08PL06uzv8PL0AAAAkJuhipWcp7C1nKasiZSbxc08LwAAABJ0Uk5TqRKi83h6A9haMP69jgke0QwAwb00twAAADdJREFUCNclxQsOgCAQA9H6RUDQovT+R2VXJ5k88A+rvBlbNxqwh0daJjAmvQdBnj3TLVf95G0PbQcDZdto1TsAAAAASUVORK5CYII=') no-repeat
+  background-position 1px 2px
+  padding-left 15px
+  margin-top 10px
+  margin-left 10px
+  text-shadow white 1px 1px 0px
+  position relative
+  margin-bottom 5px
+
+.expand-flickr img,
+.expand-facebook img,
+.expand-my-images img,
+.expand-google img
+  width 20px
+
+div.connect-name 
+  display inline
+  font-size 100%
+  position absolute
+  left 45px
+  top 2px
+
+.collapse-my-images,
+.collapse-flickr,
+.collapse-facebook,
+.collapse-google
+  background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAICAMAAAAC2hU0AAAABGdBTUEAALGPC/xhBQAAAEtQTFRF5+rs8PL08PL08PL08PL0iZSbiZSbiZSbtbzBiZSbiZSb8PL0iZSb8PL04+boiZSb8PL0iZSbu8HGAAAArbW6kZyizNHVp7C1iZSbwIXYmQAAABR0Uk5T7A+lFVoMxmwaKvq0gRvRzQYGHQDKmuVTAAAANklEQVQI12NgZRcGAQYOCTZOEC0kIcHFIwimJST4BcG0OJ8AkBYV4+YFioswsIDUMTIxg/QBAHdeA6Zf6Y1KAAAAAElFTkSuQmCC') no-repeat
+  background-position 1px 2px
+  margin-top 10px
+  margin-left 10px
+
+ul.image-tags li, ul.flickr-contents li, ul.facebook-contents li, ul.google-contents li
+  background-position 25px 5px
+  background-size 13px
+  padding 3px
+  padding-left 25px
+  margin-top 0px
+  font-size 120%
+  color #333
+  position relative
+  cursor pointer
+  margin 5px 0
+
+ul.image-tags span img
+  opacity 0.6
+
+ul.image-tags img,
+ul.flickr-contents img,
+ul.facebook-contents img,
+ul.google-contents img
+  width 15px
+
+ul.image-tags .set-name,
+ul.flickr-contents .set-name,
+ul.facebook-contents .set-name,
+ul.google-contents .set-name
+  font-size 100%
+  display inline
+  position absolute
+  left 45px
+
+ul.image-tags li.menu-select,
+ul.flickr-contents li.menu-select,
+ul.facebook-contents li.menu-select,
+ul.google-contents li.menu-select
+  background-position 25px 5px
+  background-size 13px
+  //background -webkit-linear-gradient(top, #40ABEF 0%, #0496E6 51%, #0084DE 100%)
+  background -webkit-gradient(linear, 0% 0%, 0% 100%, from(#61BF1A), to(#52a116))
+  border-top 1px solid #52A116
+  border-bottom 1px solid #52A116
+  color white
+  padding-top 1px
+  padding-bottom 0
+
+.add-tag-item
+  font-size 110%
+  margin-left 5px
+  margin-top 5px
+  margin-bottom 15px
+  position relative
+  padding-left 20px
+  cursor pointer
+
+.add-tag-item img
+  width 13px
+  opacity 0.6
+
+.add-tag-item .tag-name
+  display inline
+  position absolute
+  left 40px
+
+// ------
+// Main - area containing tiles for images
+ol.images
+  padding 30px 0px 30px 50px
+
+ol.images li:first-child
+  rounded-corners 25px
+
+ol.images li 
+  //box-shadow 0 1px 5px rgba(0, 0, 0, 0.35) 
+  //-webkit-box-shadow 0 1px 5px rgba(0, 0, 0, 0.35) 
+  //-moz-box-shadow 0 1px 5px rgba(0, 0, 0, 0.35) 
+  box-shadow 0 1px 1px rgba(0, 0, 0, 0.15)
+  -webkit-box-shadow 0 1px 1px rgba(0, 0, 0, 0.15)
+  -moz-box-shadow 0 1px 1px rgba(0, 0, 0, 0.15)
+  background #F6F6F6 
+  float left
+  margin 0 50px 40px 0
+  height 200px
+  width 200px 
+  position relative 
+  rounded-corners 3px
+
+ol.images li div.dragenter
+  background rgba(97, 191, 26, 0.4)
+  rounded-corners 25px
+
+ol.images li.selected-image
+  border 3px solid #61BF1A
+  rounded-corners 5px
+
+.image-item, 
+.image-item-select
+  rounded-corners 3px
+  position relative
+
+.image-item img,
+.image-item-select
+  padding-bottom 10px
+  rounded-corners 3px
+
+.image-item img 
+  height: 165px
+  width: 220px
+
+ol li.library-select
+  height 165px
+
+.image-item-select img
+  width: 220px
+  rounded-corners 3px
+
+ol.images li .library-item-dragwell
+  margin-right 20px
+  height 100%
+  width 100%
+  position relative
+  z-index 1
+
+ol.images li .library-item-dragwell::before
+  content ''
+  position absolute
+  z-index -1
+  top 3px
+  bottom 3px
+  left 3px
+  right 3px
+  border 4px dashed rgba(0, 0, 0, 0.5)
+  rounded-corners 20px
+
+.library-item-dragwell img
+  margin-left 55px
+  margin-top 35px
+  opacity 0.6
+  width 95px
+
+.library-item-dragwell p
+  color #777
+  font-size 130%
+  font-weight 400
+  margin 0 auto
+  margin-top 15px
+  text-align center
+  padding 0 15px 0 15px
+  text-shadow white 1px 1px 0
+
+.img-delete-msg
+  display none
+  font-weight 100
+  position absolute
+  background rgba(0, 0, 0, 0.7)
+  width 100%
+  height 95%
+  top 0
+  right 0
+  color #ccc
+  text-align center
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+img.on-site-status
+  position absolute
+  top 7px 
+  left 190px 
+  width 20px
+  height 20px
+
+p.on-site-status
+  color #61BF1A
+  font-size 150%
+  font-weight 600
+  position absolute
+  top 7px 
+  left 190px 
+  width 20px
+  height 20px
+
+.img-delete-msg h2
+  color white
+  font-weight 200
+  margin-top 40px
+
+.image-delete-controls
+  margin-top 30px
+  margin-right 15px
+
+.image-delete-controls .img-removal button.small
+  //background -webkit-gradient(linear, 0% 0%, 0% 100%, from(#61BF1A), to(#52a116)) 
+  background -webkit-gradient(linear, 0% 0%, 0% 100%, from(#C01D2B), to(#a21924))  
+  border 1px solid #85141e 
+  color white
+  font-size 100%
+  text-shadow none
+  rounded-corners 5px
+
+.img-cancel-delete
+  color white
+
+.black-img-cancel-delete
+  color black
+
+.img-cancel-delete,
+.black-img-cancel-delete
+  font-weight 400
+  font-size 125%
+
+.img-cancel-delete a
+  color white
+
+.black-img-cancel-delete a
+  color #777
+
+.img-cancel-delete a,
+.black-img-cancel-delete a
+  font-weight 400
+  font-size 115%
+  padding-left 5px
+  text-decoration underline
+
+.img-removal
+  display inline
+  rounded-corners 5px
+
+.img-cancel-delete,
+.black-img-cancel-delete
+  display inline
+  rounded-corners 5px
+
+.image-name
+  position absolute
+  top 0px 
+  left 0
+  background rgba(0, 0, 0, 0.65)
+  height 30px
+  width 220px
+  color white
+  rounded-corners(2px 2px 0 0)
+  h2
+    font-weight 200
+    margin-top 6px
+    margin-left 10px
+
+.edit-border
+  border 10px solid #333
+  
+.img-meta
+  display none
+  position absolute
+  background rgba(255, 255, 255, 0.7)
+  width 100%
+  height 83%
+  top 0px
+  right 0px
+  color white
+  font-size 145%
+  text-align center
+
+.img-meta h2
+  font-size 110%
+  padding 40 0 10 0
+  color #333
+
+.img-meta p 
+  font-size 75%
+  color #424242
+  margin-bottom 5px
+
+.img-meta p span
+  font-weight bold
+
+.edit-details
+  background #333
+  position absolute
+  top 165px
+  left 0
+  right 0
+  z-index 111
+  width 240px
+  box-shadow(0 1px 1px rgba(0, 0, 0, 0.15))
+  rounded-corners(0 0 5px 5px)
+  fieldset
+    margin-top 20px
+    padding 0
+  label
+    color #777
+    position absolute
+    top 10px
+    left 10px
+  input[type="text"]
+    height 30px
+    margin-left 10px
+    width 220px
+    font-size 120%
+    color #777
+    line-height 20px
+    rounded-corners(2px)
+  input[type="submit"]
+    width 60px
+    rounded-corners(5px)
+    height 20px
+    padding-bottom 27px
+    margin-left 15px
+    padding-left 13px
+    padding-top 0
+    margin-bottom 15px
+
+.close-btn-1,
+.close-btn-2
+  position absolute
+  top -16px
+  right -18px
+
+.close-btn-1 img,
+.close-btn-2 img
+  height 20px
+  width 20px
+  opacity 0.8
+
+.action-container
+  display none
+
+.meta-container
+  position absolute
+  top 211px
+  right -38px
+  background #F1F1F1
+  //background-image -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,white),color-stop(100%,#E3E3E3))
+  padding 10px
+  z-index 10
+  border 1px solid #a2a2a2
+  border-radius 3px
+  width 260px
+  padding-left 25px
+  padding-right 25px
+  padding-top 20px
+
+.meta-arrow
+  border-color transparent transparent #F1F1F1 transparent
+  border-style solid
+  border-width 10px
+  height 0
+  width 0
+  position absolute
+  top 192px
+  left 92px
+  z-index 11
+
+.meta-arrow-border
+  border-color transparent transparent #a2a2a2 transparent
+  border-style: solid
+  border-width 10px
+  height 0 
+  width 0
+  position absolute
+  top 191px
+  left 92px
+
+.meta-container p
+  font-size 120%
+  padding-bottom 10px
+  line-height 1.3em
+  
+.meta-container p span
+  font-weight bold
+
+.meta-container p.photo-title,
+.meta-container p.photo-tag,
+.meta-container p.photo-description
+  margin-right 3px
+  padding-left 23px
+
+.image-item span strong,
+.image-item-select span strong
+  position absolute
+  bottom 10px
+  left 0px
+  width 210px 
+  color white
+  background rgba(0, 0, 0, 0.65)
+  height 30px
+  font-size 140%
+  padding 10px 5px 5px 5px
+  overflow hidden
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-bottom-right-radius: 3px;
+  -moz-border-bottom-left-radius: 3px;
+
+/*.image-extension
+  display block
+  -webkit-box-shadow 0 1px 2px rgba(0, 0, 0, 0.07)
+  -moz-box-shadow 0 1px 2px rgba(0, 0, 0, 0.07)
+  box-shadow 0 1px 2px rgba(0, 0, 0, 0.07)
+  background white
+  padding 10px
+  width 200px
+  z-index 11
+
+.image-extension p
+  color #777
+  margin-bottom 5px
+
+.image-extension p.image-title span,
+.image-extension p.image-description span,
+.image-extension p.image-tag span
+  font-weight 600
+  font-style italic
+  color #333
+  padding-right 30x
+  */
+
+.image-controls .edit-img
+  float left
+  width 100px
+
+.image-controls .edit-img a 
+  margin 5px 0 0 15px
+  color #c1c1c1
+  font-weight bold
+  text-shadow white 1px 1px 0
+  font-size 120%
+
+.image-controls .edit-img a:hover,
+.image-controls .edit-img a:focus
+  text-decoration none
+  color #868686
+
+.image-controls .close-img
+  float right
+
+.image-controls .close-img img 
+  width 12px
+  height 12px
+  padding-top 3px
+  padding-right 15px
+  opacity 0.5
+
+.image-controls .close-img img:hover,
+.image-controls .close-img img:focus
+  opacity 0.8
+
+.edit-meta-container
+  display none
+  position relative
+
+.edit-list-meta-container
+  display none
+  position relative
+
+/* edit-list-meta is for edit dialog on photo list */
+.edit-list-meta
+  border 1px solid #ccc
+  width 250px
+  padding 20px
+  position absolute
+  top 0px
+  background #F6F6F6
+  z-index 20
+
+.edit-list-meta fieldset
+  padding 5px 0 5px 0
+
+#image-gallery-block-container .edit-list-meta fieldset label
+  font-size 110%
+
+.edit-list-meta input[type="text"]
+  font-size 110%
+  height 25px
+
+/* edit-grid-meta is for edit dialog on photo grid */
+.edit-grid-meta
+  border 1px solid #ccc
+  width 250px
+  padding 20px
+  position absolute
+  top 11px
+  background #F6F6F6
+  z-index 20
+
+.edit-grid-meta fieldset
+  padding 5px 0 5px 0
+
+#image-gallery-block-container .edit-grid-meta fieldset label
+  font-size 110%
+
+.edit-grid-meta input[type="text"]
+  font-size 110%
+  height 25px
+
+.edit-meta
+  box-shadow 0 1px 5px rgba(0, 0, 0, 0.35)
+  -webkit-box-shadow 0 1px 5px rgba(0, 0, 0, 0.35)
+  -moz-box-shadow 0 1px 5px rgba(0, 0, 0, 0.35)
+  border 1px solid #ccc
+  width 300px
+  padding 20px
+  position absolute
+  top 37px
+  background #F6F6F6
+  z-index 20
+
+.edit-grid-arrow
+  border-color transparent transparent #F1F1F1 transparent
+  border-style solid
+  border-width 10px
+  height 0
+  width 0
+  position absolute
+  top -8px
+  left 40px
+  z-index 111
+
+.edit-list-arrow
+  border-color transparent transparent #F1F1F1 transparent
+  border-style solid
+  border-width 10px
+  height 0
+  width 0
+  position absolute
+  top -19px
+  left 40px
+  z-index 111
+
+.edit-arrow
+  border-color transparent transparent #F1F1F1 transparent
+  border-style solid
+  border-width 10px
+  height 0
+  width 0
+  position absolute
+  top 18px
+  left 110px
+  z-index 111
+
+.edit-grid-arrow-border
+  border-color transparent transparent #a2a2a2 transparent
+  border-style: solid
+  border-width 10px
+  height 0 
+  width 0
+  position absolute
+  top -8px
+  left 40px
+  z-index 21
+
+.edit-list-arrow-border
+  border-color transparent transparent #a2a2a2 transparent
+  border-style: solid
+  border-width 10px
+  height 0 
+  width 0
+  position absolute
+  top -20px
+  left 40px
+  z-index 21
+
+.edit-arrow-border
+  border-color transparent transparent #a2a2a2 transparent
+  border-style: solid
+  border-width 10px
+  height 0 
+  width 0
+  position absolute
+  top 17px
+  left 110px
+
+#selection-container 
+  position relative
+  box-shadow inset 0 1px 1px rgba(0, 0, 0, 0.15),0 1px 0 white
+  border-bottom 2px solid #61BF1A
+  border-top 2px solid #61BF1A
+  background #333
+
+#selection-container .image-select
+  float left
+  //width 125px
+  //height 125px
+  padding 15px 0 5px 5px 
+  position relative
+
+#selection-container #selected-images 
+  float left
+
+.tooltip-image-container
+  display none
+
+.tooltip-arrow-border
+  border-color transparent transparent #222 transparent
+  border-style solid
+  border-width 10px
+  height 0 
+  width 0
+  position absolute
+  top 84px
+  left 45px
+
+.tooltip-arrow
+  //border-color transparent transparent #61BF1A transparent
+  border-color transparent transparent #333 transparent
+  border-style solid
+  border-width 10px
+  height 0
+  width 0
+  position absolute
+  top 85px
+  left 45px
+  z-index 111
+
+.green-overlay
+  position absolute
+  top 15px 
+  left 5px 
+  width 96%
+  height 79%
+  //background rgba(97, 191, 26, 0.4) 
+  background rgba(0, 0, 0, 0.30)
+
+.tooltip-info-container
+  //background -webkit-gradient(linear, 0% 0%, 0% 100%, from(#61BF1A), to(#52a116))
+  background #333
+  padding 10px
+  top 104px
+  position absolute
+  //width 135px
+  left -25px
+  rounded-corners 5px
+  border 1px solid #222 
+  color #FAFAFA
+  z-index 110
+  -webkit-box-shadow 0 1px 5px rgba(0, 0, 0, 0.35)
+  -moz-box-shadow 0 1px 5px rgba(0, 0, 0, 0.35)
+  -o-box-shadow 0 1px 5px rgba(0, 0, 0, 0.35)
+  box-shadow 0 1px 5px rgba(0, 0, 0, 0.35)
+
+.tooltip-image-container .tooltip-info-container p
+  font-size 115%
+  float left
+  margin 5px 5px 0 5px 
+
+.tooltip-image-container .tooltip-info-container img
+  box-shadow none
+  -webkit-box-shadow none
+  width 25px
+
+/*.tooltip-info-container p
+  font-size 125%
+  margin-bottom 5px*/
+
+/*.tooltip-info-container p span
+  font-weight bold*/
+
+.image-select img
+  width 100px
+  box-shadow 0 1px 5px rgba(0, 0, 0, 0.35)
+
+#selection-container .right-arrow-container
+  display inline
+  float right
+
+#selection-container .right-arrow-container img
+  margin-top 25px
+  margin-right 10px
+  border 1px solid #ccc
+  border-radius 10px
+  opacity 1.0
+  width 15px
+  padding 15px
+
+#selection-container .right-arrow-container img:hover,
+#selection-container .right-arrow-container img:focus
+  opacity 0.9
+
+#selection-container .left-arrow-container
+  display inline
+  float left
+
+#selection-container .left-arrow-container img
+  width 15px
+  padding 15px
+  border 1px solid #ccc
+  margin-top 25px
+  margin-left 10px
+  border-radius 10px
+  opacity 1.0 
+
+#selection-container .left-arrow-container img:hover,
+#selection-container .left-arrow-container img:focus
+  opacity 0.9
+
+.image-status
+  display none
+  position absolute
+  height 25px
+  width 25px
+  top 10px
+  right 10px
+  background-image url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMTgwMTE3NDA3MjA2ODExQUYzRUI5OUM5MDhFNDE2QSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0ODNFRkQ2NkU3ODExMUUwQTQ2Q0M2QTc1RjI1RTA3MCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0ODNFRkQ2NUU3ODExMUUwQTQ2Q0M2QTc1RjI1RTA3MCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjc3QzBCQzM5M0YyMDY4MTE4QTZERDk4NEFFRDlBQTVFIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjAxODAxMTc0MDcyMDY4MTFBRjNFQjk5QzkwOEU0MTZBIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+kde7lwAAAbpJREFUeNpiZMADEve4KQApByBWQJM6MN9l1wFc+hhxGAYyqB5qIC7wAIgXAg1vIGgo0MB+IFXAQDy4ANIGNPwCVkOBBs4HUgkMpIMPQOwIM5gJycAGYg2MVMtgyNWrZ+Bi4YEJCQDxeqAZAnBDoRFST4yB1pKuDK6ygQyGolYMcrxKyFJwM2AurSfWnzaSbnD2o8/30KULQK6FGRpAjIFyvMoM6oJ6YPbR57sZvv35gk1ZABM0+QgQYyjI2zCw8d5iXMr8mbAkbHAEaEBdhCwGCk8QuPn+EsObHy9xGSrAgs1QUMyCvAny4txrPRBXyiFcuevxerw+YoLmDJwxDXOdqywk2EEuPP/6GOmGLr89Ax4JoDQJwrA0ufvReoIZgQlbwfDo812G5bdmwMMSFkEgi0BBQgAchCWpBegyIM3oBpx/fRxXMkIGC2CGNmKTBbkW5GoikhEMTAD6/AMzuJhZdPeDYZwyI3pR9/vfL4Z7n24w8LMJMhx4upXhyrszDASKwkigWT9oW0qBAFAwEeQFEg28gGwghqFQgwtBikBVBhGua0Q3EGd1glZHBUDLBntouD0kVEcBBBgAGdSoOG99UcIAAAAASUVORK5CYII=")
+  background-repeat no-repeat
+
+.image-item-select img.select-img-status
+  position absolute
+  top 10px 
+  left 10px
+  width 20px
+  height 20px
+  rounded-corners 0px
+  z-index 11
+  opacity 0.7
+
+.image-item-select img.select-img-status:hover
+  opacity 1
+
+.image-item-select div.website-info
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display none
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 38px
+  background rgba(0, 0, 0, 0.65)
+  z-index 1
+
+.image-item-select div.website-info h4
+  color white
+  margin-left 45px
+  margin-top 12px
+  font-size 120%
+  font-weight 400
+
+.image-item-select div.website-info h4 span
+  font-weight 600
+
+.image-controls-container,
+  //background #E0E5EA
+  background linear-gradient(top, white, #F4F4F4)
+  background -webkit-linear-gradient(top, white, #F4F4F4)
+
+.image-controls-container-gallery
+  //background #333
+  //border-top 5px solid #61BF1A
+  //border-bottom 5px solid #61BF1A
+  background -webkit-linear-gradient(top, white 0%, #F4F4F4 100%)
+  border-top 1px solid #ccc
+
+.gallary-image-uploader
+  opacity 0
+  position absolute
+  top 20px
+  right 21px
+  width 185px
+  height 37px
+  z-index 11
+
+.gallary-image-uploader input 
+  cursor pointer
+  height 100%
+  width 100%
+  
+.library-buttons
+  float right
+  padding 20px
+  position relative
+
+/* Image Library Modal */
+#library-modal-container,
+#library-modal-mask
+  width 100%
+  height 100%
+  position fixed
+  top 0
+  left 0
+  overflow scroll
+
+#library-modal-container
+  //display none
+  z-index 101
+
+#library-modal-mask
+  background black
+  opacity(.6)
+
+.library-heading h2
+  color #68757E
+  margin-left 20px
+  margin-bottom 24px
+  text-shadow white 1px 1px 0
+
+#library-modal-content
+  color: #ccc
+  position relative 
+  z-index 1
+  box-sizing(border-box)
+  top 10%
+  width 82%
+  min-width 1075px
+  max-width 1075px 
+  //max-height 80%
+  padding 0 20px
+  rounded-corners(6px)
+  background white
+  box-shadow(0 0 6px 2px rgba(51,51,51,.7))
+  margin 0 auto 0 auto
+  //overflow hidden
+  overflow auto
+  clearfix()
+  header
+    padding-top 20px
+    h1
+      margin 0 60px 0 0
+      padding-bottom 10px
+    a
+      position absolute
+      top 23px
+      right 20px
+      &[disabled]
+        &,
+        &:hover
+          color #08C
+          text-decoration none
+          cursor default
+
+
+/* Modal */
+#modal-container,
+#modal-mask
+  width 100%
+  height 100%
+  position fixed
+  top 0
+  left 0
+
+#modal-container
+  display none
+  z-index 101
+          
+#modal-mask
+  background black
+  opacity(.6)
+
+#modal-content
+  box-shadow inset 0px 2px 4px -2px rgba(255, 255, 255, 0.25)
+  -webkit-box-shadow inset 0px 2px 4px -2px rgba(255, 255, 255, 0.25)
+  -moz-box-shadow inset 0px 2px 4px -2px rgba(255, 255, 255, 0.25)
+  background #191919 url('../images/bg_vert.png') repeat-y 593px 0
+  color: #ccc
+  position relative 
+  z-index 1
+  box-sizing(border-box)
+  top 10%
+  width 82%
+  min-width 950px
+  max-width 950px
+  //max-height 80%
+  padding 0 20px
+  rounded-corners(3px)
+  //background url("../images/txture.png")
+  //background url("../images/image-skin.jpeg")
+  box-shadow(0 0 6px 2px rgba(51,51,51,.7))
+  margin 0 auto 0 auto
+  overflow hidden
+  clearfix()
+  header
+    padding-top 20px
+    h1
+      margin 0 60px 0 0
+      padding-bottom 10px
+    a
+      position absolute
+      top 23px
+      right 20px
+      &[disabled]
+        &,
+        &:hover
+          color #08C
+          text-decoration none
+          cursor default
+  .modal-content
+    color white 
+    padding-bottom 20px
+    .image-grid
+      float left
+      width 100%
+    .controls
+      overflow hidden // float-clearing for some cases
+    form.scrollable
+      overflow auto
+    form.needsScrolling
+      .scrollbox
+        overflow auto
+    fieldset.fixed-controls
+      border-top solid 1px #dedede
+      background #fff
+    fieldset.next-to-last
+      border-bottom none
+      padding-bottom 0
+
+#uploadNewAdd
+  margin 0 0 20px 0
+
+#modal-buttonbar
+  float left
+  width 100%
+  text-align right 
+  margin-top 10px
+  padding 20px 0 10px 0
+  border-top solid 1px #cdcdcd
+  button
+    margin 0 0 0 20px
+  #modal-close-button
+    float left
+    margin-left 0
+
+.single-image-heading h2
+  color white
+  margin-left 20px
+  margin-bottom 24px
+  float left
+  width 500px
+
+.single-image-heading a 
+  color #ccc
+  font-size 120%
+  text-transform uppercase
+
+.single-image-heading img:hover
+  opacity 1.0
+
+.single-image-heading img
+  cursor pointer
+  float right
+  width 15px
+  opacity 0.6
+
+.single-image-container 
+  float left
+  padding 0 0 15px 15px
+  position relative
+  //width 600px
+
+.single-image-container img
+  padding 1px
+  margin 20px
+  width 600px
+
+.focal-point-panel
+  background #0b0b0b
+  background -webkit-linear-gradient(top,#242424,#0b0b0b)
+  color #8A8A8A
+  position absolute
+  top 10px
+  left 400px 
+  opacity 0.9
+  width 130px
+  rounded-corners 3px
+  cursor default
+  -webkit-box-shadow 5px 5px 10px rgba(0, 0, 0, 0.35)
+  border 1px solid #333 
+
+.focal-point-panel:hover
+  opacity 1.0
+
+.focal-point-panel img
+  float left
+  width 20px
+  cursor default
+  margin 0
+  padding 5px
+
+.focal-point-panel p
+  font-size 100%
+  font-weight 600
+  float left
+  text-align center
+  width 95px
+  cursor default
+  margin-top 8px
+  text-shadow black 1px 1px 0
+
+.image-meta-container 
+  float right
+  width 275px
+  box-sizing border-box
+  margin-right 45px
+
+.image-meta-container label
+  color white
+  font-weight bold
+  font-size 130%
+
+.image-meta-container input
+  background #212121
+  color #8A8A8A 
+  font-size 130%
+  //text-shadow 0 1px 0 rgba(255, 255, 255, 0.5)
+  border solid 1px #333
+  -webkit-box-shadow none
+  box-shadow none
+
+.image-meta-container textarea
+  font-size 130%
+  height 100px
+  padding 10px 10px
+  background #212121
+  color #8A8A8A
+  border solid 1px #333
+  -webkit-box-shadow none
+  box-shadow none
+
+.image-meta-container dl dt 
+  font-size 16px
+  font-weight bold
+  line-height 1.2
+    
+.image-meta-container dl dd 
+  margin 0 0 10px 0
+  font-size 14px
+  line-height 1.4
+  color #666
+
+.ratio-controls
+  clear both
+
+.ratio-controls ul
+  font-weight bold
+  font-size 150%
+  margin-left 20px
+
+.ratio-controls ul li
+  float left
+  padding-right 20px
+  position relative
+
+.ratio-controls ul li span
+  color #777
+  font-weight normal
+
+.ratio-controls ul li a
+  color #D9D9D9
+
+.square-container
+  display none
+
+.sixteen-nine-container
+  display none
+
+.four-three-container
+  display none
+
+.ratio-arrow
+  border-color transparent transparent #333 transparent
+  border-style solid
+  border-width 10px
+  height 0
+  width 0
+  position absolute
+  top 19px
+  left 10px
+  z-index 21
+
+.ratio-arrow-border
+  border-color transparent transparent #222 transparent
+  border-style solid
+  border-width 10px
+  height 0 
+  width 0
+  position absolute
+  top 18px
+  left 10px
+
+.ratio-info-container
+  position absolute
+  top 37px
+  left -67px
+  z-index 11
+  //background #FCFCFD
+  background #333
+  color #C1C1C1
+  padding 10px
+  width 175px
+  border 2px solid #222
+  border-radius 10px
+
+.ratio-info-container p.ratio-title
+  font-size 80%
+  margin-bottom 5px
+  font-weight bold
+  font-style italic
+
+.ratio-info-container p.ratio-description
+  font-size 70%
+  font-weight normal
+
+/* image modal button controls */
+
+.image-modal-controls
+  margin 90px 20px 25px 0
+  float right
+  width 250px
+
+.image-modal-controls .select-image
+  float right
+  padding 10px
+  width 100px
+
+.image-modal-controls .cancel-image
+  float left
+  padding 10px
+  width 100px
+
+.image-modal-controls .select-image button
+  border-radius 5px
+
+.image-modal-controls .cancel-image button
+  border-radius 5px
+
+.gallery-links-container
+  padding 40px 0 20px 20px
+
+.gallery-links-container button
+  display block 
+  margin-bottom 30px
+
+.gallery-links-container button a:hover,
+.gallery-links-container button a:focus
+  text-decoration none
+
+/* Image Gallery Block */
+/* ------------------------------------------- */
+
+#image-gallery-block-container
+  border 1px solid #ccc
+  padding 20px
+  margin-top 50px
+  width 700px
+  background white
+  rounded-corners 10px
+
+#gallery-block-title
+  font-size 150%
+  font-weight bold
+
+#gallery-toolbar-container
+  border-bottom 1px solid #ccc
+  margin-top 20px
+  padding-bottom 5px
+  width 100%
+
+.toolbar-options 
+  float right
+  margin-right 10px
+
+.toolbar-options a:hover,
+.toolbar-options a:focus
+  opacity 0.5 
+
+.toolbar-options img:active 
+  -moz-box-shadow 0 0 4px 2px rgba(0,0,0,.3) inset
+  -webkit-box-shadow 0 0 4px 2px rgba(0,0,0,.3) inset
+  box-shadow 0 0 4px 2px rgba(0,0,0,.3) inset
+  position relative
+  top 1px
+
+.toolbar-options img
+  box-shadow 0px 1px 1px rgba(50, 50, 50, 0.75)
+  width 20px
+  opacity 0.6
+  margin-right 10px
+
+img#list-option
+  border 1px solid #777
+  padding 7px
+  border-radius 5px
+
+img#grid-option
+  margin-top 3px
+  border 1px solid #777
+  border-radius 5px
+  padding 6px
+
+#image-manager-container
+  box-sizing border-box
+  margin-top 30px
+  width 700px
+
+.new-file-uploader
+  height 175px
+  width 390px
+  right 10px
+  top 7px
+
+.file-uploader
+  height 180px
+  width 148px
+  right 39px
+  top 7px
+
+.file-uploader,
+.new-file-uploader
+  opacity 0
+  position absolute
+  cursor pointer
+  z-index 11
+  padding 15px
+
+.file-uploader input[type="file"],
+.new-file-uploader input[type="file"]
+  cursor pointer
+  width: 100%
+  height 100%
+
+.image-upload
+  float left
+  width 250px
+  padding-left 30px
+  box-sizing border-box
+  position relative
+
+.image-dragwell
+  background -webkit-linear-gradient(top, white 0%, #F4F4F4 100%)
+  color rgba(0, 0, 0, 0.5)
+  height 220px
+  width 180px
+  margin-right 20px
+  z-index 1
+  position relative
+  border-radius 24px
+
+.image-dragwell img
+  opacity 0.5
+  width 75px
+  padding-left 53px
+  padding-top 35px
+
+.image-dragwell::before
+  content ''
+  position absolute
+  z-index -1
+  top 3px
+  bottom 3px
+  left 3px
+  right 3px
+  border 4px dashed rgba(0, 0, 0, 0.5)
+  border-radius 20px
+
+.image-dragwell p
+  padding-top 15px
+  font-size 110%
+  text-align center
+  width 145px
+  padding-left 15px
+
+.image-dragwell button
+  background -webkit-gradient(linear,0% 0%,0% 100%,from(#61BF1A),to(#52A116))
+  color white
+  text-shadow none
+  font-size 120%
+  rounded-corners 3px
+  border 1px solid #52A116
+  margin 10px 0 0 45px
+
+.image-dragwell button:active 
+  -moz-box-shadow 0 0 4px 2px rgba(0,0,0,.3) inset
+  -webkit-box-shadow 0 0 4px 2px rgba(0,0,0,.3) inset
+  box-shadow 0 0 4px 2px rgba(0,0,0,.3) inset
+  position relative
+  top 1px
+
+.upload-btn
+  margin-top 20px
+
+.upload-btn button
+  border-radius 5px
+  height 80px
+  width 175px
+  line-height 1.4em
+  font-size 130%
+
+/*.image-grid
+  float left
+  width 450px*/
+
+.image-preview-container
+  float left
+  width 450px
+
+.thumbnail-item
+  box-shadow 0px 1px 2px rgba(0, 0, 0, 0.3)
+  -webkit-box-shadow 0px 1px 2px rgba(0, 0, 0, 0.3)
+  -mox-box-shadow 0px 1px 2px rgba(0, 0, 0, 0.3)
+  float left
+  width 124px
+  margin-right 5px
+  margin-bottom 5px
+  position relative
+
+.thumbnail-item img
+  max-width 100%
+
+.white-splash
+  display none
+  position absolute
+  width 100%
+  height 100%
+  top 0px
+  right 0px
+  z-index 11
+
+.white-splash img
+  background rgba(255, 255, 255, 0.7)
+  width 15px
+  opacity 0.8
+  margin-top 68px
+  padding 4px
+  border 1px solid white
+
+.white-splash img.expand-thumb
+  margin-left 71px
+
+.white-splash img.trash-thumb
+  position absolute
+  top -68px
+  left 100px
+  width 14px
+
+.slats-container
+  width 640px
+
+ol.slats li 
+  background-image -webkit-linear-gradient(top, white, #F4F4F4)
+  background-image linear-gradient(top, white, #F4F4F4)
+  margin 0 0 10px 0
+  cursor move
+  padding 10px 10px 0px 10px
+  border 1px solid #eee
+  position relative
+	
+/*ol.slats li:last-child 
+  margin 0
+  padding 0
+  border-bottom none*/
+
+ol.slats li h3 
+  position relative
+  font-size 16px
+  font-weight bold
+  line-height 1.1
+	
+ol.slats li img 
+  float left
+  margin 0 10px 0 0
+  padding 4px
+  border 1px solid #eee
+  width 105px
+	
+ol.slats li a:hover img 
+  background #eee
+	
+ol.slats li p 
+  margin 0 0 0 76px
+  font-size 13px
+  line-height 1.4
+  color #555
+	
+ol.slats li p.attribution  
+  font-size 12px
+  color #0E527F
+  margin-top 3px
+	
+ol.slats li p.attribution span
+  color: #222
+  font-style: italic
+
+.slat-controls
+  display block
+  padding 0
+  clear both
+  height 10px
+
+ul.slat-actions
+  cursor pointer
+  float right
+  left 560px
+  padding 0
+  position absolute
+  top 80px
+
+ul.slat-actions li
+  cursor pointer
+  float left
+  margin 0
+  min-height 12px
+  padding 5px
+
+ul.slat-actions li img 
+  width 10px
+  margin 0
+  padding 0
+  border none
+  opacity 0.7
+
+ul.slat-actions li img:hover
+  opacity 1.0
+
+.remove-image-message
+  display none
+  background rgba(255, 255, 255, 0.8)
+  //background url("../images/low_contrast_linen.png");
+  position absolute
+  top 0px
+  left 0px
+  height 100%
+  width 100%
+  border 1px solid #CCC
+  z-index 121
+
+.remove-image-message h2
+  padding-top 25px
+  padding-left 15px
+  color black
+  text-align center
+  font-size 130%
+
+.remove-image-message .image-delete-controls
+  margin-left 220px
+  margin-top 20px
+
+.down-arrow
+  -webkit-transform rotate(180deg)
+  -moz-transform rotate(180deg)
+  -o-transform rotate(180deg)
+
+.image-list-controls
+  display none 
+  position absolute
+  width 100%
+  height 100%
+  top 0px
+  right 0px
+  z-index 11
+
+ol.slats li h3 .image-list-controls a img
+  background rgba(255, 255, 255, 0.7)
+  width 15px
+  opacity 0.8
+  margin-top 57px
+  margin-left 5px
+  padding 5px
+
+ol.slats li h3 .image-list-controls a img.expand-thumb
+  margin-left 41px
+
+#image-with-text-container
+  border 1px solid #ccc
+  margin-top 50px
+  width 650px
+  padding 30px
+  background white
+  border-radius 10px
+
+.image-drag-area
+  margin 0 auto
+  margin-top 60px
+  color rgba(0, 0, 0, 0.5)
+  height 500px
+  width 550px
+  z-index 1
+  position relative
+
+.image-drag-area::before
+  content ''
+  position absolute
+  z-index -1
+  top 3px
+  bottom 3px
+  left 3px
+  right 3px
+  border 5px dashed rgba(0, 0, 0, 0.5)
+  border-radius 20px
+
+.image-drag-area .first-file-uploader
+  position absolute
+  top 25px
+  left 25px
+  z-index 11
+  opacity 0
+  width 500px
+  height 450px
+  cursor pointer
+
+.image-drag-area .first-file-uploader input
+  cursor pointer
+  width 100%
+  height 100%
+
+.image-side
+  float left
+  padding 15px
+  padding-left 50px
+  padding-top 65px
+  width 125px
+
+.image-side img
+  max-width 100%
+  opacity 0.6
+
+.browser-side
+  float left
+  width 225px
+  padding 20px
+  margin-top 105px
+  margin-left 65px
+
+.browser-side img
+  max-width 100%
+  opacity 0.6
+
+.drag-message
+  text-align center
+  padding-top 50px
+
+.drag-message h2
+  margin-top 330px
+  margin-bottom 10px
+  font-size 225%
+
+.drag-message p
+  font-size 125%
+
+.directional-arrow
+  position absolute
+  width 100px
+  top 200px
+  left 160px
+  -webkit-transform rotate(196deg)
+  -moz-transform rotate(196deg)
+  -o-transform rotate(196deg)
+
+.directional-arrow img
+  max-width 100%
+  opacity 0.6
+
+#image-list-item
+  padding 100px
+
+.grid-remove-message
+  display none
+  position absolute
+  top 0
+  left 0
+  background rgba(0, 0, 0, 0.6)
+  height 100%
+  width 100%
+  z-index 120
+
+.grid-remove-message p
+  color #fafafa
+  font-size 110%
+  margin-top 20px
+  text-align center
+  margin-bottom 10px
+
+.grid-img-remove button
+  width 50px
+  float left
+  height 30px
+  margin-left 6px
+  padding-left 15px
+  rounded-corners 5px
+
+.grid-img-cancel button
+  float right
+  width 50px
+  margin-right 8px
+  rounded-corners 5px
+  height 30px
+  padding-left 16px
+
+.alt-image-manage-container
+  width 100%
+
+.alt-image-upload
+  margin-top
+  width 100%
+
+.alt-image-dragwell
+  background -webkit-linear-gradient(top, white 0%, #F4F4F4 100%)
+  color rgba(0, 0, 0, 0.5)
+  height 220px
+  width 600px
+  margin-right 20px 
+  z-index 1
+  position relative
+  border-radius 24
+  margin 0 auto
+  margin-top 50px
+
+.alt-image-dragwell img
+  opacity 0.5
+  width 75px
+  margin 25px 0 10px 265px
+
+.alt-image-dragwell::before
+  content ''
+  position absolute
+  z-index -1
+  top 3px
+  bottom 3px
+  left 3px
+  right 3px
+  border 4px dashed rgba(0, 0, 0, 0.5)
+  rounded-corners 20px
+
+.alt-image-dragwell p
+  padding-top 10px 0
+  font-size 150%
+  text-align center
+  width 475px
+  margin 0 auto
+
+.alt-image-dragwell button
+  background -webkit-gradient(linear,0% 0%,0% 100%,from(#61BF1A),to(#52A116))
+  border 1px solid #61BF1A
+  font-size 130%
+  color white
+  margin 20px 0 0px 175px
+  width 250px
+  rounded-corners 3px
+  text-shadow none
+
+.alt-upload-btn button
+  margin 0 0 
+
+.gallery-panel-container
+  width 85%
+  margin 0 auto
+  padding-bottom 20px
+  border-bottom 1px solid #ccc
+
+.alt-upload-btn
+  float left
+
+.alt-upload-btn button
+  margin 25px 0 0 10px
+  rounded-corners 3px
+
+.alt-toolbar-options
+  float right
+  margin 25px 0 0 0
+  width 100px
+
+#alt-list-option
+  background -webkit-linear-gradient(top, white 0%, #F4F4F4 100%)
+  border 1px solid #ccc
+  margin-left 10px
+  margin-right 10px
+  rounded-corners 3px
+  width 35px
+  padding-top 4px
+  padding-bottom 6px
+
+#alt-grid-option
+  background -webkit-linear-gradient(top, white 0%, #F4F4F4 100%)
+  border 1px solid #ccc
+  rounded-corners 3px
+  width 30px
+  padding 2px 0 3px 0
+
+.alt-image-grid 
+  width 580px
+  padding 10px 0 10px 25px
+
+.alt-image-grid li
+  float left
+  margin-right 5px
+  margin-bottom 5px
+  width 106px
+  position relative
+
+.alt-image-grid li img
+  max-width 100% 
+
+ol.alt-image-list
+  margin 40px auto
+  width 560px
+
+ol.alt-slats li 
+  padding 10px 10px 0px 10px
+  position relative
+	
+/*ol.slats li:last-child 
+  margin 0
+  padding 0
+  border-bottom none*/
+	
+ol.alt-slats li h3 
+  position relative
+  font-size 16px
+  font-weight bold
+  line-height 1.1
+	
+ol.alt-slats li img 
+  float left
+  margin 0 10px 0 0
+  padding 4px
+  width 105px
+	
+ol.alt-slats li a:hover img 
+  background #eee
+	
+ol.alt-slats li p 
+  margin 0 0 0 76px
+  font-size 13px
+  line-height 1.4
+  color #555
+	
+ol.alt-slats li p.attribution  
+  font-size 12px
+  color #0E527F
+  margin-top 3px
+	
+ol.alt-slats li p.attribution span
+  color: #222
+  font-style: italic
+
+.alt-slat-controls
+  display block
+  padding 0
+  clear both
+  height 10px
+
+ol.alt-slats li
+  margin 0 0 0 0
+  padding 10px 10px 10px 10px
+  border-top 1px solid #ccc
+  border-right 1px solid #ccc
+  border-left 1px solid #ccc
+  position relative
+
+ol.alt-slats li:first-child
+  -webkit-border-top-left-radius 5px
+  -webkit-border-top-right-radius 5px
+  -moz-border-radius-topleft 5px
+  -moz-border-radius-topright 5px
+  border-top-left-radius 5px
+  border-top-right-radius 5px
+
+// Markup for the new gallery block layout based on feedback
+
+.new-image-upload
+  position relative
+
+.new-image-dragwell
+  float left
+  background -webkit-linear-gradient(top, white 0%, #F4F4F4 100%)
+  color rgba(0, 0, 0, 0.5)
+  height 220px
+  width 442px
+  margin-right 0px
+  z-index 1
+  position relative
+  border-radius 24px
+  margin-left 30px
+
+.new-image-dragwell img
+  opacity 0.5
+  width 75px
+  padding-left 185px
+  padding-top 25px
+  padding-bottom 10px
+
+.new-image-dragwell::before
+  content ''
+  position absolute
+  z-index -1
+  top 3px
+  bottom 3px
+  left 3px
+  right 3px
+  border 4px dashed rgba(0, 0, 0, 0.5)
+  border-radius 20px
+
+.new-image-dragwell img
+  opacity 0.5
+  width 75px
+  padding-left 185px
+  padding-top 25px
+  padding-bottom 10px
+
+.new-image-dragwell::before
+  content ''
+  position absolute
+  z-index -1
+  top 3px
+  bottom 3px
+  left 3px
+  right 3px
+  border 4px dashed rgba(0, 0, 0, 0.5)
+  border-radius 20px
+
+.new-image-dragwell p
+  font-size 140%
+  margin-left 20px
+  text-align center
+  width 400px
+
+.new-image-dragwell img
+  opacity 0.5
+  width 75px
+  padding-left 185px
+  padding-top 25px
+  padding-bottom 10px
+
+.new-image-dragwell::before
+  content ''
+  position absolute
+  z-index -1
+  top 3px
+  bottom 3px
+  left 3px
+  right 3px
+  border 4px dashed rgba(0, 0, 0, 0.5)
+  border-radius 20px
+
+.new-image-dragwell p
+  font-size 140%
+  margin-left 20px
+  text-align center
+  width 400px
+
+.new-image-dragwell button
+  background -webkit-gradient(linear,0% 0%,0% 100%,from(#61BF1A),to(#52A116))
+  background -moz-linear-gradient(top, #61bf1a 0%, #52a116 100%) 
+  color white
+  text-shadow none
+  font-size 120%
+  rounded-corners 3px/
+  border 1px solid #52A116
+  margin 10px 0 0 80px
+
+.new-image-dragwell button:active 
+  -moz-box-shadow 0 0 4px 2px rgba(0,0,0,.3) inset
+  -webkit-box-shadow 0 0 4px 2px rgba(0,0,0,.3) inset
+  box-shadow 0 0 4px 2px rgba(0,0,0,.3) inset
+  position relative
+  top 1px
+
+.new-image-upload-btn
+  float left
+  width 200px
+  height 200px
+  margin-top 3px
+  position relative
+
+.new-image-upload-btn img
+  left 72px
+  opacity 0.6
+  cursor pointer
+  position absolute
+  top 55px
+  width 60px
+
+.new-image-upload-btn button
+  box-shadow 1px 1px 1px white, 1px 1px 1px white inset
+  -webkit-box-shadow 1px 1px 1px white, 1px 1px 1px white inset
+  -moz-box-shadow 1px 1px 1px white, 1px 1px 1px white inset
+  border-radius 3px
+  margin-left 10px
+  height 215px
+  border 1px solid #ccc 
+  background -webkit-linear-gradient(top,whiteSmoke,#F1F1F1)
+  background -moz-linear-gradient(top,whiteSmoke,#F1F1F1)
+  background -ms-linear-gradient(top,whiteSmoke,#F1F1F1)
+  background -o-linear-gradient(top,whiteSmoke,#F1F1F1)
+  font-size 150%
+  line-height 1.2em
+  padding-top 50px
+
+.new-image-upload-btn button img:active 
+  position relative 
+  top 0px
+
+ol.alt-slats li:last-child 
+  margin 0
+  border-bottom 1px solid #ccc
+  -webkit-border-bottom-right-radius 5px
+  -webkit-border-bottom-left-radius 5px
+  -moz-border-radius-bottomright 5px
+  -moz-border-radius-bottomleft 5px
+  border-bottom-right-radius 5px
+  border-bottom-left-radius 5px
+
+ol.alt-slats li.even
+  background #F1F1F1
+
+ul.alt-slat-actions
+  padding 0
+  cursor pointer
+  position absolute
+  top 80px
+  left 475px
+
+ul.alt-slat-actions li
+  float left
+  border none
+  width 12px
+  margin 0 
+  padding 0 10px 0 0
+  position relative
+
+ul.alt-slat-actions li:last-child
+  border none
+
+ul.alt-slat-actions li img
+  max-width 100%
+  opacity 0.7
+
+// ---
+
+.new-image-upload-btn button:active 
+  -moz-box-shadow 0 0 1px 1px rgba(0,0,0,.3) inset
+  -webkit-box-shadow 0 0 1px 1px rgba(0,0,0,.3) inset
+  box-shadow 0 0 1px 1px rgba(0,0,0,.3) inset
+  position relative
+  top 1px
+
+.new-image-upload-btn button:hover
+  background #eee
+
+// Image list and grid markup
+.image-gallery-container
+  margin-top 20px
+  margin-left 30px
+  width 700px
+
+ol.slats li .tool-list-panel
+  display none
+  background #090909
+  background -webkit-linear-gradient(top,#555,#111)
+  position absolute
+  top -5px
+  left 45px
+  padding 1px 5px 1px 5px 
+  opacity .9
+  -webkit-box-shadow 5px 5px 10px rgba(0, 0, 0, 0.35)
+  rounded-corners 3px
+  border 1px solid #333
+  cursor pointer
+
+ol.slats li .tool-list-panel img
+  border none
+  margin 0
+  width 15px
+  opacity 0.6
+  cursor pointer
+
+ol.slats li .tool-list-panel img:hover
+  opacity 1.0
+
+ol.slats li .tool-list-panel img.link-thumb
+  margin-right 10px
+
+.tool-panel
+  display none
+  background #0b0b0b
+  background -webkit-linear-gradient(top,#242424,#0b0b0b)
+  position absolute
+  top 5px
+  left 30px
+  padding 5px
+  opacity .9
+  -webkit-box-shadow 5px 5px 10px rgba(0, 0, 0, 0.35)
+  rounded-corners 3px
+  border 1px solid #333
+
+.tool-panel a img:hover
+  opacity 1.0 
+
+.tool-panel ul li img:hover
+  opacity 1.0 
+
+.tool-panel img
+  opacity 0.6
+  cursor pointer
+
+.tool-panel img.link-thumb
+  width 15px
+
+.tool-panel img.trash-thumb
+  width 12px
+
+.tool-panel img.expand-thumb
+  width 15px
+
+.tool-panel ul li:first-child
+  margin-left 3px
+
+.tool-panel ul li:last-child
+  margin-right 3px
+
+.tool-panel ul li
+  float left
+  margin-left 13px
+
+.link-panel-container
+  position relative
+
+.link-list-panel-container
+  position absolute
+
+.link-panel-container,
+.link-list-panel-container
+  display none
+  width 200px
+
+.link-panel-arrow
+  top -20px
+  left 55px
+
+.link-list-panel-arrow
+  top 57px
+  left 45px
+
+.link-panel-arrow,
+.link-list-panel-arrow
+  border-color transparent transparent #0B0B0B transparent
+  border-style solid
+  border-width 10px
+  height 0
+  width 0
+  position absolute
+  z-index 111
+
+.link-panel-arrow-border
+  top -21px
+  left 55px
+
+.link-list-panel-arrow-border
+  top 55px
+  left 45px
+
+.link-panel-arrow-border,
+.link-list-panel-arrow-border
+  border-color transparent transparent #222 transparent
+  border-style solid
+  border-width 10px
+  height 0 
+  width 0
+  position absolute
+  z-index 21
+
+.link-panel
+  top -2px
+  left 0
+  width 250px
+
+.link-list-panel
+  top 75px
+  left 0
+  width 260px
+
+.link-panel,
+.link-list-panel
+  position absolute
+  background #0B0B0B
+  border 1px solid #222
+  padding 10px 0 5px 0
+  z-index 20
+  rounded-corners 3px
+  -webkit-box-shadow 5px 5px 10px rgba(0, 0, 0, 0.35)
+
+.link-panel-container .link-panel fieldset label,
+ol.slats li h3 .link-list-panel-container .link-list-panel fieldset label
+  color #fafafa
+  font-weight normal
+  float left
+  margin-top 4px
+
+.link-panel-container .link-panel fieldset label
+  font-size 120%
+  width 60px
+  
+ol.slats li h3 .link-list-panel-container .link-list-panel fieldset label
+  font-size 90%
+  width 55px
+
+.link-panel fieldset input,
+ol.slats li h3 .link-list-panel-container .link-list-panel fieldset input
+  border 1px solid #222
+  box-shadow none
+  color #fafafa
+  -webkit-box-shadow none
+  -moz-box-shadow none
+  float left
+  font-size 100%
+  line-height 10px
+  height 25px
+  padding 5px 0 5px 0
+  width 175px
+  rounded-corners 5px
+  background #333
+
+.link-panel img
+  left 236px
+  top -14px
+
+ol.slats li h3 .link-list-panel-container .link-list-panel img
+  left 236px
+  top -14px
+
+.link-panel img,
+ol.slats li h3 .link-list-panel-container .link-list-panel img
+  border none
+  position absolute
+  width 25px
+  opacity 0.8
+
+.link-panel img:hover,
+ol.slats li h3 .link-list-panel-container .link-list-panel img:hover
+  opacity 1.0
+
+ol.slats li h3 img
+  cursor default
+
+// Markup for site list panel (located from with the image gallery)
+.site-list-container
+  display none 
+
+.site-list-panel
+  position absolute
+  //top -15px
+  //left 231px 
+  top 30px
+  left 80px
+  background #0b0b0b
+  background -webkit-linear-gradient(top,#242424,#0b0b0b)
+  border 1px solid black
+  rounded-corners 3px
+  min-height 75px
+  -webkit-box-shadow 5px 5px 10px rgba(0, 0, 0, 0.35)
+  z-index 11
+  opacity 0.9
+
+.site-list
+  margin-bottom 10px
+  width 150px
+
+.site-list-panel .site-list img
+  float left
+  height 20px
+  padding 0 0 0 20px
+  opacity 0.8
+  width 15px
+  -webkit-transform rotate(45deg)
+  -moz-transform rotate(45deg)
+  -o-transform rotate(45deg)
+
+.site-list-panel .site-list p 
+  float left
+  font-size 100%
+  font-color #8A8A8A
+  font-weight 600
+  text-align left
+  margin 10px 0 0 5px
+  width 85px
+
+.site-list-arrow
+  border-color transparent #0b0b0b transparent transparent
+  border-style solid
+  border-width 10px
+  height 0
+  width 0
+  position absolute
+  top 8px
+  left 212px
+  z-index 11
+  opacity 0.9
+
+.site-list-arrow-border
+  border-color transparent black transparent transparent
+  border-style: solid
+  border-width 10px
+  height 0 
+  width 0
+  position absolute
+  top 8px
+  left 212px
+  opacity 0.9
+
+.sidebar ul.image-tags li.add-tag img
+  margin-bottom 4px
+
+.sidebar ul.image-tags li input
+  display inline
+  height 20px
+  font-size 85%
+  line-height 0px
+  width 95px
+  padding: 10px 2px 10px
+
+.sidebar ul.image-tags li button
+  background -webkit-linear-gradient(top,whiteSmoke,#F1F1F1)
+  border 1px solid rgba(0, 0, 0, 0.1)
+  display inline
+  width 58px
+  font-size 75%
+  height 24px
+  line-height 5px
+  padding 3px 4px 5px 4px
+  position absolute
+  top 2px
+  left 145px
+  rounded-corners 3px
+
+// This is temporary markup for drag-n-drop demo page
+
+/*#dropbox {
+	width: 425px;
+	height: 300px;
+	border: 2px solid #DDD;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	background-color: #FEFFEC;
+	text-align: center;
+	color: #BBB;
+	font-size: 2em;
+	font-family: Arial, sans-serif;
+}*/
+ 
+/*#droplabel {
+	position: relative;
+	top: 40%;
+}*/
+
+// Markup for CSS3 Progress Bars
+.meter 
+  height 20px
+  position relative
+  //background #555
+  background #333
+  rounded-corners 5px
+  padding 5px
+  -webkit-box-shadow inset 0 -1px 1px rgba(255,255,255,0.3)
+  -moz-box-shadow inset 0 -1px 1px rgba(255,255,255,0.3)
+  box-shadow inset 0 -1px 1px rgba(255,255,255,0.3)
+  margin 90px auto
+  width 75%
+
+.meter p
+  font-size 130%
+  font-weight 600
+  float right
+  margin-top 15px
+  padding 3px
+  text-shadow white 1px 1px 0
+  color #C1C1C1
+
+.meter > span
+  display block
+  height 100%
+  -webkit-border-top-right-radius 3px
+  -webkit-border-bottom-right-radius 3px
+  -moz-border-radius-topright 3px
+  -moz-border-radius-bottomright 3px
+  border-top-right-radius 3px
+  border-bottom-right-radius 3px
+  -webkit-border-top-left-radius 5px
+  -webkit-border-bottom-left-radius 5px
+  -moz-border-radius-topleft 5px
+  -moz-border-radius-bottomleft 5px
+  border-top-left-radius 5px
+  border-bottom-left-radius 5px
+  background-color rgb(43,194,83)
+  background-image -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(97,191,26)), color-stop(1, rgb(82, 191, 22)))
+  background-image -webkit-linear-gradient(center bottom, rgb(97,191,26) 37%, rgb(82, 191, 22) 69%)
+  background-image -moz-linear-gradient(center bottom,rgb(97,191,26) 37%,rgb(82, 191, 22) 69%)
+  background-image -ms-linear-gradient(center bottom,rgb(97,191,26) 37%,rgb(82, 191, 22) 69%)
+  background-image -o-linear-gradient(center bottom,rgb(97,191,26) 37%,rgb(82, 191, 22) 69%)
+  -webkit-box-shadow inset 0 2px 9px  rgba(255,255,255,0.3),inset 0 -2px 6px rgba(0,0,0,0.4)
+  -moz-box-shadow inset 0 2px 9px  rgba(255,255,255,0.3),inset 0 -2px 6px rgba(0,0,0,0.4)
+  position relative
+  overflow hidden
+
+.orange > span 
+  background-color #f1a165
+  background-image -webkit-gradient(linear,left top,left bottom,color-stop(0, #f1a165),color-stop(1, #f36d0a))
+  background-image -webkit-linear-gradient(top, #f1a165, #f36d0a)
+  background-image -moz-linear-gradient(top, #f1a165, #f36d0a)
+  background-image -ms-linear-gradient(top, #f1a165, #f36d0a)
+  background-image -o-linear-gradient(top, #f1a165, #f36d0a)
+
+.red > span 
+  background-color #f0a3a3
+  background-image -webkit-gradient(linear,left top,left bottom,color-stop(0, #f0a3a3),color-stop(1, #f42323))
+  background-image -webkit-linear-gradient(top, #f0a3a3, #f42323)
+  background-image -moz-linear-gradient(top, #f0a3a3, #f42323)
+  background-image -ms-linear-gradient(top, #f0a3a3, #f42323)
+  background-image -o-linear-gradient(top, #f0a3a3, #f42323)
+
+.animate > span > span,
+.meter > span:after
+  content ""
+  position absolute
+  top 0 
+  left 0
+  bottom 0
+  right 0
+  background-image -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(255, 255, 255, .2)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.75, rgba(255, 255, 255, .2)), color-stop(.75, transparent), to(transparent))
+  background-image -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent)
+  background-image -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent)
+  background-image -ms-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent)
+  background-image -o-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent)
+  z-index 1
+  -webkit-background-size 50px 50px
+  -moz-background-size 50px 50px
+  background-size 50px 50px
+  -webkit-animation move 2s linear infinite
+  -webkit-border-top-right-radius 8px
+  -webkit-border-bottom-right-radius 8px
+  -moz-border-radius-topright 8px
+  -moz-border-radius-bottomright 8px
+  border-top-right-radius 8px
+  border-bottom-right-radius 8px
+  -webkit-border-top-left-radius 20px
+  -webkit-border-bottom-left-radius 20px
+  -moz-border-radius-topleft 20px
+  -moz-border-radius-bottomleft 20px
+  border-top-left-radius 20px
+  border-bottom-left-radius 20px
+  overflow hidden
+
+.animate > span:after
+  display none
+
+@-webkit-keyframes move
+  0% 
+    background-position 0 0
+  100%
+    background-position 50px 50px
+
+.meter > span:after,
+.animate > span > span 
+  -webkit-animation move 2s linear infinite
+
+// Markup for the second upload indicator for photos
+.overlay-status
+  position relative
+
+.overlay-status img.overlay-thumb
+  height 100%
+  width 100%
+  rounded-corners 3px
+
+.white-splash-overlay
+  position absolute
+  left 0px
+  top 0px
+  background rgba(255, 255, 255, 0.7)
+  height 200px
+  width 220px
+  rounded-corners 3px
+
+.upload-indicator,
+.upload-pending-indicator
+  display none
+
+.upload-circle-indicator
+  display block
+
+.upload-indicator, 
+.upload-pending-indicator,
+.upload-circle-indicator
+  position absolute
+  height 20px
+  width 20px
+  top 160px
+  left 190px
+  opacity 0.7
+
+.upload-pending-indicator
+  position absolute
+  top 173px
+  left 35px
+  width 215px
+
+.upload-pending-indicator img 
+  margin-left 40px
+  width 25px
+  margin-bottom -3px
+
+.upload-pending-indicator p
+  display inline
+  color #424242
+  font-size 120%
+
+.grid-upload-meter
+  background -webkit-linear-gradient(top,whiteSmoke,#F1F1F1)
+
+.grid-upload-meter .meter
+  margin 27px auto
+
+.grid-upload-meter .meter p
+  margin-right -15px
+
+.grid-overlay-upload
+  position absolute
+  top 0
+  left 0
+  background rgba(255, 255, 255, 0.5)
+  height 93px
+  width 124px
+
+.grid-green-loader img
+  position absolute
+  top 75px 
+  left 105px 
+  width 15px
+  opacity 0.7
+
+.list-upload-meter .meter
+  margin 10px auto
+
+.list-upload-meter .meter p
+    margin-top 15px
+    font-size 130%
+
+.list-upload-meter h2
+  margin-left 70px
+  font-size 130%
+  width 35%
+  padding 0
+
+
+// Markup for upload manager
+
+#manager-panel
+  position relative
+
+.manager-tab
+  background #333
+  //background -webkit-gradient(linear, 0% 0, 0% 100%, color-stop(0%, #575757), color-stop(50%, #333), color-stop(50%, #272727), color-stop(100%, #232323))
+  width 40px
+  height 25px
+  position absolute
+  top 32px
+  left 380px 
+  border-radius 3px 3px 0px 0px
+
+.manager-tab img 
+  margin-top 7px
+  margin-left 12px
+  opacity 0.6
+  width 15px
+
+.upload-manager-container
+  position fixed
+  bottom 0
+  left 30px
+  right 0
+  z-index 300
+
+.upload-manager-header
+  -webkit-border-top-left-radius 3px
+  -webkit-border-top-right-radius 3px
+  -moz-border-radius-topleft 3px
+  -moz-border-radius-topright 3px
+  border-top-left-radius 3px
+  border-top-right-radius 3px
+  background #333
+  //background -webkit-linear-gradient(top, #333, #222)
+  //background -webkit-gradient(linear, 0% 0, 0% 100%, color-stop(0%, #575757), color-stop(50%, #333), color-stop(50%, #272727), color-stop(100%, #232323))
+  height 30px
+  position relative
+  width 400px
+
+.upload-manager-header img
+  position absolute
+  top 6px
+  left 365px
+  opacity 0.6
+  padding 2px
+  width 20px
+
+.upload-manager-header p
+  color #ccc
+  font-size 130%
+  text-align center
+  padding 4px
+
+.upload-manager-content
+  background -webkit-linear-gradient(top,whiteSmoke,#F1F1F1)
+  border-right 1px solid #ccc
+  border-left 1px solid #ccc
+  height 300px
+  position relative
+  width 398px
+
+.upload-manager-content li:last-child
+  margin-bottom 20px
+
+.upload-manager-content ul li
+  border-bottom 1px solid #ccc
+  padding-bottom 25px
+  box-shadow inset 0px 1px 0px 0px white
+  -webkit-box-shadow inset 0px 1px 0px 0px white
+  -moz-box-shadow inset 0px 1px 0px 0px white
+
+.upload-manager-content ul li.upload-select
+  background rgba(97, 191, 26, 0.1)
+
+.upload-manager-content .upload-title
+  font-size 125%
+  margin-top 10px
+  margin-left 20px
+  position absolute
+  left 25px
+
+.upload-manager-content .upload-percentage
+  float right
+  margin-top -28px
+  font-size 135%
+  margin-right -15px
+
+.upload-manager-content .meter-container 
+  position relative
+  padding-top 35px
+  width 85%
+
+.upload-manager-content .meter-container .cancel-upload 
+  display none
+  position absolute
+  top 40px
+  left 365px
+
+.upload-manager-content .meter-container .cancel-upload img
+  width 15px
+  opacity 0.6
+
+.upload-manager-content .meter-container .meter
+  //position absolute
+  margin 0 auto
+  //left 20px
+  //width 260px*
+
+.spinner-outer
+  position absolute
+  top -110px
+  left -125px
+
+.spinner-dividers
+  position absolute
+  top 0
+  left 0
+  z-index 310
+
+.spinner-inner
+  position absolute
+  animation(full-rotation 1s linear infinite)
+  transform-origin(42px 42px)
+  top 0 
+  left 0
+  z-index 10
+
+@keyframes full-rotation
+  from
+    -webkit-transform rotate(0deg)
+    -moz-transform rotate(0deg)
+  to 
+    -webkit-transform rotate(360deg)
+    -moz-transform rotate(360deg)
+
+.overlay-percentage
+  position absolute
+  color #333
+  font-size 170%
+  top -80px
+  left -102px
+  font-weight 600
+
+.upload-pending
+  opacity 0.9
+
+li.upload-pending div.upload-info-container p
+  color white
+
+// Image pending styles for uploading
+.upload-info-container img
+  display block
+  width 165px
+  opacity 0.6
+  padding 5px
+  margin 15px auto
+
+.upload-info-container p
+  text-align center
+  font-size 130%
+  //text-shadow white 1px 1px 0
+
+.pending-thumbnail
+  position absolute
+  top 0 
+  left 0
+  z-index -1
+
+.pending-thumbnail img
+  rounded-corners 3px
+  height 200px
+  width 220px
+
+.inset 
+  box-shadow inset 0 1px 6px rgba(0, 0, 0, 0.6)
+  -webkit-box-shadow inset 0 1px 6px rgba(0, 0, 0, 0.6)
+  -moz-box-shadow inset 0 1px 6px rgba(0, 0, 0, 0.6)
+  background rgba(0,0,0,0.2)
+  position absolute
+  top 0
+  left 0
+  height 100%
+  width 100%
+  rounded-corners 3px
+
+.inset-green
+  background rgba(97,191,26,0.2)
+
+// New progress bars
+.progressbar
+  border-radius 0px 0px 3px 3px 
+  -webkit-border-radius 0px 0px 3px 3px 
+  -moz-border-radius 0px 0px 3px 3px 
+  background rgba(0,0,0,0.4)
+  height 15px
+  width 100%
+  box-shadow 0 1px 5px black inset, 0 0 0 #444
+  -webkit-box-shadow 0 1px 5px black inset, 0 0 0 #444
+  -moz-box-shadow 0 1px 5px black inset, 0 0 0 #444
+  position absolute
+  bottom 0 
+  left 0
+
+.progressbar span
+  background -webkit-linear-gradient(top, #40ABEF 0%, #0496E6 51%, #0084DE 100%)
+  background -moz-linear-gradient(top, #40ABEF 0%, #0496E6 51%, #0084DE 100%)
+  background -o-linear-gradient(top, #40ABEF 0%, #0496E6 51%, #0084DE 100%)
+  background linear-gradient(top, #40ABEF 0%, #0496E6 51%, #0084DE 100%)
+  box-shadow 0 1px 0 rgba(255, 255, 255, .5) inset
+  -webkit-box-shadow 0 1px 0 rgba(255, 255, 255, .5) inset
+  -moz-box-shadow 0 1px 0 rgba(255, 255, 255, .5) inset
+  display inline-block
+  height 100%
+  transition width .4s ease-in-out
+  -webkit-transition width .4s ease-in-out
+  -moz-transition width .4s ease-in-out
+  border-radius 0px 0px 3px 3px 
+  -webkit-border-radius 0px 0px 3px 3px 
+  -moz-border-radius 0px 0px 3px 3px 
+
+// Upload rocket demo
+.upload-rocket-progress
+  background white
+  positon relative
+
+.upload-rocket-progress, .upload-rocket-value, .upload-rocket-text
+  width 220px
+  height 200px
+
+.upload-rocket-progress, .upload-rocket-value
+  background #bdbdbd url("../images/space_backfill") top left no-repeat
+
+.upload-rocket-value img
+  height 200px
+
+ol.images li.rocket-progress 
+  background transparent
+  overflow hidden
+
+.rocket-progress-upload
+  position relative
+  height 100%
+  width 100%
+  overflow hidden
+
+.rocket-progress-upload img
+  display block
+  margin 20 auto
+  width 300px
+  z-index 100
+  margin-top -52px
+  -webkit-transform rotate(40deg)
+  margin-left -36px
+
+.rocket-progress-indicator
+  z-index 50
+  height 0px
+  //background #61BF1A
+  background -webkit-linear-gradient(top, #40ABEF 0%, #0496E6 51%, #0084DE 100%)
+  margin-top -230px
+  margin-left 60px
+  width 45%
+
+.rocket-upload-indicator img
+  margin 0 
+  padding 0
+  position absolute
+  bottom 10px
+  right 10px
+  width 15px
+
+// Default Image Overlay
+.overlay-status .overlay-default-img
+  display block
+  margin 0 auto
+  padding 40px 40px 66px 40px
+  width 125px
+
+.image-controls-drag
+  background -webkit-linear-gradient(top,whiteSmoke,#F1F1F1)
+  height 35px
+  position absolute
+  width 220px
+  bottom 0px
+  left 0px
+
+.edit-img-drag
+  float left
+  width 100px
+  margin-top 9px
+
+.close-img-drag
+  float right
+  margin-top 9px
+
+.image-controls-drag .edit-img-drag a 
+  margin 5px 0 0 15px
+  color #c1c1c1
+  font-weight bold
+  text-shadow white 1px 1px 0
+  font-size 120%
+
+.image-controls-drag .edit-img-drag a:hover,
+.image-controls-drag .edit-img-drag a:focus
+  text-decoration none
+  color #868686
+
+.image-controls-drag .close-img-drag
+  float right
+
+.image-controls-drag .close-img-drag img 
+  width 12px
+  height 12px
+  padding-top 3px
+  padding-right 15px
+  opacity 0.5
+
+.image-controls-drag .close-img-drag img:hover,
+.image-controls-drag .close-img-drag img:focus
+  opacity 0.8
+
+h1.demo-heading
+  background #1F1F1F
+  border-bottom 1px solid #ccc
+  color white
+  font-size 200%
+  margin 0 auto
+  margin-bottom 20px
+  padding 15px 0
+  text-align center
+  text-transform uppercase
+  width 400px
+
+#dropzone
+  border 1px solid #ccc
+  width 1024px
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

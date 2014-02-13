@@ -1,0 +1,209 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Image Gallery Block ALTERNATE -- Prototype</title>
+    <link type="text/css" href="css/image-gallery.css" rel="stylesheet" />
+    <link type="text/css" href="css/jquery.Jcrop.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/alt-image-block.js"></script>
+    <script type="text/javascript" src="js/jquery.Jcrop.js"></script>
+  </head>
+  <body>
+    <div id="main" class="outer">
+      <div class="inner">
+        <h1>Image Gallery Block -- Prototype</h1>
+        <div id="image-gallery-block-container">
+          <form action="/">
+            <fieldset>
+              <label for="name">Gallery Title</label>
+              <input type="text" id="gallery-title" class="form-text" />
+            </fieldset>
+          </form>
+
+          <div id="alt-image-manager-container group">
+
+            <div class="alt-image-upload group">
+              <div class="alt-image-dragwell">
+                <img src="images/drag-plus.png" />
+                <p>Drag images here from your desktop to upload.</p>
+                <button class="large">Upload</button>
+              </div>
+
+              <div class="gallery-panel-container group">
+                <div class="alt-upload-btn">
+                  <button class="large">Select from image library</button>
+                </div>
+                <div class="alt-toolbar-options">
+                  <a href="#"><img id="alt-grid-option" src="images/alt-grid.png" /></a>
+                  <a href="#"><img id="alt-list-option" src="images/alt-list.png" /></a>
+                </div>
+              </div>
+
+              <div class="alt-image-preview-container group"></div>
+
+            </div> <!-- end of alt-image-upload -->
+
+          </div> <!-- end of alt-image-manager-container -->
+        </div> <!-- end of image-gallery-block-container -->
+        <script id="alt-image-list-template" type="text/html">
+
+          <ol class="alt-image-list alt-slats">
+            <li class="group">
+              <h3>
+                <img src="images/grid/steve_150.jpg" alt="thumbnail" />
+                This is the title
+              </h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+              <p class="attribution"><span class="credit">Photo credit: </span>Steve Hernandez</p>
+              <ul class="alt-slat-actions group" style="display:block">
+                <li><img src="images/arrow.png" /></li>
+                <li><img class="down-arrow" src="images/arrow.png" /></li>
+                <li class="remove-img-item"><img src="images/trash.png" /></li>
+              </ul>
+            </li>
+            <li class="group even">
+              <h3>
+                <img src="images/grid/burger-color-thumb.jpg" alt="thumbnail" />
+                This is the title
+              </h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+              <p class="attribution"><span class="credit">Photo credit: </span>Steve Hernandez</p>
+              <ul class="alt-slat-actions group" style="display:block">
+                <li><img src="images/arrow.png" /></li>
+                <li><img class="down-arrow" src="images/arrow.png" /></li>
+                <li class="remove-img-item"><img src="images/trash.png" /></li>
+              </ul>
+            </li>
+            <li class="group">
+              <h3>
+                <img src="images/grid/carrots_thumb.jpg" alt="thumbnail" />
+                This is the title
+              </h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+              <p class="attribution"><span class="credit">Photo credit: </span>Steve Hernandez</p>
+              <ul class="alt-slat-actions group" style="display:block">
+                <li><img src="images/arrow.png" /></li>
+                <li><img class="down-arrow" src="images/arrow.png" /></li>
+                <li class="remove-img-item"><img src="images/trash.png" /></li>
+              </ul>
+            </li>
+            <li class="group even">
+              <h3>
+                <img src="images/grid/food-bread-thumb.jpg" alt="thumbnail" />
+                This is the title
+              </h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+              <p class="attribution"><span class="credit">Photo credit: </span>Steve Hernandez</p>
+              <ul class="alt-slat-actions group" style="display:block">
+                <li><img src="images/arrow.png" /></li>
+                <li><img class="down-arrow" src="images/arrow.png" /></li>
+                <li class="remove-img-item"><img src="images/trash.png" /></li>
+              </ul>
+            </li>
+            <li class="group">
+              <h3>
+                <img src="images/grid/golden-gate-thumb.jpg" alt="thumbnail" />
+                This is the title
+              </h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+              <p class="attribution"><span class="credit">Photo credit: </span>Steve Hernandez</p>
+              <ul class="alt-slat-actions group" style="display:block">
+                <li><img src="images/arrow.png" /></li>
+                <li><img class="down-arrow" src="images/arrow.png" /></li>
+                <li class="remove-img-item"><img src="images/trash.png" /></li>
+              </ul>
+            </li>
+            <li class="group even">
+              <h3>
+                <img src="images/grid/grilled-veggie-thumb.jpg" alt="thumbnail" />
+                This is the title
+              </h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+              <p class="attribution"><span class="credit">Photo credit: </span>Steve Hernandez</p>
+              <ul class="alt-slat-actions group" style="display:block">
+                <li><img src="images/arrow.png" /></li>
+                <li><img class="down-arrow" src="images/arrow.png" /></li>
+                <li class="remove-img-item"><img src="images/trash.png" /></li>
+              </ul>
+            </li>
+            <li class="group">
+              <h3>
+                <img src="images/grid/Mixed-color-thumb.jpg" alt="thumbnail" />
+                This is the title
+              </h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+              <p class="attribution"><span class="credit">Photo credit: </span>Steve Hernandez</p>
+              <ul class="alt-slat-actions group" style="display:block">
+                <li><img src="images/arrow.png" /></li>
+                <li><img class="down-arrow" src="images/arrow.png" /></li>
+                <li class="remove-img-item"><img src="images/trash.png" /></li>
+              </ul>
+            </li>
+            <li class="group even">
+              <h3>
+                <img src="images/grid/nature-trees-thumb.jpg" alt="thumbnail" />
+                This is the title
+              </h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+              <p class="attribution"><span class="credit">Photo credit: </span>Steve Hernandez</p>
+              <ul class="alt-slat-actions group" style="display:block">
+                <li><img src="images/arrow.png" /></li>
+                <li><img class="down-arrow" src="images/arrow.png" /></li>
+                <li class="remove-img-item"><img src="images/trash.png" /></li>
+              </ul>
+            </li>
+            <li class="group">
+              <h3>
+                <img src="images/grid/nature-water-drop-thumb.jpg" alt="thumbnail" />
+                This is the title
+              </h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+              <p class="attribution"><span class="credit">Photo credit: </span>Steve Hernandez</p>
+              <ul class="alt-slat-actions group" style="display:block">
+                <li><img src="images/arrow.png" /></li>
+                <li><img class="down-arrow" src="images/arrow.png" /></li>
+                <li class="remove-img-item"><img src="images/trash.png" /></li>
+              </ul>
+            </li>
+            <li class="group even">
+              <h3>
+                <img src="images/grid/steak-color-thumb.jpg" alt="thumbnail" />
+                This is the title
+              </h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+              <p class="attribution"><span class="credit">Photo credit: </span>Steve Hernandez</p>
+              <ul class="alt-slat-actions group" style="display:block">
+                <li><img src="images/arrow.png" /></li>
+                <li><img class="down-arrow" src="images/arrow.png" /></li>
+                <li class="remove-img-item"><img src="images/trash.png" /></li>
+              </ul>
+            </li>
+          </ol>
+
+
+      </script>
+
+      <script id="alt-image-grid-template" type="text/html">
+        <ul class="alt-image-grid">
+          <li><img src="images/grid/steve_150.jpg" /></li>
+          <li><img src="images/grid/burger-color-thumb.jpg" /></li>
+          <li><img src="images/grid/carrots_thumb.jpg" /></li>
+          <li><img src="images/grid/food-bread-thumb.jpg" /></li>
+          <li><img src="images/grid/golden-gate-thumb.jpg" /></li>
+          <li><img src="images/grid/grilled-veggie-thumb.jpg" /></li>
+          <li><img src="images/grid/Mixed-color-thumb.jpg" /></li>
+          <li><img src="images/grid/nature-trees-thumb.jpg" /></li>
+          <li><img src="images/grid/nature-water-drop-thumb.jpg" /></li>
+          <li><img src="images/grid/steak-color-thumb.jpg" /></li>
+          <li><img src="images/grid/sushi-color-thumb.jpg" /></li>
+        </ul> 
+      </script>
+
+      </div> <!-- end of inner -->
+    </div> <!-- end of main -->
+
+     </body>
+</html>

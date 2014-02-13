@@ -1,0 +1,122 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Image With Text Block -- Prototype</title>
+    <link type="text/css" href="css/image-gallery.css" rel="stylesheet" />
+    <link type="text/css" href="css/jquery.Jcrop.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/image.js"></script>
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="js/jquery.Jcrop.js"></script>
+  </head>
+  <body>
+    <div id="main" class="outer">
+      <div class="inner">
+        <h1>Image with text block -- Prototype</h1>
+        <div id="image-with-text-container">
+          <form action="/">
+            <fieldset>
+              <label for="name">Title</label>
+              <input type="text" id="image-title" class="form-text" />
+            </fieldset>
+            <fieldset>
+              <label for="name">Description</label>
+              <input type="text" id="image-description" class="form-text" />
+            </fieldset>
+          </form>
+
+          <div id="image-drag-container">
+            <div class="image-drag-area">
+              <div class="first-file-uploader">
+                <input type="file" accept="image/jpeg,image/png,image/gif" multiple="multiple" autocomplete="off" class="active" />
+              </div>
+              <div class="image-side">
+                <img src="images/images-icon-512.png" />
+              </div>
+              <div class="browser-side">
+                <img src="images/browser-icon-512.png" />
+              </div>
+              <div class="directional-arrow">
+                <img src="images/guide-arrow.png" />
+              </div>
+              <div class="drag-message">
+                <h2>Add an image</h2>
+                <!-- <p>Drag an image here from your desktop to upload.</p> -->
+                <p>Drop files here to begin or click here to upload.</p>
+              </div>
+            </div>
+          </div> <!-- end of image-drag-container -->
+          <div id="image-list-item"></div>
+        </div> <!-- end of image-with-text-container -->
+      </div> <!-- end of inner -->
+    </div> <!-- end of main -->
+    <script id="image-list-template" type="text/html">
+      <div class="image-list">
+        <div class="image-list">
+          <ol class="slats" id="sortable">
+            <li class="group">
+              <h3>
+                  <img src="images/grid/steve_150.jpg" alt="thumbnail" />
+                  This is the title
+                  <div class="image-list-controls">
+                    <a id="edit-thumb-1" href="#"><img class="edit-thumb" src="images/edit-pen2.png" /></a>
+                    <a href="#"><img class="expand-thumb" src="images/expand.png" /></a>
+                  </div>
+              </h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+              <p class="attribution"><span class="credit">Photo credit: </span>Steve Hernandez</p>
+              <div class="slat-controls group">
+                <ul class="slat-actions" style="display:block">
+                  <li><a href=""><img src="images/arrow.png" /></a></li>
+                  <li><a href=""><img class="down-arrow" src="images/arrow.png" /></a></li>
+                  <li class="remove-img-item"><img src="images/trash.png" /></li>
+                </ul>
+              </div>
+              <!-- edit-meta-container -->
+              <div class="edit-list-meta-container">
+                <div class="edit-list-arrow-border"></div>
+                <div class="edit-list-arrow"></div>
+                <div class="edit-list-meta">
+                  <fieldset>
+                    <label for="title">Title <a href="#">(?)</a></label>
+                    <input type="text" id="title" class="form-text" />
+                  </fieldset>
+                  <fieldset>
+                    <label for="description">Description <a href="#">(?)</a></label>
+                    <input type="text" id="description" class="form-text" />
+                  </fieldset>
+                  <fieldset>
+                    <label for="tag">Tag <a href="#">(?)</a></label>
+                    <input type="text" id="tag" class="form-text" />
+                  </fieldset>
+                  <fieldset>
+                    <label for="attribution">Attribution <a href="#">(?)</a></label>
+                    <input type="text" id="attribution" class="form-text" />
+                  </fieldset>
+                  <fieldset class="form-actions">
+                    <input type="submit" value="Save" />
+                    <input id="cancel-edit" type="submit" value="Cancel" />
+                  </fieldset>
+                </div>
+              </div> <!-- end of edit-meta-container -->
+
+              <!-- remove-image-message -->
+              <div class="remove-image-message">
+                <h2>Are you sure you want to remove this image from the gallery?</h2>
+                <div class="image-delete-controls">
+                  <div class="img-removal">
+                    <button class="small">Remove It</button>
+                  </div>
+                  <div class="black-img-cancel-delete">
+                    or <a href="#">Cancel</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ol>
+      </div>
+    </script>
+  </body>
+</html>
+

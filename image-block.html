@@ -1,0 +1,1035 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Image Gallery Block -- Prototype</title>
+    <link type="text/css" href="css/image-gallery.css" rel="stylesheet" />
+    <link type="text/css" href="css/jquery.Jcrop.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/images.js"></script>
+    <script type="text/javascript" src="js/jquery.Jcrop.js"></script>
+    <script type="text/javascript" src="js/jquery.filedrop.js"></script>
+  </head>
+  <body>
+    <div id="main" class="outer">
+      <div class="inner">
+        <h1>Image Gallery Block -- Prototype</h1>
+        <div id="image-gallery-block-container">
+          <form action="/">
+            <fieldset>
+              <label for="name">Gallery Title</label>
+              <input type="text" id="gallery-title" class="form-text" />
+            </fieldset>
+          </form>
+          <div id="gallery-toolbar-container" class="group">
+            <div class="toolbar-options">
+              <a href="#"><img id="list-option" src="images/list-view.png" /></a>
+              <a href="#"><img id="grid-option" src="images/grid-view.png" /></a>
+            </div>
+          </div>
+          <div id="image-manager-container" class="group">
+            <div class="image-upload">
+              <div id="dropbox" class="file-uploader">
+                <input type="file" accept="image/jpeg,image/png,image/gif" multiple="multiple" autocomplete="off" class="active" />
+              </div>
+              <div class="image-dragwell">
+                <img src="images/drag-plus.png" />
+                <p>Drag images here from your desktop to upload.</p>
+                <button class="small">Upload</button>
+              </div>
+              <div class="upload-btn">
+                <button class="large">Select from image library</button>
+              </div>
+            </div> <!-- end image-upload -->
+            <div class="image-preview-container"></div>
+          </div> <!-- end of image-manager-container -->
+        </div> <!-- end of image-gallery-block-container -->
+
+        <div id="library-modal-container" style="display:none">
+          <div id="library-modal-mask"></div>
+          <div id="library-modal-content">
+            <header class="library-heading">
+              <h2>Select Images</h2>
+              <a id="close-image-modal" href="#" style="display:block;">Close</a>
+            </header>
+            <section class="library-content">
+              <div id="gallery-wrapper" class="group">
+                
+                <div id="gallery-wrapper" class="group">
+
+                <div id="sidebar-container">
+                  <div class="sidebar">
+                    <div class="expand-my-images">
+                      <img src="images/home-logo.png" />
+                      <div class="connect-name">My Images</div>
+                    </div>
+                    <ul class="image-tags">
+                      <li id="all-images">
+                        <img src="images/tag-logo.png" />
+                        <div class="set-name">All Images</div>
+                      </li>
+                      <li>
+                        <img src="images/tag-logo.png" />
+                        <div class="set-name">Tag A</div>
+                      </li>
+                      <li>
+                        <img src="images/tag-logo.png" />
+                        <div class="set-name">Tag B</div>
+                      </li>
+                      <li>
+                        <img src="images/tag-logo.png" />
+                        <div class="set-name">Tag C</div>
+                      </li>
+                      <li>
+                        <img src="images/tag-logo.png" />
+                        <div class="set-name">Tag D</div>
+                      </li>
+                    </ul>
+
+                    <div class="expand-flickr">
+                      <img src="images/flickr-logo.png" />
+                      <div class="connect-name">Flickr</div>
+                    </div>
+                    <ul class="flickr-contents">
+                      <li>
+                        <img src="images/img-logo.png" />
+                        <div class="set-name">Beach Front</div>
+                      </li>
+                      <li>
+                        <img src="images/img-logo.png" />
+                        <div class="set-name">Halloween 2011</div>
+                      </li>
+                      <li>
+                        <img src="images/img-logo.png" />
+                        <div class="set-name">Holiday in New York</div>
+                      </li>
+                      <li>
+                        <img src="images/img-logo.png" />
+                        <div class="set-name">UT Graduation</div>
+                      </li>
+                    </ul>
+
+                    <div class="expand-facebook">
+                      <img src="images/facebook-logo.png" />
+                      <div class="connect-name">Facebook</div>
+                    </div>
+                    <ul class="facebook-contents">
+                      <li>
+                        <img src="images/folder-logo.png" />
+                        <div class="set-name">Office Party</div>
+                      </li>
+                      <li>
+                        <img src="images/folder-logo.png" />
+                        <div class="set-name">Paris Vacation</div>
+                      </li>
+                      <li>
+                        <img src="images/folder-logo.png" />
+                        <div class="set-name">Swimming</div>
+                      </li>
+                      <li>
+                        <img src="images/folder-logo.png" />
+                        <div class="set-name">Wall Photos</div>
+                      </li>
+                    </ul>
+
+                  <div class="expand-google">
+                      <img src="images/google-logo.png" />
+                      <div class="connect-name">Google+</div>
+                    </div>
+                    <ul class="google-contents">
+                      <li>
+                        <img src="images/google-plus-logo.png" />
+                        <div class="set-name">Desk photos</div>
+                      </li>
+                      <li>
+                        <img src="images/google-plus-logo.png" />
+                        <div class="set-name">Gary's Party</div>
+                      </li>
+                      <li>
+                        <img src="images/google-plus-logo.png" />
+                        <div class="set-name">Fireworks Show</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div> <!-- end of sidebar-container -->
+
+                <div id="main-container">
+                  <div class="main">
+                    <ol class="images group">
+                      <li class="library-select">
+                        <div class="image-item-select">
+                          <a href="#"><img data-id="1" src="images/steve_profile.jpg" /></a><div class="image-status"></div>
+
+                          <img class="select-img-status" src="images/select-image.png" />
+                          <div class="website-info">
+                            <h4>Organic Foods</h4>
+                          </div>
+                          
+                          <!--<div class="image-controls">
+                            <div class="edit-img"><a id="image-edit-1" href="#">Edit</a></div>
+                            <div class="close-img"><img src="images/close.png"/></div>
+                          </div>-->
+                          <span><strong>garden-pic.jpg</strong></span>
+
+                          <div class="img-delete-msg">
+                            <h2>Are you sure you want to remove this image?</h2>
+                            <div class="image-delete-controls">
+                              <div class="img-removal">
+                                <button class="small">Delete It</button>
+                              </div>
+                              <div class="img-cancel-delete">
+                                <!--<button class="small">Cancel</button>-->
+                                or <a href="#">Cancel</a>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="img-meta">
+                            <h2>gardens-pic.jpg</h2>
+                            <p>Took a walk through the water gardens at the palace.</p>
+                            <p><span>Tags: </span>Tag A, Tag C</p>
+                          </div>
+                        </div>
+                        <div class="edit-meta-container">
+                          <div class="edit-arrow-border"></div>
+                          <div class="edit-arrow"></div>
+                          <div class="edit-meta">
+                            <fieldset>
+                              <label for="title">Title <a href="#">(?)</a></label>
+                              <input type="text" id="title" class="form-text" value="gardens-pic.jpg"/>
+                            </fieldset>
+                            <fieldset>
+                              <label for="description">Description <a href="#">(?)</a></label>
+                              <input type="text" id="description" class="form-text" value="Took  a walk through the water gardens at the palace." />
+                            </fieldset>
+                            <fieldset>
+                              <label for="tag">Tag <a href="#">(?)</a></label>
+                              <input type="text" id="tag" class="form-text" value="Tag A, Tag C" />
+                            </fieldset>
+                            <fieldset>
+                              <label for="attribution">Photo credit: <a href="#">(?)</a></label>
+                              <input type="text" id="attribution" class="form-text" value="Steve Hernandez" />
+                            </fieldset>
+                            <fieldset class="form-actions">
+                              <input type="submit" value="Save" />
+                              <input id="cancel-edit" type="submit" value="Cancel" />
+                            </fieldset>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="library-select">
+                        <div class="image-item-select">
+                          <img data-id="2" src="images/gallery/carrots300.jpg" /><div class="image-status"></div>
+                          <!--<div class="image-controls">
+                            <div class="edit-img"><a href="#">Edit</a></div>
+                            <div class="close-img"><img src="images/close.png"/></div>
+                          </div>-->
+                          <span><strong>Chopped Vegtables</strong></span>
+
+                          <div class="img-delete-msg">
+                            <h2>Are you sure you want to remove this image?</h2>
+                            <div class="image-delete-controls">
+                              <div class="img-removal">
+                                <button class="small">Delete It</button>
+                              </div>
+                              <div class="img-cancel-delete">
+                                <!--<button class="small">Cancel</button>-->
+                                or <a href="#">Cancel</a>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="img-meta">
+                            <h2>Chopped Vegtables</h2>
+                            <p>Veggies that are sliced and diced and ready for a salad.</p>
+                            <p><span>Tags: </span>Foods</p>
+                          </div>
+
+                        </div>
+                        <div class="action-container">
+                          <div class="meta-arrow-border"></div>
+                          <div class="meta-arrow"></div>
+                          <div class="meta-container">
+                            <p class="photo-title"><span>Title:</span> Spring Flower</p>
+                            <p class="photo-description"><span>Description:</span> Took this photo while exploring the country side of France. Full bloom in the back country</p>
+                            <p class="photo-tag"><span>Tag: </span>Tag A</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="library-select">
+                        <div class="image-item-select">
+                          <img data-id="3" src="images/high-view.jpg" /><div class="image-status"></div>
+                          <!--<div class="image-controls">
+                            <div class="edit-img"><a id="image-edit-2" href="#">Edit</a></div>
+                            <div class="close-img"><img src="images/close.png"/></div>
+                          </div>-->
+                          <span><strong>Arc de Triomphe</strong></span>
+                          <div class="img-delete-msg">
+                            <h2>Are you sure you want to remove this image?</h2>
+                            <div class="image-delete-controls">
+                              <div class="img-removal">
+                                <button class="small">Delete It</button>
+                              </div>
+                              <div class="img-cancel-delete">
+                                <!--<button class="small">Cancel</button>-->
+                                or <a href="#">Cancel</a>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="img-meta">
+                            <h2>Arc de Triomphe</h2>
+                            <p>View from Arc de Triomphe. Paris, France</p>
+                            <p><span>Tags: </span>Vacation, Paris</p>
+                          </div>
+                          <!--<span><strong>View from Arc de Triomphe</strong></span>-->
+                        </div>
+                      </li>
+                      <li class="library-select">
+                        <div class="image-item-select">
+                          <a href="#"><img data-id="9" src="images/gallery/goldengate300.jpg" /></a><div class="image-status"></div>
+                          <img data-id="4" class="select-img-status" src="images/select-image.png" />
+                          <div class="website-info">
+                            <h4>Organic Foods</h4>
+                          </div>
+                          <!--<div class="image-controls">
+                            <div class="edit-img"><a href="#">Edit</a></div>
+                            <div class="close-img"><img src="images/close.png"/></div>
+                          </div>-->
+                          <span><strong>Golden Gate Bridge</strong></span>
+                          <div class="img-delete-msg">
+                            <h2>Are you sure you want to remove this image?</h2>
+                            <div class="image-delete-controls">
+                              <div class="img-removal">
+                                <button class="small">Delete It</button>
+                              </div>
+                              <div class="img-cancel-delete">
+                                <!--<button class="small">Cancel</button>-->
+                                or <a href="#">Cancel</a>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="img-meta">
+                            <h2>Golden Gate Bridge</h2>
+                            <p>My favorite photo from my trip to San Francisco!</p>
+                            <p><span>Tags: </span>jQuery, Conference</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="library-select">
+                        <div class="image-item-select">
+                          <a id="image-modal-launch" href="#"><img data-id="5" src="images/gallery/rockybay300.jpg" /></a><div class="image-status"></div>
+                          <!--<div class="image-controls">
+                            <div class="edit-img"><a href="#">Edit</a></div>
+                            <div class="close-img"><img src="images/close.png"/></div>
+                          </div>-->
+                          <span><strong>rockybay300.jpg</strong></span>
+                          <div class="img-delete-msg">
+                            <h2>Are you sure you want to remove this image?</h2>
+                            <div class="image-delete-controls">
+                              <div class="img-removal">
+                                <button class="small">Delete It</button>
+                              </div>
+                              <div class="img-cancel-delete">
+                                <!--<button class="small">Cancel</button>-->
+                                or <a href="#">Cancel</a>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="img-meta">
+                            <h2>rockybay300.jpg</h2>
+                            <p>Early morning shot of the waves hitting the outer bay.</p>
+                            <p><span>Tags: </span>California</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="library-select">
+                        <div class="image-item-select">
+                          <img data-id="6" src="images/flower23.jpg" /><div class="image-status"></div>
+                          <!--<div class="image-controls">
+                            <div class="edit-img"><a href="#">Edit</a></div>
+                            <div class="close-img"><img src="images/close.png"/></div>
+                          </div>-->
+                          <span><strong>Yellow-Flowers.jpg</strong></span>
+
+                          <div class="img-delete-msg">
+                            <h2>Are you sure you want to remove this image?</h2>
+                            <div class="image-delete-controls">
+                              <div class="img-removal">
+                                <button class="small">Delete It</button>
+                              </div>
+                              <div class="img-cancel-delete">
+                                <!--<button class="small">Cancel</button>-->
+                                or <a href="#">Cancel</a>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="img-meta">
+                            <h2>Yellow-Flowers.jpg</h2>
+                            <p></p>
+                            <p><span>Tags: </span>Outdoors, Nature</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="library-select">
+                        <div class="image-item-select">
+                          <img data-id="7" src="images/gallery/naturetrees300.jpg" /><div class="image-status"></div>
+                          <!--<div class="image-controls">
+                            <div class="edit-img"><a href="#">Edit</a></div>
+                            <div class="close-img"><img src="images/close.png"/></div>
+                          </div>-->
+
+                          <span><strong>Autumn Trees</strong></span>
+
+                          <div class="img-delete-msg">
+                            <h2>Are you sure you want to remove this image?</h2>
+                            <div class="image-delete-controls">
+                              <div class="img-removal">
+                                <button class="small">Delete It</button>
+                              </div>
+                              <div class="img-cancel-delete">
+                                <!--<button class="small">Cancel</button>-->
+                                or <a href="#">Cancel</a>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="img-meta">
+                            <h2>Autumn Trees</h2>
+                            <p>Nice photo of autumn trees at my local park.</p>
+                            <p><span>Tags: </span>Outdoors, Nature</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="library-select">
+                        <div class="image-item-select">
+                          <img data-id="8" src="images/gallery/peoplebike300.jpg" /><div class="image-status"></div>
+                          <img class="select-img-status" src="images/select-image.png" />
+                          <div class="website-info">
+                            <h4>Organic Foods</h4>
+                          </div>
+                          <!--<div class="image-controls">
+                            <div class="edit-img"><a href="#">Edit</a></div>
+                            <div class="close-img"><img src="images/close.png"/></div>
+                          </div>-->
+                          
+                          <span><strong>Family Time</strong></span>
+
+                          <div class="img-delete-msg">
+                            <h2>Are you sure you want to remove this image?</h2>
+                            <div class="image-delete-controls">
+                              <div class="img-removal">
+                                <button class="small">Delete It</button>
+                              </div>
+                              <div class="img-cancel-delete">
+                                <!--<button class="small">Cancel</button>-->
+                                or <a href="#">Cancel</a>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="img-meta">
+                            <h2>Family Time</h2>
+                            <p>Happy family out for a Sunday bike ride in the park.</p>
+                            <p><span>Tags: </span>Park, Outdoors, People</p>
+                          </div>
+                        </div>
+                      </li>
+                    </ol>
+                  </div>
+                </div> <!-- end of main-container -->
+          
+                <div id="selection-container" class="group">
+                  <div class="left-arrow-container"><img src="images/left-arrow-white.png" /></div>
+                  <div id="selected-images"></div> 
+                  <div class="right-arrow-container"><img src="images/right-arrow-white.png" /></div>
+                </div> <!-- selection-container -->
+
+                <div class="image-controls-container group">
+                  <div class="library-buttons">
+                    <button id="librarySelectionCancel" class="large">Cancel</button>
+                    <button id="librarySelectionSave" class="large accent">Add images</button>
+                  </div>
+                </div> <!-- image-controls-container -->
+              </div> <!-- end of gallery-wrapper -->
+            </section>
+          </div>
+        </div>
+
+        <div id="modal-container">
+          <div id="modal-mask"></div>
+          <div id="modal-content">
+            <header class="single-image-heading">
+              <h2>Select Focal Point</h2> 
+              <a id="close-image-modal" href="#" style="display:block;">Close</a>
+            </header>
+            <section class="modal-content">
+              
+              <div class="single-image-container">
+                <img id="target" src="images/steve_profile_large.jpg" />
+              </div>
+
+              <div class="image-meta-container">
+                <form action="/">
+                  <fieldset>
+                      <label for="name">Title</label>
+                      <input type="text" id="name" class="form-text" value="gardens-pic.jpg" />
+                  </fieldset>
+                  <fieldset>
+                      <label for="email">Description</label>
+                      <!-- <input type="email" id="email" class="form-text" /> -->
+                      <textarea row="10" cols="20">Took this photo while exploring the country side of France. Full bloom in the back country.</textarea>
+                  </fieldset>
+                  <fieldset>
+                      <label for="email">Tag</label>
+                      <input type="email" id="email" class="form-text" value="Tag A, Vacation" />
+                  </fieldset>
+                  <fieldset>
+                      <label for="email">Photo credit</label>
+                      <input type="email" id="email" class="form-text" value="Steve Hernandez" />
+                  </fieldset>
+                </form>	
+              </div>
+
+              <div class="image-modal-controls group">
+                <div class="cancel-image">
+                  <!-- <a href="#">Cancel</a> -->
+                  <button class="large">Cancel</button>
+                </div>
+                <div class="select-image">
+                  <!--<a href="#">Select</a>-->
+                  <button class="large">Select</button>
+                </div>
+              </div>
+            </section>
+          </div> <!-- modal-content -->
+        </div> <!-- modal container -->
+
+
+        <script id="photo-roll-item-template" type="text/html">
+          <div class="image-select" id="roll-item-<%= photo_roll.image_id %>">
+            <img src="<%= photo_roll.image %>" />
+            <div class="tooltip-image-container">
+              <div class="green-overlay"></div>
+              <div class="tooltip-arrow-border"></div>
+              <div class="tooltip-arrow"></div>
+              <div class="tooltip-info-container">
+                <p class="tooltip-title"><span>Title: </span>Some title</p>
+                <p class="tooltip-connection"><span>Location: </span>Flickr</p>
+              </div>
+            </div>
+          </div>
+        </script>
+
+        <script id="image-list-template" type="text/html">
+          <div class="image-list">
+
+            <ol class="slats" id="sortable">
+              <li class="group">
+                <h3>
+                    <img src="images/grid/steve_150.jpg" alt="thumbnail" />
+                    This is the title
+                    <div class="image-list-controls">
+                      <a id="edit-thumb-1" href="#"><img class="edit-thumb" src="images/edit-pen2.png" /></a>
+                      <a href="#"><img class="expand-thumb" src="images/expand.png" /></a>
+                    </div>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                <p class="attribution"><span class="credit">Photo credit: </span>Steve Hernandez</p>
+                <div class="slat-controls group">
+                  <ul class="slat-actions" style="display:block">
+                    <li><a href=""><img src="images/arrow.png" /></a></li>
+                    <li><a href=""><img class="down-arrow" src="images/arrow.png" /></a></li>
+                    <li class="remove-img-item"><img src="images/trash.png" /></li>
+                  </ul>
+                </div>
+                <!-- edit-meta-container -->
+                <div class="edit-list-meta-container">
+                  <div class="edit-list-arrow-border"></div>
+                  <div class="edit-list-arrow"></div>
+                  <div class="edit-list-meta">
+                    <fieldset>
+                      <label for="title">Title <a href="#">(?)</a></label>
+                      <input type="text" id="title" class="form-text" />
+                    </fieldset>
+                    <fieldset>
+                      <label for="description">Description <a href="#">(?)</a></label>
+                      <input type="text" id="description" class="form-text" />
+                    </fieldset>
+                    <fieldset>
+                      <label for="tag">Tag <a href="#">(?)</a></label>
+                      <input type="text" id="tag" class="form-text" />
+                    </fieldset>
+                    <fieldset>
+                      <label for="attribution">Attribution <a href="#">(?)</a></label>
+                      <input type="text" id="attribution" class="form-text" />
+                    </fieldset>
+                    <fieldset class="form-actions">
+                      <input type="submit" value="Save" />
+                      <input id="cancel-edit" type="submit" value="Cancel" />
+                    </fieldset>
+                  </div>
+                </div> <!-- end of edit-meta-container -->
+
+                <!-- remove-image-message -->
+                <div class="remove-image-message">
+                  <h2>Are you sure you want to remove this image from the gallery?</h2>
+                  <div class="image-delete-controls">
+                    <div class="img-removal">
+                      <button class="small">Remove It</button>
+                    </div>
+                    <div class="black-img-cancel-delete">
+                      or <a href="#">Cancel</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="group">
+                <h3>
+                    <img src="images/grid/burger-color-thumb.jpg" alt="thumbnail" />
+                    This is the title
+                    <div class="image-list-controls">
+                      <a href="#" id="edit-thumb-2"><img class="edit-thumb" src="images/edit-pen2.png" /></a>
+                      <a href="#"><img class="expand-thumb" src="images/expand.png" /></a>
+                    </div>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                <p class="attribution"><span class="credit">Photo credit: </span>Steve Hernandez</p>
+                <div class="slat-controls group">
+                  <ul class="slat-actions">
+                    <li><a href=""><img src="images/arrow.png" /></a></li>
+                    <li><a href=""><img class="down-arrow" src="images/arrow.png" /></a></li>
+                    <li><img src="images/trash.png" /></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="group">
+                <h3>
+                    <img src="images/grid/carrots_thumb.jpg" alt="thumbnail" />
+                    This is the title
+                    <div class="image-list-controls">
+                      <a href="#"><img class="edit-thumb" src="images/edit-pen2.png" /></a>
+                      <a href="#"><img class="expand-thumb" src="images/expand.png" /></a>
+                    </div>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                <p class="attribution"><span class="credit">Photo credit: </span>Steve Hernandez</p>
+                <div class="slat-controls group">
+                  <ul class="slat-actions">
+                    <li><a href=""><img src="images/arrow.png" /></a></li>
+                    <li><a href=""><img class="down-arrow" src="images/arrow.png" /></a></li>
+                    <li><img src="images/trash.png" /></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="group">
+                <h3>
+                    <img src="images/grid/food-bread-thumb.jpg" alt="thumbnail" />
+                    This is the title
+                    <div class="image-list-controls">
+                      <a href="#"><img class="edit-thumb" src="images/edit-pen2.png" /></a>
+                      <a href="#"><img class="expand-thumb" src="images/expand.png" /></a>
+                    </div>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                <p class="attribution"><span class="credit">Photo credit: </span>Steve Hernandez</p>
+                <div class="slat-controls group">
+                  <ul class="slat-actions">
+                    <li><a href=""><img src="images/arrow.png" /></a></li>
+                    <li><a href=""><img class="down-arrow" src="images/arrow.png" /></a></li>
+                    <li><a href=""><img src="images/trash.png" /></a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="group">
+                <h3>
+                    <img src="images/grid/grilled-veggie-thumb.jpg" alt="thumbnail" />
+                    This is the title
+                    <div class="image-list-controls">
+                      <a href="#"><img class="edit-thumb" src="images/edit-pen2.png" /></a>
+                      <a href="#"><img class="expand-thumb" src="images/expand.png" /></a>
+                    </div>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                <p class="attribution"><span class="credit">Photo credit: </span>Steve Hernandez</p>
+                <div class="slat-controls group">
+                  <ul class="slat-actions">
+                    <li><a href=""><img src="images/arrow.png" /></a></li>
+                    <li><a href=""><img class="down-arrow" src="images/arrow.png" /></a></li>
+                    <li><a href=""><img src="images/trash.png" /></a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="group">
+                <h3>
+                    <img src="images/grid/sushi-color-thumb.jpg" alt="thumbnail" />
+                    This is the title
+                    <div class="image-list-controls">
+                      <a href="#"><img class="edit-thumb" src="images/edit-pen2.png" /></a>
+                      <a href="#"><img class="expand-thumb" src="images/expand.png" /></a>
+                    </div>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                <p class="attribution"><span class="credit">Photo credit: </span>Steve Hernandez</p>
+                <div class="slat-controls group">
+                  <ul class="slat-actions">
+                    <li><a href=""><img src="images/arrow.png" /></a></li>
+                    <li><a href=""><img class="down-arrow" src="images/arrow.png" /></a></li>
+                    <li><a href=""><img src="images/trash.png" /></a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="group">
+                <h3>
+                    <img src="images/grid/Mixed-color-thumb.jpg" alt="thumbnail" />
+                    This is the title
+                    <div class="image-list-controls">
+                      <a href="#"><img class="edit-thumb" src="images/edit-pen2.png" /></a>
+                      <a href="#"><img class="expand-thumb" src="images/expand.png" /></a>
+                    </div>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                <p class="attribution"><span class="credit">Photo credit: </span>Steve Hernandez</p>
+                <div class="slat-controls group">
+                  <ul class="slat-actions">
+                    <li><a href=""><img src="images/arrow.png" /></a></li>
+                    <li><a href=""><img class="down-arrow" src="images/arrow.png" /></a></li>
+                    <li><a href=""><img src="images/trash.png" /></a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="group">
+                <h3>
+                    <img src="images/grid/steak-color-thumb.jpg" alt="thumbnail" />
+                    This is the title
+                    <div class="image-list-controls">
+                      <a href="#"><img class="edit-thumb" src="images/edit-pen2.png" /></a>
+                      <a href="#"><img class="expand-thumb" src="images/expand.png" /></a>
+                    </div>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                <p class="attribution"><span class="credit">Photo credit: </span>Steve Hernandez</p>
+                <div class="slat-controls group">
+                  <ul class="slat-actions">
+                    <li><a href=""><img src="images/arrow.png" /></a></li>
+                    <li><a href=""><img class="down-arrow" src="images/arrow.png" /></a></li>
+                    <li><a href=""><img src="images/trash.png" /></a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="group">
+                <h3>
+                    <img src="images/grid/golden-gate-thumb.jpg" alt="thumbnail" />
+                    This is the title
+                    <div class="image-list-controls">
+                      <a href="#"><img class="edit-thumb" src="images/edit-pen2.png" /></a>
+                      <a href="#"><img class="expand-thumb" src="images/expand.png" /></a>
+                    </div>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                <p class="attribution"><span class="credit">Photo credit: </span>Steve Hernandez</p>
+                <div class="slat-controls group">
+                  <ul class="slat-actions">
+                    <li><a href=""><img src="images/arrow.png" /></a></li>
+                    <li><a href=""><img class="down-arrow" src="images/arrow.png" /></a></li>
+                    <li><a href=""><img src="images/trash.png" /></a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="group">
+                <h3>
+                    <img src="images/grid/nature-trees-thumb.jpg" alt="thumbnail" />
+                    This is the title
+                    <div class="image-list-controls">
+                      <a href="#"><img class="edit-thumb" src="images/edit-pen2.png" /></a>
+                      <a href="#"><img class="expand-thumb" src="images/expand.png" /></a>
+                    </div>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                <p class="attribution"><span class="credit">Photo credit: </span>Steve Hernandez</p>
+                <div class="slat-controls group">
+                  <ul class="slat-actions">
+                    <li><a href=""><img src="images/arrow.png" /></a></li>
+                    <li><a href=""><img class="down-arrow" src="images/arrow.png" /></a></li>
+                    <li><a href=""><img src="images/trash.png" /></a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="group">
+                <h3>
+                    <img src="images/grid/nature-water-drop-thumb.jpg" alt="thumbnail" />
+                    This is the title
+                    <div class="image-list-controls">
+                      <a href="#"><img class="edit-thumb" src="images/edit-pen2.png" /></a>
+                      <a href="#"><img class="expand-thumb" src="images/expand.png" /></a>
+                    </div>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                <p class="attribution"><span class="credit">Photo credit: </span>Steve Hernandez</p>
+                <div class="slat-controls group">
+                  <ul class="slat-actions">
+                    <li><a href=""><img src="images/arrow.png" /></a></li>
+                    <li><a href=""><img class="down-arrow" src="images/arrow.png" /></a></li>
+                    <li><a href=""><img src="images/trash.png" /></a></li>
+                  </ul>
+                </div>
+              </li>
+            </ol>			
+          </div> <!-- end of image-list -->
+        </script>
+
+        <script id="image-grid-template" type="text/html">
+          <div class="image-grid">
+              <div class="thumbnail-item">
+                <a href="#"><img src="images/grid/steve_150.jpg" /></a>
+                <div class="white-splash">
+                  <a href="#"><img class="trash-thumb" src="images/trash.png" /></a>
+                  <img class="edit-thumb" src="images/edit-pen2.png" />
+                  <a href="#"><img class="expand-thumb" src="images/expand.png" /></a>
+                </div>
+
+                <div class="grid-remove-message">
+                  <p>Remove image?</p>  
+                  <div class="grid-img-remove">
+                      <button class="small">Yes</button>
+                  </div>
+                  <div class="grid-img-cancel">
+                      <button class="small">No</button>
+                  </div>
+                </div>
+
+                <div class="edit-meta-container">
+                  <div class="edit-grid-arrow-border"></div>
+                  <div class="edit-grid-arrow"></div>
+                  <div class="edit-grid-meta">
+                    <fieldset>
+                      <label for="title">Title <a href="#">(?)</a></label>
+                      <input type="text" id="title" class="form-text" />
+                    </fieldset>
+                    <fieldset>
+                      <label for="description">Description <a href="#">(?)</a></label>
+                      <input type="text" id="description" class="form-text" />
+                    </fieldset>
+                    <fieldset>
+                      <label for="tag">Tag <a href="#">(?)</a></label>
+                      <input type="text" id="tag" class="form-text" />
+                    </fieldset>
+                    <fieldset>
+                      <label for="attribution">Attribution <a href="#">(?)</a></label>
+                      <input type="text" id="attribution" class="form-text" />
+                    </fieldset>
+                    <fieldset class="form-actions">
+                      <input type="submit" value="Save" />
+                      <input id="cancel-edit" type="submit" value="Cancel" />
+                    </fieldset>
+                  </div>
+                </div> <!-- end of edit-meta-container -->
+              </div> <!-- end of grid-image-1 -->
+              <div class="thumbnail-item">
+                <a href="#"><img src="images/grid/burger-color-thumb.jpg" /></a>
+                <div class="white-splash">
+                  <a href="#"><img class="trash-thumb" src="images/trash.png" /></a>
+                  <img class="edit-thumb" src="images/edit-pen2.png" />
+                  <a href="#"><img class="expand-thumb" src="images/expand.png" /></a>
+                </div>
+                <div class="grid-remove-message">
+                  <p>Remove image?</p>  
+                  <div class="grid-img-remove">
+                      <button class="small">Yes</button>
+                  </div>
+                  <div class="grid-img-cancel">
+                      <button class="small">No</button>
+                  </div>
+                </div>
+                <div class="edit-meta-container">
+                  <div class="edit-grid-arrow-border"></div>
+                  <div class="edit-grid-arrow"></div>
+                  <div class="edit-grid-meta">
+                    <fieldset>
+                      <label for="title">Title <a href="#">(?)</a></label>
+                      <input type="text" id="title" class="form-text" />
+                    </fieldset>
+                    <fieldset>
+                      <label for="description">Description <a href="#">(?)</a></label>
+                      <input type="text" id="description" class="form-text" />
+                    </fieldset>
+                    <fieldset>
+                      <label for="tag">Tag <a href="#">(?)</a></label>
+                      <input type="text" id="tag" class="form-text" />
+                    </fieldset>
+                    <fieldset>
+                      <label for="attribution">Attribution <a href="#">(?)</a></label>
+                      <input type="text" id="attribution" class="form-text" />
+                    </fieldset>
+                    <fieldset class="form-actions">
+                      <input type="submit" value="Save" />
+                      <input id="cancel-edit" type="submit" value="Cancel" />
+                    </fieldset>
+                  </div>
+                </div> <!-- end of edit-meta-container -->
+              </div>
+              <div class="thumbnail-item">
+                <a href="#"><img src="images/grid/carrots_thumb.jpg" /></a>
+                <div class="white-splash">
+                  <a href="#"><img class="trash-thumb" src="images/trash.png" /></a>
+                  <img class="edit-thumb" src="images/edit-pen2.png" />
+                  <a href="#"><img class="expand-thumb" src="images/expand.png" /></a>
+                </div>
+                <div class="grid-remove-message">
+                  <p>Remove image?</p>  
+                  <div class="grid-img-remove">
+                      <button class="small">Yes</button>
+                  </div>
+                  <div class="grid-img-cancel">
+                      <button class="small">No</button>
+                  </div>
+                </div>
+              </div>
+              <div class="thumbnail-item">
+                <a href="#"><img src="images/grid/food-bread-thumb.jpg" /></a>
+                <div class="white-splash">
+                  <a href="#"><img class="trash-thumb" src="images/trash.png" /></a>
+                  <img class="edit-thumb" src="images/edit-pen2.png" />
+                  <a href="#"><img class="expand-thumb" src="images/expand.png" /></a>
+                </div>
+                <div class="grid-remove-message">
+                  <p>Remove image?</p>  
+                  <div class="grid-img-remove">
+                      <button class="small">Yes</button>
+                  </div>
+                  <div class="grid-img-cancel">
+                      <button class="small">No</button>
+                  </div>
+                </div>
+              </div>
+              <div class="thumbnail-item">
+                <a href="#"><img src="images/grid/grilled-veggie-thumb.jpg" /></a>
+                <div class="white-splash">
+                  <a href="#"><img class="trash-thumb" src="images/trash.png" /></a>
+                  <img class="edit-thumb" src="images/edit-pen2.png" />
+                  <img class="expand-thumb" src="images/expand.png" />
+                </div>
+                <div class="grid-remove-message">
+                  <p>Remove image?</p>  
+                  <div class="grid-img-remove">
+                      <button class="small">Yes</button>
+                  </div>
+                  <div class="grid-img-cancel">
+                      <button class="small">No</button>
+                  </div>
+                </div>
+              </div>
+              <div class="thumbnail-item">
+                <a href="#"><img src="images/grid/sushi-color-thumb.jpg" /></a>
+                <div class="white-splash">
+                  <a href="#"><img class="trash-thumb" src="images/trash.png" /></a>
+                  <img class="edit-thumb" src="images/edit-pen2.png" />
+                  <img class="expand-thumb" src="images/expand.png" />
+                </div>
+                <div class="grid-remove-message">
+                  <p>Remove image?</p>  
+                  <div class="grid-img-remove">
+                      <button class="small">Yes</button>
+                  </div>
+                  <div class="grid-img-cancel">
+                      <button class="small">No</button>
+                  </div>
+                </div>
+              </div>
+              <div class="thumbnail-item">
+                <a href="#"><img src="images/grid/Mixed-color-thumb.jpg" /></a>
+                <div class="white-splash">
+                  <a href="#"><img class="trash-thumb" src="images/trash.png" /></a>
+                  <img class="edit-thumb" src="images/edit-pen2.png" />
+                  <img class="expand-thumb" src="images/expand.png" />
+                </div>
+                <div class="grid-remove-message">
+                  <p>Remove image?</p>  
+                  <div class="grid-img-remove">
+                      <button class="small">Yes</button>
+                  </div>
+                  <div class="grid-img-cancel">
+                      <button class="small">No</button>
+                  </div>
+                </div>
+              </div>
+              <div class="thumbnail-item">
+                <a href="#"><img src="images/grid/steak-color-thumb.jpg" /></a>
+                <div class="white-splash">
+                  <a href="#"><img class="trash-thumb" src="images/trash.png" /></a>
+                  <img class="edit-thumb" src="images/edit-pen2.png" />
+                  <img class="expand-thumb" src="images/expand.png" />
+                </div>
+                <div class="grid-remove-message">
+                  <p>Remove image?</p>  
+                  <div class="grid-img-remove">
+                      <button class="small">Yes</button>
+                  </div>
+                  <div class="grid-img-cancel">
+                      <button class="small">No</button>
+                  </div>
+                </div>
+              </div>
+              <div class="thumbnail-item">
+                <a href="#"><img src="images/grid/golden-gate-thumb.jpg" /></a>
+                <div class="white-splash">
+                  <a href="#"><img class="trash-thumb" src="images/trash.png" /></a>
+                  <img class="edit-thumb" src="images/edit-pen2.png" />
+                  <img class="expand-thumb" src="images/expand.png" />
+                </div>
+                <div class="grid-remove-message">
+                  <p>Remove image?</p>  
+                  <div class="grid-img-remove">
+                      <button class="small">Yes</button>
+                  </div>
+                  <div class="grid-img-cancel">
+                      <button class="small">No</button>
+                  </div>
+                </div>
+              </div>
+              <div class="thumbnail-item">
+                <a href="#"><img src="images/grid/nature-trees-thumb.jpg" /></a>
+                <div class="white-splash">
+                  <a href="#"><img class="trash-thumb" src="images/trash.png" /></a>
+                  <img class="edit-thumb" src="images/edit-pen2.png" />
+                  <img class="expand-thumb" src="images/expand.png" />
+                </div>
+                <div class="grid-remove-message">
+                  <p>Remove image?</p>  
+                  <div class="grid-img-remove">
+                      <button class="small">Yes</button>
+                  </div>
+                  <div class="grid-img-cancel">
+                      <button class="small">No</button>
+                  </div>
+                </div>
+              </div>
+              <div class="thumbnail-item">
+                <a href="#"><img src="images/grid/nature-water-drop-thumb.jpg" /></a>
+                <div class="white-splash">
+                  <a href="#"><img class="trash-thumb" src="images/trash.png" /></a>
+                  <img class="edit-thumb" src="images/edit-pen2.png" />
+                  <img class="expand-thumb" src="images/expand.png" />
+                </div>
+                <div class="grid-remove-message">
+                  <p>Remove image?</p>  
+                  <div class="grid-img-remove">
+                      <button class="small">Yes</button>
+                  </div>
+                  <div class="grid-img-cancel">
+                      <button class="small">No</button>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- end image-grid -->
+        </script>
+
+      </div> <!-- end of inner -->
+    </div> <!-- end or main -->
+  </body>
+</html>

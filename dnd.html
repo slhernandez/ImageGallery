@@ -1,0 +1,400 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Drag and Drop Demo</title>
+    <link type="text/css" href="css/image-gallery.css" rel="stylesheet" />
+    <link type="text/css" href="css/jquery.Jcrop.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+
+      $(document).ready(function() {
+
+        // Load the image dragwell
+        $('ol.images').append(_.template($('#image-dragwell-template').html()));
+
+        // Load the various uploading states
+        //$('ol.images').append(_.template($('#upload-instruction-template').html()));
+        //$('ol.images').append(_.template($('#upload-pending-template').html()));
+        //$('ol.images').append(_.template($('#uploading-state-template').html()));
+        //$('ol.images').append(_.template($('#upload-rocket-template').html()));
+        //$('ol.images').append(_.template($('#uploading-no-thumb-template').html()));
+
+        attachDragListeners();
+
+        // Let the progress meter grow and mimic an actual download
+        $('.progressbar span').each(function() {
+          console.log('progressbar this ...', this);
+          /*$(this)
+            .data("origWidth", $(this).width())
+            .width(0)
+            .animate({
+              width: $(this).data("origWidth")
+            }, 1200);*/
+          //var origWidth = $(this).width();
+          //$(this).width(0);
+          $(this).animate({ width: "220px" }, 600);
+        });
+
+        // Let's see if this thing will work
+        $('.rocket-progress-upload').on("click", function() {
+          var count = 0;
+          var inter = null;
+          var $this = $(this);
+          function run() {
+            count++;
+            $this.find('.rocket-progress-indicator').css('height', count+"%");
+            if(count === 100) {
+              clearInterval(inter);
+            }
+          }
+          inter = setInterval(run, 50);
+        });
+      });
+
+      function attachDragListeners() {
+        //var dropbox = document.getElementById("dropbox");
+        var dropzone = document.getElementById("dropzone");
+
+        // init event handlers
+        dropzone.addEventListener("dragenter", dragEnter, false);
+        dropzone.addEventListener("dragexit", dragExit, false);
+        dropzone.addEventListener("dragover", dragOver, false);
+        dropzone.addEventListener("drop", drop, false);
+      }
+
+      function dragEnter(evt) {
+        evt.stopPropagation();
+        evt.preventDefault();
+        console.log('dragEnter has been fired...');
+        $('#dropbox').addClass('dragenter');
+        if ($('.upload-instruction').is(":visible")) {
+          return;
+        } else {
+          $('ol.images li:first-child').remove();
+          $('ol.images').prepend(_.template($('#upload-instruction-template').html()));
+          $('ol.images').prepend(_.template($('#image-dragwell-template').html()));
+          attachDragListeners();
+        }
+      }
+
+      function dragExit(evt) {
+        evt.stopPropagation();
+        evt.preventDefault();
+        $('#dropbox').removeClass('dragenter');
+      }
+
+      function dragOver(evt) {
+        evt.stopPropagation();
+        evt.preventDefault();
+      }
+
+      function drop(evt) {
+        evt.stopPropagation();
+        evt.preventDefault();
+
+        // Get the dropped files
+        var files = evt.dataTransfer.files;
+
+        // If anything is wrong with the dropped files, exit.
+        if(typeof files === "undefined" || files.length == 0)
+          return;
+
+        // Let's randomly determine which file will be in a pending or upload state
+        // Add a new property called pending with true/false values.
+
+
+        // Handle only one file
+        var count = files.length;
+
+        // Only call the handler if 1 or more files was dropped.
+        if (count > 0) {
+          handleFiles(files);
+        }
+
+        // Handle multiple files
+        var length = files.length;
+        for (var i = 0; i < length; i++) {
+          // Do the deed.
+          handleFiles(files[i], length);
+        }
+        $('#dropbox').removeClass('dragenter');
+
+      }
+
+      function assignPendingState(evt) {
+        // Before handling the files...
+        // Let's generate some random true/false values
+        var random_number = Math.floor(Math.random()*2);
+        console.log('random_number is ... ', random_number);
+        if (random_number === 0) {
+          evt.pending = true;
+        } else if (random_number === 1) {
+          evt.pending = false;
+        }
+      }
+
+      function handleFiles(file) {
+        //var file = files[0];
+
+        //document.getElementById("droplabel").innerHTML = "Processing " + file.name;
+
+        var reader = new FileReader();
+
+        // Handle errors that might occur while reading the file (before upload).
+        reader.onerror = function(evt) {
+          var message;
+
+          // REF: http://www.w3.org/TR/FileAPI/#ErrorDescriptions
+          switch(evt.target.error.code) {
+            case 1:
+              message = file.name + " not found.";
+              break;
+            case 2:
+              message = file.name + " has changed on disk, please retry.";
+              break;
+            case 3:
+              message = "Upload cancelled.";
+              break;
+            case 4:
+              message = "Cannot read " + file.name + ".";
+              break;
+            case 5:
+              message = "File too large for browser to upload.";
+              break;
+          }
+          $('#upload-status-text').html(message);
+        }
+
+        // When the file is done loading, POST to the server.
+        reader.onloadend = function(evt) {
+          alert('hey, onloadend was called ... ');
+        }
+
+        // init the reader event handlers
+        reader.onprogress = handleReaderProgress;
+        reader.onloadend = handleReaderLoadEnd;
+
+        // begin the read operation
+        reader.readAsDataURL(file);
+        // Remove the drop info message
+        $('.upload-instruction').remove();
+
+      }
+
+      function handleReaderProgress(evt) {
+        if (evt.lengthComputable) {
+          var loaded = (evt.loaded / evt.total);
+          //$('#progressbar').progressbar({ value: loaded * 100 });
+        }
+      }
+
+      function handleReaderLoadEnd(evt) {
+        assignPendingState(evt);
+        console.log('evt is ...', evt);
+        //$('#progressbar').progressbar({ value: 100 });
+
+        //var img = document.getElementById("preview");
+        //img.src = evt.target.result;
+
+        //$('ol.images li:first-child').remove();
+        var image = { result: evt.target.result, id: evt.timeStamp };
+
+        // display the progress loader
+
+        $('ol.images li:first-child').remove();
+
+        //----
+        // Image Upload Indicators....
+        // ---
+        //$('ol.images').prepend(_.template($('#upload-rocket-template').html()));
+        $('ol.images').prepend(_.template($('#uploading-state-template').html(), {image: image }));
+
+        if (evt.pending === true) {
+          console.log('FILE PENDING...');
+          $('#' + evt.timeStamp + ' .upload-pending-indicator').show();
+        } else if (evt.pending === false) {
+          console.log('FILE UPLOADING...');
+          $('#' + evt.timeStamp + ' .upload-indicator').show();
+          $('#' + evt.timeStamp + ' .progressbar').show();
+        }
+
+        $('ol.images').prepend(_.template($('#image-dragwell-template').html()));
+        attachDragListeners();
+
+        var imageCtrls = $('ol.images li .overlay-status .image-controls-drag')
+
+        if(evt.pending === true) {
+          setTimeout(function() {
+            $('.upload-pending-indicator').hide();
+            $('#' + evt.timeStamp + ' .upload-indicator').show();
+            $('#' + evt.timeStamp + ' .progressbar').show();
+          }, 2000);
+        }
+
+        setTimeout(function() {
+          // remove the progress indicator
+          $('.rocket-progress').remove();
+          //$('.overlay-status').parent().remove();
+
+          $('#' + evt.timeStamp + ' .white-splash-overlay').hide();
+          $('.upload-indicator').hide();
+          $('.progressbar').hide();
+          //$('.upload-pending-indicator').hide();
+
+          $(imageCtrls).slideDown('slow', function() {
+            // Animation complete
+          }).show();
+
+          $('ol.images li:first-child').remove();
+          //$('ol.images').prepend(_.template($('#image-item-template').html(), { image: image })).fadeIn('slow');
+          $('ol.images').prepend(_.template($('#image-dragwell-template').html()));
+          attachDragListeners();
+        }, 7000);
+
+
+        $('.progressbar span').each(function() {
+          $(this).animate({ width: "220px" }, 4500);
+        });
+
+        $('.rocket-progress-upload').each(function() {
+          var count = 0;
+          var inter = null;
+          var $this = $(this);
+          function run() {
+            count++;
+            $this.find('.rocket-progress-indicator').css('height', count+"%");
+            if(count === 100) {
+              clearInterval(inter);
+            }
+          }
+          inter = setInterval(run, 50);
+        });
+
+        //$('ol.images').prepend(_.template($('#image-item-template').html(), { image: image }));
+        //$('ol.images').prepend(_.template($('#image-dragwell-template').html()));
+        //attachDragListeners();
+      }
+
+    </script>
+  </head>
+  <body>
+
+    <div id="main" class="outer">
+      <div class="inner">
+        <div id="main-container">
+          <h1 class="demo-heading">Drag and Drop Demo</h1>
+          <div id="dropzone" class="main">
+            <ol class="images group"></ol>
+          </div>
+        </div> <!-- end of main-container -->
+      </div>
+    </div> <!-- end of main -->
+
+    <script id="upload-instruction-template" type="text/html">
+      <li class="upload-instruction">
+        <div class="upload-info-container">
+          <img src="images/upload-pending256.png" />
+          <p>Drop to upload...</p>
+        </div>
+        <div class="inset"></div>
+      </li>
+    </script>
+
+    <script id="upload-pending-template" type="text/html">
+      <li class="upload-pending">
+        <div class="upload-info-container">
+          <img src="images/upload-pending256.png" />
+          <p>Upload pending...</p>
+        </div>
+        <div class="pending-thumbnail"><img src="images/gallery/goldengate300.jpg" /></div>
+        <div class="inset inset-green"></div>
+      </li>
+    </script>
+
+    <script id="upload-rocket-template" type="text/html">
+      <li class="rocket-progress">
+        <div class="rocket-progress-upload">
+          <img src="images/spacecraft256_large.png" />
+          <div class="rocket-progress-indicator"></div>
+          <div class="rocket-upload-indicator">
+            <img src="images/white-arrow-indicator.gif" />
+          </div>
+        </div>
+      </li>
+    </script>
+
+    <script id="uploading-state-template" type="text/html">
+      <li>
+        <div class="overlay-status" id="<%= image.id %>">
+          <img class="overlay-thumb" src="<%= image.result %>" />
+
+          <!-- image controls -->
+          <div class="image-controls-drag group" style="display:none">
+            <div class="edit-img-drag"><a href="#">Edit</a></div>
+            <div class="close-img-drag"><img src="images/close.png"/></div>
+          </div>
+
+          <!-- uploading splash overlay -->
+          <div class="white-splash-overlay"></div>
+
+          <!-- upload indicator -->
+          <div class="upload-indicator">
+            <img src="images/arrow-indicator.gif" />
+          </div>
+
+          <!-- upload pending indicator -->
+          <div class="upload-pending-indicator">
+            <img src="images/upload64.png" />
+            <p>Upload pending...</p>
+          </div>
+
+          <div class="progressbar" style="display:none" >
+            <span style="width: 0%"></span>
+          </div>
+
+        </div>
+      </li>
+    </script>
+
+    <script id="uploading-no-thumb-template" type="text/html">
+      <li>
+        <div class="overlay-status">
+          <img class="overlay-default-img" src="images/single-image256.png" />
+          <div class="white-splash-overlay"></div>
+          <div class="upload-indicator">
+            <img src="images/arrow-indicator.gif" />
+          </div>
+          <div class="progressbar">
+            <span style="width: 10%"></span>
+          </div>
+        </div>
+      </li>
+    </script>
+
+    <script id="image-dragwell-template" type="text/html">
+      <li>
+        <div id="dropbox" class="library-item-dragwell">
+          <img src="images/drag-images.png"/>
+          <p id="droplabel">Drag images here from your desktop to upload.</p>
+          <div id="upload-status-text"></div>
+        </div>
+      </li>
+    </script>
+
+    <script id="image-item-template" type="text/html">
+      <li>
+        <div class="image-item">
+          <img id="preview" src="<%= image.result %>" />
+          <div class="image-controls">
+            <div class="edit-img"><a href="#">Edit</a></div>
+            <div class="close-img"><img src="images/close.png"/></div>
+          </div>
+        </div> <!-- end of image-item -->
+      </li>
+    </script>
+
+  </body>
+</html>

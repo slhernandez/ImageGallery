@@ -1,0 +1,259 @@
+@import './common'
+ 
+/* Header */
+#header
+  &,
+  .header
+    height 60px
+
+/* Utility nav */
+body.contact-us #utility .contact-us
+  utility-active()
+
+/* Not customer message on login */
+.not-customer
+  text-align center
+  margin-top 30px
+
+/* Mixins */
+small-container()
+  min-width 280px
+  max-width 544px
+  margin 0 auto
+
+/* Fixed width adjustments for login and signup */
+.signup,
+.login,
+.forgot-password,
+.password-retrieved,
+.not-found
+  .outer
+    min-width 320px
+  .inner
+    min-width 280px
+  #main
+    padding-top 30px
+  .container,
+  nav.tabs
+    small-container()
+  p
+    margin-bottom 1em 
+  .content
+    h2
+      margin-bottom 20px
+  fieldset
+    position relative
+    padding-top 0
+    text-align left
+    border-top-width 0
+    margin-bottom 34px
+    input[type=checkbox]
+      margin-left 0
+    label.checkbox
+      display inline-block
+      margin 0
+      padding-left 5px
+      width auto
+    &.remember
+      padding 10px 0 0
+      label
+        margin-left 0
+        padding-left 5px
+    &.controls
+      text-align right
+      padding-top 10px
+      margin-bottom 10px
+      border-top 0
+      .new-customer-content &
+        padding-top 0
+    label
+      position static
+      top auto
+      width auto
+    p.error
+      max-height 34px
+      display none
+    &.invalid
+      margin-bottom 0px
+      input[type=text], input[type=email], input[type=password]
+        border-color error-color
+        box-shadow(0px 0px 4px error-color)
+        background url(field-error) right center no-repeat
+      p.error
+        display block
+  input[type=text],
+  input[type=email],
+  input[type=password],
+  p.note
+    display block
+    width 100%
+
+.forgot-password
+  fieldset,
+  fieldset.invalid
+    margin-bottom 20px
+
+/* Signup */
+.signup
+  fieldset
+    p.hint
+      position absolute
+      width auto
+      top 30px
+      right 10px
+      color #666
+    &.invalid
+      p.hint
+        right 35px
+      input[type=checkbox]
+        margin-top 0
+    &.show-password
+      margin-bottom 34px
+      input[type=checkbox]
+        margin 12px 0 0 10px
+      p.error
+        margin-bottom 0px
+    &.options
+      margin-bottom 0
+      div
+        padding 5px 0
+        overflow hidden
+      input[type=checkbox],
+      label
+        display inline-block
+        vertical-align middle
+        margin 0
+      input[type=checkbox]
+        margin-left 10px
+      label
+        width auto
+      p
+        font-size font-size-11
+        padding-left 10px
+        margin 10px 0
+        min-height 1px
+        &.error
+          color error-color
+
+      p.error
+        display block
+
+.login
+  fieldset.remember
+    margin-bottom 0
+  #remember
+    margin-left 10px
+    margin-right 0
+
+.password-retrieved
+  .container
+    text-align center
+    padding 50px
+    h1
+      line-height 110%
+      margin 0 30px 30px 30px
+    fieldset
+      border-bottom none
+      &.collapse
+        text-align left
+        padding-top 10px
+    label
+      position relative
+      display block
+      text-transform none
+      width auto
+      font-size font-size-12
+      top 0px
+      margin-bottom 10px
+      &.checkbox
+        margin-bottom 0
+      em
+        bold()
+        font-style normal
+        font-size font-size-16
+    input[type=password],
+    input[type=text]
+      width 100%
+      margin-bottom 10px
+    input[type=checkbox]
+      margin-left 0
+    p.hint
+      width auto
+      margin 0
+      position absolute
+      bottom 44px
+      right 10px
+      width 200px
+      text-align right
+    .errors
+      text-align left
+
+.not-found
+  .container
+    section
+      text-align center
+      padding-top 100px
+      padding-bottom 100px
+    h1
+      margin-bottom 40px
+
+@media only screen and (min-width: 320px) and (max-width: 580px) 
+
+  #header
+    .outer
+      min-width 300px
+    .inner
+      margin 0
+
+  .password-retrieved
+    .container
+      padding 0
+      .content
+        margin 0
+      label
+        em
+          display block
+      fieldset
+        &.show-password
+          label
+            padding-bottom 10px
+      p.hint
+        bottom 50px
+
+  .signup,
+  .login,
+  .forgot-password,
+  .password-retrieved,
+  .not-found
+    nav.tabs
+      a
+        padding 0 8px
+        font-size font-size-10
+    .inner
+      margin 0 20px
+      width auto
+    fieldset
+      &.controls
+        button
+          margin 0
+          width 100%
+      &.options
+        div
+          position relative
+        input[type=checkbox]
+          position absolute
+          margin 0
+          top 4px
+          left 10px
+        label
+          padding-left 32px
+
+/* Signup */
+.signup
+  .select
+    .control
+      padding-left 10px
+  .scrollList
+    font-size inherit
+  a.help-link
+    margin-left 5px

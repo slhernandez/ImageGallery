@@ -1,0 +1,3131 @@
+@import './common'
+@import './spacecraft-bgimg'
+
+#notification
+  &, & a
+    color #fff
+  & a
+    text-decoration underline
+  position relative
+  bold()
+  text-align center
+  font-size font-size-18
+  text-shadow 0 1px 0 rgba(0,0,0,.2)
+  overflow hidden
+  height 0
+  background error-color
+  &.warning
+    background #fe6417
+  .inner
+    padding 15px 50px
+    box-sizing(border-box)
+    .ie8 &
+      max-width 985px
+  .close
+    top 50%
+    margin-top -5px
+    right 7px
+
+span.upgrade-current-site,
+span.update-payment-info
+  text-decoration underline
+  cursor pointer
+  &.blue
+    color #369
+
+/* Global Header */
+#global
+  h1
+    top 15px
+    &.logo,
+    a
+      width 17px
+      background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAZCAYAAADXPsWXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo2QzgwRUE5MEFDMjA2ODExOTVGRUM1NDQ1NkM1RjdDMiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3OTJFNDM1Qzg2N0IxMUUxOERFQUEzNzc4QzI0QjhFOCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3OTJFNDM1Qjg2N0IxMUUxOERFQUEzNzc4QzI0QjhFOCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjJCNkNBRkY3MUQyMDY4MTE4REJCQ0ZFNDIwQTg2NEVCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjZDODBFQTkwQUMyMDY4MTE5NUZFQzU0NDU2QzVGN0MyIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+R3dIKwAAAb5JREFUeNqc1csrRFEcwPEzD2mSV1mQomYz2SALC4WlvFay88gsWIjssLBhKeI/YKesJI+SBaUQkZQVY8hrwWI0TY3H9T06t07HvXcmv/pM99w593d/87vnnvFZliW0qEY/GlGOHLzgDCvYRA8q1fwdHAuZBD5MI2V5xyrutfH4bxEqyaL1vxiT1wcppwWj4m9c4Br5qEWJcAsyrRnZE+hGQFUplWIGX06VyAl3xhdT2sWmSackflWuHkfCPRbwoI198kMmSRoTmzySpBBDGh/4tHuya5QoH/MIgi4/qQIRpdjuSdTl8Z1gCGUePRJ2klzseayFV6ygza06+0De7TCLxXWKXrckUh5mkcwi2TbCTklsVZhDPEOimGqu8GpYIbrUS5fwaH5IZOq8ElY/Ne2QaEBuAc0sl5BaTAd491hs7VjV5stYl3d51rI2ZlHVklHJpV8tYTtaRea4MsYBmUTfH4dRnyFJgzFO+I0TBdhA1OHtln2YQIdxfl82Ns5BhcMdb3GOJxShDhGHt7pGaIvq+x977KC92N60k/O4yeJi+UT77Sf2+1ehNuFvTKlG96ETYaP8R2xhWd/hfgQYAC6KwHVXY670AAAAAElFTkSuQmCC') 
+
+/* Primary Nav */
+#primary
+  position absolute
+  left 45px
+  bottom 18px
+  overflow hidden
+  ul
+    list-style none
+    overflow hidden
+  li
+    display inline-block
+    margin-right 30px
+    cursor pointer
+    a
+      display inline-block
+      font-weight bold
+      single-line(font-size-18)
+      color #fff
+      text-decoration none
+      text-shadow none
+      &:hover
+        text-decoration none
+        text-shadow 2px 2px 0 #000
+      &[disabled]
+        &,
+        &:hover,
+        &:active
+          color #666
+          text-decoration none
+          text-shadow none
+          cursor default
+    &.selected a
+      &,
+      &:hover
+        color #fff
+        text-decoration none
+        text-shadow none
+
+#dp-controls
+  display none
+  position absolute
+  z-index -1
+  right 40px
+  bottom 0
+
+#dp-toggle
+  min-width 110px
+  text-align center
+  transition(opacity 250ms ease-in-out)
+  &.hidden
+    display block
+    opacity 0
+  &.inactive
+    visibility hidden
+
+#header-toggle
+  width 41px
+  text-indent 100%
+  white-space nowrap
+  overflow hidden
+  padding 0
+  background-image url(double-arrows-up-white)
+  background-position 50% 50%
+  background-repeat no-repeat
+
+#header.closed #header-toggle
+  background-image url(double-arrows-down-white)
+
+/* Modal */
+#modal-container,
+#modal-mask
+  width 100%
+  height 100%
+  position fixed
+  top 0
+  left 0
+
+#modal-container
+  z-index 101
+          
+#modal-mask
+  background black
+  opacity(.6)
+
+#modal-content
+  position relative 
+  z-index 1
+  box-sizing(border-box)
+  top 10%
+  width 82%
+  min-width 675px
+  max-width 975px
+  max-height 80%
+  padding 0 20px
+  rounded-corners(6px)
+  background white
+  box-shadow(0 0 6px 2px rgba(51,51,51,.7))
+  margin 0 auto 0 auto
+  overflow hidden
+  clearfix()
+  header
+    padding-top 20px
+    h1
+      margin 0 60px 0 0
+      padding-bottom 10px
+    a
+      position absolute
+      top 23px
+      right 20px
+      &[disabled]
+        &,
+        &:hover
+          color #ccc
+          text-decoration none
+          cursor default
+  .modal-content
+    padding-bottom 20px
+    .image-grid
+      float left
+      width 100%
+    .controls
+      overflow hidden // float-clearing for some cases
+    form.scrollable
+      overflow auto
+    form.needsScrolling
+      .scrollbox
+        overflow auto
+    fieldset.fixed-controls
+      border-top solid 1px #dedede
+      background #fff
+    fieldset.next-to-last
+      border-bottom none
+      padding-bottom 0
+
+#uploadNewAdd
+  margin 0 0 20px 0
+
+#modal-buttonbar
+  float left
+  width 100%
+  text-align right 
+  margin-top 10px
+  padding 20px 0 10px 0
+  border-top solid 1px #cdcdcd
+  button
+    margin 0 0 0 20px
+  #modal-close-button
+    float left
+    margin-left 0
+
+/* Content */
+#main h1
+  margin-bottom 30px  
+
+/* image library title/details editor */
+#image-details-edit
+  position absolute
+  top -1000px
+  margin 0 auto
+  width 93.5%
+  min-width 680px
+  max-width 1085px
+  left 50%
+  z-index 140
+  &.library
+    width 82%
+    min-width 655px
+    max-width 955px
+    padding 0 20px
+  #use-defaults-fieldset
+    display none
+  .closeLink
+    position absolute
+    top 20px
+    right 40px
+    text-align right
+  div.content
+    margin 0 20px
+    padding 0 20px
+    box-sizing(border-box)
+    border solid 1px #ccc
+    gradient-fill(#f1f1f1, #e9e9e9)
+    fieldset
+      border 0
+    label
+      left 20px
+      width 18%
+    #use-defaults-fieldset
+      padding-top 10px
+      padding-bottom 0
+      label
+        left auto
+        width auto
+  fieldset.controls
+    text-align right
+    padding-bottom 10px
+    span
+      text-align right
+      button
+        margin 0 0 0 10px          
+
+
+#edit-btn-bottom-mask
+  background #f3f3f3
+  height 2px
+  position absolute
+  z-index 1000
+  left -9999px
+  .ie8 &
+    display none // ie8 can't position this thing right to save its life, of course, so screw it
+
+
+/* generated lists */
+.generated-list
+  li
+    border-top solid 1px #dedede
+    padding-top 15px
+    position relative
+    margin-top 15px
+    overflow hidden
+    white-space nowrap
+    padding-right 30px
+    text-overflow ellipsis
+    font-size font-size-13
+    &:first-child
+      margin-top 5px
+    .close
+      right 0
+      top auto
+      bottom -2px
+      padding 5px
+      background-position 50% 50%
+    .edit
+      position absolute
+      right 40px
+  &.resources-list
+    margin-bottom 0
+    li
+      margin-top 0
+      padding 17px 115px 17px 46px
+      background-position 0 11px
+      background-repeat no-repeat
+      &.pdf
+        background-image url(pdf_icon_26x26)
+      .close
+        bottom auto
+        top 50%
+        margin-top -8px
+
+.resource-library
+  .resources-list
+    li
+      min-height 16px
+      &:first-child
+        border-top 0
+      .filename
+        white-space nowrap
+        overflow hidden
+        text-overflow ellipsis
+      .edit
+        position absolute
+        right 40px
+      .editor
+        position absolute
+        top 9px
+        left 34px
+        right 40px
+        input
+          width 100%
+          padding-right 115px
+          margin 0
+          line-height 36px
+          height 36px
+        .buttons
+          position absolute
+          top 6px
+          right 4px
+          text-align right
+        button, 
+        .link-button
+          height 23px
+          line-height 21px
+          font-size font-size-11
+          padding-left 5px
+          padding-right 5px
+          margin 0 0 0 10px
+      .close
+        margin-top -10px
+    &.select_mode
+      li
+        padding-left 77px
+        padding-right 0
+        background-position 30px 11px 
+        input[type=checkbox]
+          position absolute
+          top 15px
+          left 0
+
+fieldset.add-content-section
+  text-align left
+  p
+    margin-bottom 5px
+  label
+    position static
+    text-transform none
+    margin 0
+    display inline
+    width auto
+    font-size 100%
+  input
+    overflow hidden
+    padding 0
+    margin 0
+  strong
+    font-family bold-family
+    font-size font-size-18
+    margin 0 10px
+  
+/* Gallery */
+.asset-library section.content 
+  overflow hidden // float-clearing
+  h3
+    text-align center
+    margin 60px 0
+    display none
+  &.empty
+    h3
+      display block
+
+/* Item delete button */
+button#deleteItem
+  position absolute
+  right 0
+  top 8px
+  display none
+
+/* Featured content */
+.add-featured-content
+  min-height 270px
+  .form-replacement
+    margin 0
+
+/* Content Overview */
+#content-overview
+  padding 20px 0
+  margin-top 20px
+  border-top solid 1px #ccc
+  ul
+    margin 0
+    padding 0
+  li
+    div.content-section
+      gradient-fill(#f1f1f1, #e9e9e9) 
+      gradient-rounded-corners(border-radius-size)
+      border solid 1px #ccc;
+      box-shadow(0px 0px 4px #ccc)
+      position relative // for the buttonbars that get nested inside
+      margin-bottom 20px
+      padding 13px 250px 14px 20px
+    .content-overview-buttonbar
+      top 50%
+      margin-top -15px
+      right 10px
+  a
+    font-family bold-family
+    font-size font-size-14
+    line-height 20px
+    max-width 100%
+    display block
+    overflow hidden
+    white-space nowrap
+    text-overflow ellipsis
+  ul li ul
+    margin-left 40px
+ 
+/* Content Items */
+h2.has-help
+  position relative
+  a.help-link
+    position absolute
+    top 2px
+
+/* design tool page */
+.design_tool
+  height 100%
+  overflow hidden
+  overflow-y hidden
+  overflow-x scroll
+  background-color #808080
+  body
+    height 100%
+    background-color #808080
+  #main
+    padding 0
+    min-width 0
+    width 100%
+    background-color #808080
+    .inner
+      min-width 0
+      max-width none
+      width 100%
+  #main.outer
+    min-width 0
+  #design_view
+    display block
+    width 1024px
+    height 768px
+    margin 0 auto
+    border 0
+    background #fff
+    box-shadow(0 3px 8px 0 #666666)
+    .ie8&
+      border solid 2px #adadad
+      border-top-width 0
+    &.tablets
+      width 768px
+      height 1024px
+      .no-touch&
+        width 784px
+    &.mobile
+      width 320px
+      height 480px
+      .no-touch&
+        width 336px
+  #design_view_drag_mask
+    position absolute
+    top 0
+    left 0
+    right 0
+    bottom 0
+    width 100%
+    background transparent
+    .ie8& // IE can't hear the mousemove if it's fully transparent:
+      background white
+      opacity(.01)
+
+  &.no-touch
+    #design_view
+      -webkit-transition-property width, height  
+      -webkit-transition-duration 500ms, 500ms
+      -moz-transition-property width, height  
+      -moz-transition-duration 500ms, 500ms  
+      -ms-transition-property width, height  
+      -ms-transition-duration 500ms, 500ms
+      -o-transition-property width, height  
+      -o-transition-duration 500ms, 500ms
+      transition-property width, height  
+      transition-duration 500ms, 500ms
+
+/* design panel */
+
+#design-panel,
+.dp-mask
+  position absolute
+  overflow hidden
+  z-index 1
+  opacity(1)
+  top 100px
+  background black
+  border solid 5px #adadad
+  rounded-corners()
+  box-shadow(2px 2px 5px 0px rgba(0,0,0, .4))
+  width 260px
+  &.start-offscreen
+    left -9999px
+
+.dp-mask
+  border 0
+  padding 0 5px
+  opacity(.5)
+
+// general styles for generic elements when used in the design panel,
+// the dt-style color picku
+
+.dt-styles
+  a.disabled
+    color #666
+    cursor default
+  label
+    color inherit
+    font-size inherit
+    position static
+    display block
+    width auto
+    height auto
+    text-transform none
+    color inherit
+    padding 0
+    margin 0 
+  .form-input
+    color #ccc
+  input[type=text],
+  input[type=email],
+  input[type=password],
+  input[type=url],
+  input[type=number],
+  textarea,
+  .richtextarea,
+  .rta-toolbar,
+  .form-box,
+  div.help
+    box-shadow(none)
+    background transparent
+    color #fff
+    margin 0
+    border-color #666
+  .scrollList
+    font-size 12px
+    background #000
+    color #ccc
+    li
+      color inherit
+    li.selected
+      color #fff
+  .form-box
+    background-color #333
+  div.select
+    border none
+    background #333333
+    color #ccc
+    height 30px
+    line-height 30px
+    &.sliding-select
+      min-height 29px
+      padding-bottom 1px
+      height auto
+      margin-bottom 20px
+      background transparent
+    .form-input      
+      line-height 28px
+      padding 2px 10px 0
+    .label
+      background url(dt-arrow-dropdown) 96.6% 55% no-repeat
+      color #ccc
+      height 28px
+      font-size 13px
+      line-height 25px
+      padding-left 10px
+    .label:active,
+    .label:hover
+      color #fff
+    &.open
+      .control
+        .label
+          background-image url(dt-arrow-dropdown-open)
+    &.disabled
+      opacity(.5)
+      .control
+        .label:active,
+        .label:hover
+          color #ccc
+        .ie8 &
+          background-color #191919
+          border-color #333
+          .label
+            color #676767
+  .click-trap
+    margin-top 12px
+  .slider
+    margin-top 0
+    &, &.show-labels
+      height auto
+    &.show-labels
+      margin-bottom 20px
+    label
+      width auto
+      display block
+      position absolute
+      color #fff
+      font-size font-size-20
+    label.text
+      font-size font-size-11
+    .positioning-container
+      position relative
+      label
+        top 14px
+      label.text
+        top 22px
+    .track
+      border-color #666
+      background-color #333
+      box-shadow(none)
+    .tick
+      background #666
+    .thumb:focus
+      outline 0
+    &.show-input
+      .positioning-container
+        margin-right 45px
+      input
+        position absolute
+        bottom 19px
+        right 0
+        width 32px
+        font-size font-size-12
+        line-height 20px
+        height 22px
+        padding 2px 0 0
+        text-align center
+
+.dt-error p
+  margin-bottom 10px
+  &:last-child
+    margin-bottom 0
+
+.dt-content > div.select
+  margin-bottom 10px
+
+.dt-label
+  display block
+  padding-bottom 4px
+
+.dp-header
+  background #666
+  border-bottom solid 1px #000
+  position relative
+  height 30px
+  ul, 
+  li
+    float left
+    margin 0
+    padding 0
+  a
+    text-align center
+    text-transform uppercase
+    font-size font-size-11
+    line-height 30px
+    float left
+    width 65px
+    color #d6d6d6
+    &:hover
+      color #e9e9e9
+      text-decoration none
+    &.current, &.current:hover
+      bold()
+      color #fff
+      text-shadow 0 1px #000
+      cursor default
+    &:focus
+      outline 0
+  a.dp-toggle-preview
+    width 72px
+    padding-left 1px
+    margin-left -1px
+    background url(dp-header-divider) 0% 50% no-repeat
+  a.dp-hide
+    display block
+    position absolute
+    top 0
+    right 0
+    width 30px
+    height 30px
+    background url(dp-hide-icon) 50% 50% no-repeat
+  .dp-current-marker
+    position absolute
+    z-index 1
+    top 100%
+    width 10px
+    height 7px
+    background url(dp-header-current-marker) 0 0 no-repeat
+    transition(left 200ms ease)
+    &.curr-dzn
+      left 28px
+    &.curr-prev
+      left 97px
+
+.dp-main
+  color #fff
+  a
+    color #fff
+
+.dt-scrollbox
+  border solid 1px #3f3f3f
+  overflow-x hidden
+  overflow-y auto
+  position relative
+  .dt-scroll-inner
+    padding 10px
+
+.dp-start-view
+  .dp-start-options
+    padding 15px 10px 20px
+    overflow-x hidden
+    overflow-y auto
+  p
+    margin-bottom 15px
+    font-size font-size-13
+  input
+    position absolute
+    left -9999px
+  button
+    regular()
+    display block
+    width 100%
+    box-sizing(border-box)
+    padding 0 20px
+    margin 0 0 10px
+    height 37px
+    line-height 37px
+    font-size font-size-16
+    text-transform none
+    border solid 1px #3f3f3f
+    color #ccc
+    gradient-fill(#313131, #000)
+    gradient-rounded-corners(border-radius-size)
+    text-align left
+    text-shadow none
+    &.current
+      bold()
+      padding 0 18px
+      line-height 33px
+      color #fff
+      clear-gradient(#000)
+      border solid 3px #fff
+
+.dp-preview
+  height 285px
+  padding 15px 20px 30px 20px
+  ul
+    height 285px
+    background url(dp-preview-wedge) 0 0 no-repeat
+    position relative
+    float left
+    width 50px
+    margin 0
+    padding 0
+    overflow visible
+    a
+      color #ccc
+      text-transform uppercase
+      display block
+      position absolute
+      white-space nowrap
+      text-align center
+      right 0
+      width 60px
+      padding-top 33px
+      font-size font-size-9
+      background-repeat no-repeat
+      background-position 50% 0
+    a:hover
+      text-decoration none
+    a.dp-prev-computers
+      top 20px
+      background-image url(dp-preview-computers)
+    a.dp-prev-tablets
+      top 120px
+      padding-top 38px
+      background-image url(dp-preview-tablets)
+    a.dp-prev-mobile
+      top 225px
+      background-image url(dp-preview-mobile)
+    a.current
+      color #fff
+      bold()
+      background-position 50% -100px
+  .dp-prev-content
+    position relative
+    height 278px
+    margin-left 50px
+    padding 10px
+    border solid 1px #3f3f3f
+    h2
+      margin-bottom 15px
+    p
+      margin-bottom 10px
+      font-size font-size-14
+    div
+      display none
+      overflow auto
+    div.current
+      display block
+    div.current-indicator
+      position absolute
+      display block
+      top 22px
+      left -11px
+      width 11px
+      height 17px
+      background url(dp-preview-current-marker) 0 0 no-repeat
+      transition(top 200ms ease)
+      &.tablets
+        top 128px
+      &.mobile
+        top 231px
+
+.dp-footer,
+.dp-menu-bar
+  background #333
+  border-color #474747
+  border-style solid
+
+.dp-menu-bar
+  height 27px
+  border-width 0 0 1px 0
+  text-align right
+  position relative
+  a:hover
+    text-decoration none
+  .trigger
+    float right
+    position relative
+    z-index 2
+    padding-top 2px
+    line-height 25px
+    padding-right 12px
+    margin-right 12px
+    background transparent url(arrow-dropdown-white) 100% 50% no-repeat
+
+#dp-menu
+  text-align left
+  width auto
+  background #000
+  ie-gradient(#000, #000)
+  border solid 1px #fff
+  position absolute
+  z-index 1
+  top 0px
+  right 0px
+  padding 30px 10px 5px
+  li
+    margin-bottom 5px
+
+.dp-footer
+  overflow hidden
+  border-width 1px 0 0 0
+  text-align center
+  padding 15px 10px
+  .dp-customize
+    width 100%
+    margin 0 auto
+  .dp-save-cancel
+    button
+      display block
+      float left
+      width 115px
+      margin 0
+      &.dp-save
+        margin-left 10px
+  button[disabled]
+    font-size font-size-16
+    border-color #474747
+    color #666
+    gradient-fill(#252525, #000000) 
+    gradient-rounded-corners(border-radius-size)
+
+.dp-tabs
+  display table
+  width 100%
+  font-size font-size-16
+  li
+    display table-cell
+    vertical-align middle
+    width 50%
+    text-align center
+    gradient-fill(#313131, #000)
+    &.current
+      clear-gradient(#000)
+    a
+      display block
+      border solid 1px #474747
+      border-width 0 0 1px 1px
+      padding 8px 0
+      &:hover, &:active, &:focus
+        text-decoration none
+        outline 0
+    &:first-child a
+      border-width 0 1px 1px 0
+    &.current a
+      bold()
+      border-color transparent
+
+.dp-tab-content
+  min-width 780px
+  position relative
+  left  0
+  top auto
+  overflow hidden
+  &.hidden
+    display block
+    position absolute
+    top -9999px
+
+.dt-breadcrumbs
+  margin-bottom 5px
+  li
+    display inline-block
+    text-transform uppercase
+    padding 0 5px 0 10px
+    background transparent url(arrow-lt-gray) 0 35% no-repeat
+    font-size font-size-11
+    white-space nowrap
+    a, a:visited
+      color #ccc
+
+.dt-header
+  margin-top -10px
+
+.dt-title
+  regular()
+  color #fff
+  font-size font-size-24
+  margin-bottom 10px
+
+.dt-content
+  width 240px
+  padding 20px 10px  
+  position absolute
+  &.current
+    position relative;  
+  top 0
+  .dt-radio-set,
+  .dt-checkbox-set
+    min-height 0
+    margin-bottom 20px
+  .dt-color-swatch
+    border-color #666
+
+.dt-bgattach
+  margin-bottom 0
+
+#sitewideContent1,
+#pageContent1
+  left 0
+
+#sitewideContent2,
+#pageContent2
+  left: 260px
+
+#sitewideContent3,
+#pageContent3
+  left: 520px
+
+
+.dt-full,
+.dt-half
+  min-height 70px
+  margin-bottom 10px
+.dt-full
+  clear both
+  width 100%
+.dt-half
+  float left
+  width 100px
+  &.col-2
+    float right
+.dt-divider-top
+  padding-top 20px
+  border-top solid 1px #3F3F3F
+.dt-divider-bottom
+  margin-bottom 15px
+  padding-bottom 5px
+  border-bottom solid 1px #3F3F3F
+
+/* design panel specific control customizations */ 
+
+.dt-styles
+  .dt-block-fs-slider
+    label
+      font-size font-size-11
+
+.dt-img-upload
+  min-height 0
+  fieldset
+    text-align left
+    border 0
+    padding 0
+    p
+      margin-bottom 10px
+    button
+      display block
+      width 100%
+  .image-grid
+    margin 10px 0
+    width 208px
+    .item, .img-box, .item-inner, .item-selection-border
+      background transparent
+      border 0
+      padding 0
+      margin 0
+      width auto
+      height auto
+      position static
+      line-height 1
+    .img-box
+      background url(transparency-grid) 0 0 repeat fixed
+    .img-box img
+      max-width none
+      max-height none
+      width 208px
+    .item 
+      width 100%
+    .title, .edit, .selection-icon, .preselected
+      display none
+    .buttons
+      bottom auto
+      left auto
+      top 3px
+      right 3px
+      button.delete
+        width 22px
+        height 21px
+        border solid 2px #4d4d4e
+        gradient-rounded-corners(border-radius-size)
+        .icon
+          width 18px
+          height 17px
+          background-position 50% 52%
+
+.dt-logo-upload
+  button
+    margin-top 10px
+
+.dt-logo-size
+  margin-top 20px
+
+.dt-bg-img
+  margin-bottom 30px
+
+#dt-bg-patterns
+  label
+    position relative
+    background white
+    &:nth-child(even)
+      margin-right 0
+    .ie8 &
+      width 92px
+      height 92px
+  .delete
+    position absolute
+    padding 0
+    top 2px
+    right 2px
+    width 22px
+    height 21px
+    border solid 2px #4d4d4e
+    display none
+    .icon
+      display block
+      width 18px
+      height 17px
+      background url(dark-close-x) 50% 50% no-repeat
+  label.selected
+    .delete
+      display block
+
+.design_tool
+  .uploader
+    margin 6px 0 0 6px
+
+.dt-radio-group
+  min-height 0
+  padding 0 0 10px 0
+  border 0
+  label
+    padding 1px 0
+  input
+    margin-right 7px
+
+.dt-scc-chooser
+  padding-top 10px
+
+/* fontsize */
+#dt-fs-preset-wrapper,
+#dt-fs-custom-wrapper
+  padding-top 25px
+  position relative
+  &.offscreen
+    position absolute
+    left -9999px
+    top -9999px
+
+#dt-fs-preset-wrapper
+  .slider
+    min-height 30px
+
+.dt-font.dt-fontgroup-label
+  padding-bottom 10px
+
+#dt-fs-custom-wrapper
+  .slider.show-labels
+    margin-bottom 10px
+  .dt-fontgroup-label
+    padding-bottom 15px
+
+.dt-fontgroup-label
+  bold()
+  padding-bottom 10px
+
+.dt-fs-toggle
+  font-size font-size-11
+  position absolute
+  top 5px
+  right 0
+
+.dt-message
+  min-height 0
+
+.dt-options
+  li
+    a
+      display block
+      background transparent url(arrow-gt-gray-large) 95% 50% no-repeat
+      padding 4% 12% 4% 4%
+      white-space nowrap
+      text-overflow ellipsis
+      border-top solid 1px #3c3c3c
+      font-size font-size-14
+      &:hover
+        text-decoration none
+    &:first-child
+      a
+        border-top 0
+
+.dt-toggler
+  width 100%
+  margin-bottom 20px
+  li
+    display inline-block
+    width 50%
+    box-sizing(border-box)
+  a
+    display block
+    position relative
+    text-align center
+    border solid 1px #3f3f3f
+    padding 5px 0
+    .currArrow
+      background url(dt-toggler-curr-arrow) 0 0 no-repeat
+      display block
+      width 16px
+      height 11px
+      position absolute
+      display none
+      top 100%
+      left 50%
+      margin -1px 0 0 -8px
+  a.current
+    .currArrow
+      display block
+  li:first-child a
+    border-right 0
+
+.dt-radio-sub
+  display inline-block
+  position relative
+  input[type=radio]
+    position absolute
+    left -9999px
+  label
+    display inline-block
+    text-align center
+    vertical-align top
+    box-sizing(border-box)
+    border solid 2px transparent
+    margin-right 7px
+    margin-bottom 7px
+    background-repeat no-repeat
+    &:last-child
+      margin-right 0px
+    &.selected
+      border-color #fff
+  &.xlarge label
+    width 93px
+    height 93px
+    border-width 3px
+  &.large label
+    width 58px
+    height 58px
+    border-width 3px
+  &.medium label
+    width 43px
+    height 42px
+  &.xsmall label
+    width 31px
+    height 31px
+    padding-top 7px
+  &.xsmall-alt label
+    width 32px
+    height 31px
+  &.buttonstyle label
+    width 92px
+    height 44px
+    padding-top 13px
+  &.linkplacement label,
+  &.tagstyle label
+    padding-top 6px
+    width 72px
+    height 31px
+  &.colorscheme label
+    background-image url(dt-color-schemes)
+    background-repeat no-repeat
+    width 100%
+    height 50px
+  &.dt-block-fs label
+    width 62px
+    height 42px
+    font-size 11px
+    padding-top 12px
+    .ie8 &.dt-fs-sm
+      width 56px 
+    &.dt-fs-med
+      font-size 14px
+      padding-top 9px
+    &.dt-fs-lg
+      font-size 17px
+      padding-top 6px
+
+.dt-tagstyle-flat
+  background-color #333
+
+.dt-color-grayscale-light
+  background-position 50% -2px
+.dt-color-grayscale-dark
+  background-position 50% -52px
+.dt-color-blue-gray
+  background-position 50% -102px
+.dt-color-eggplant
+  background-position 50% -152px
+.dt-color-pentagram
+  background-position 50% -202px
+.dt-color-orange-julius
+  background-position 50% -252px
+.dt-color-limescale
+  background-position 50% -302px
+.dt-color-blue-morpho
+  background-position 50% -352px
+.dt-color-seashore
+  background-position 50% -402px
+.dt-color-mountain
+  background-position 50% -452px
+.dt-color-chocolate
+  background-position 50% -502px
+.dt-color-shamrock
+  background-position 50% -552px
+.dt-color-grackle
+  background-position 50% -602px
+.dt-color-frolick
+  background-position 50% -652px
+.dt-color-maine
+  background-position 50% -702px
+
+
+.dt-phoneicon-glyph,
+.dt-phoneicon-square,
+.dt-phoneicon-roundrect,
+.dt-phoneicon-circle
+  background-position -2px -2px
+  background-image url(dt-phone-icons)
+.dt-emailicon-glyph,
+.dt-emailicon-square,
+.dt-emailicon-roundrect,
+.dt-emailicon-circle
+  background-position -2px -2px
+  background-image url(dt-email-icons)
+.dt-socialicon-glyph,
+.dt-socialicon-square,
+.dt-socialicon-roundrect,
+.dt-socialicon-circle
+  background-image url(dt-social-icons)
+  background-position -2px -2px
+.dt-socialicon-square, .dt-emailicon-square, .dt-phoneicon-square
+  background-position -2px -44px
+.dt-socialicon-roundrect, .dt-emailicon-roundrect, .dt-phoneicon-roundrect
+  background-position -2px -86px
+.dt-socialicon-circle, .dt-emailicon-circle, .dt-phoneicon-circle
+  background-position -2px -128px
+
+.dt-textalign-left,
+.dt-textalign-justify,
+.dt-textalign-center,
+.dt-textalign-right
+  background-image url(dt-textalign-icons)
+  background-position -2px -2px
+.dt-textalign-justify
+  background-position -2px -33px
+.dt-textalign-center
+  background-position -2px -64px
+.dt-textalign-right
+  background-position -2px -95px
+
+.dt-liststyle-none,
+.dt-liststyle-bullets,
+.dt-liststyle-numbers
+  background-image url(dt-liststyle-icons)
+  background-position -2px -2px
+.dt-liststyle-bullets
+  background-position -2px -33px
+.dt-liststyle-numbers
+  background-position -2px -64px
+
+.dt-blockalign-left,
+.dt-blockalign-center,
+.dt-blockalign-right
+  background-position -3px -3px
+  background-image url(dt-blockalign-icons)
+.dt-blockalign-center
+  background-position -3px -61px
+.dt-blockalign-right
+  background-position -3px -119px 
+
+.dt-bgpos
+  margin-bottom 20px
+  label
+    background-image url(dt-bg-position)
+
+.dt-bgpos-0
+  background-position -3px -3px
+.dt-bgpos-1
+  background-position -61px -3px
+.dt-bgpos-2
+  background-position -119px -3px
+.dt-bgpos-3
+  background-position -3px -61px
+.dt-bgpos-4
+  background-position -61px -61px
+.dt-bgpos-5
+  background-position -119px -61px
+.dt-bgpos-6
+  background-position -3px -119px  
+.dt-bgpos-7
+  background-position -61px -119px
+.dt-bgpos-8
+  background-position -119px -119px
+
+.dt-buttonstyle-flat,
+.dt-buttonstyle-gradient,
+.dt-buttonstyle-shiny
+  background-position -2px -2px
+  background-image url(dt-buttonstyle-icons)
+.dt-buttonstyle-gradient
+  background-position -2px -46px
+.dt-buttonstyle-shiny
+  background-position -2px -90px
+
+.dt-link-treament-0,
+.dt-link-treatment-1,
+.dt-link-treatment-2
+  background-position -2px -2px
+  background-image url(dt-link-treatment-icons)
+.dt-link-treatment-1
+  background-position -2px -33px
+.dt-link-treatment-2
+  background-position -2px -64px
+// need some specificity help
+.dt-radio-sub.xsmall label.dt-link-treatment-3 
+  background-image none
+  width auto
+  padding-left 8px
+  padding-right 8px
+
+.dt-corners-square,
+.dt-corners-round
+  background-position -2px -2px
+  background-image url(dt-corners-icons)
+.dt-corners-round
+  background-position -2px -33px
+
+// inhertiance extra help for these because they require indidual padding customizations
+.dt-styles 
+  .dt-imgstyle-flat,
+  .dt-imgstyle-shadow
+    background-position -3px -3px
+    padding-top 35px
+    background-image url(dt-imagestyle-icons)
+  .dt-imgstyle-shadow
+    padding-top 29px
+    padding-left 15px
+    padding-right 15px
+    background-position -3px -96px
+  .dt-itemlayouts-grid,
+  .dt-itemlayouts-list
+    font-size font-size-10
+    text-align center
+    text-transform uppercase
+    padding-top 67px
+    background-image url(dt-itemlayouts-grid-list)
+    background-position -3px -3px
+  .dt-itemlayouts-grid
+    background-position -3px -96px
+
+
+.dt-navstyle-vert-text,
+.dt-navstyle-vert-lines,
+.dt-navstyle-vert-boxes,
+.dt-navstyle-vert-pills
+  background-position -3px -3px
+  background-image url(dt-navstyle-vertical-icons)
+.dt-navstyle-horiz-text,
+.dt-navstyle-horiz-lines,
+.dt-navstyle-horiz-boxes,
+.dt-navstyle-horiz-pills
+  background-position -3px -3px
+  background-image url(dt-navstyle-horiz-icons)
+.dt-navstyle-horiz-lines,
+.dt-navstyle-vert-lines
+  background-position -3px -95px
+.dt-navstyle-horiz-boxes,
+.dt-navstyle-vert-boxes
+  background-position -3px -187px
+.dt-navstyle-horiz-pills,
+.dt-navstyle-vert-pills
+  background-position -3px -279px
+
+.dt-footerlayout-A,
+.dt-footerlayout-B
+  background-position -3px -3px
+  background-image url(dt-footer-layouts)
+.dt-ppe-layout-A,
+.dt-ppe-layout-B
+  background-position -3px -3px
+  background-image url(dt-primaryphoneemail-icons)
+.dt-contentmedialayout-A,
+.dt-contentmedialayout-B,
+.dt-contentmedialayout-C,
+.dt-contentmedialayout-D,
+.dt-contentmedialayout-E,
+.dt-contentmedialayout-F
+  background-position -3px -3px
+  background-image url(dt-contentmedialayout-icons)
+.dt-contentmedialayout-B, .dt-ppe-layout-B, .dt-footerlayout-B
+  background-position -3px -96px
+.dt-contentmedialayout-C
+  background-position -3px -189px
+.dt-contentmedialayout-D
+  background-position -3px -282px
+.dt-contentmedialayout-E
+  background-position -3px -375px
+.dt-contentmedialayout-F
+  background-position -3px -468px
+
+.dt-contentlayout-A,
+.dt-contentlayout-B,
+.dt-contentlayout-C,
+.dt-contentlayout-D
+  background-position -3px -3px
+  background-image url(dt-contentlayout-icons)
+.dt-contentlayout-C
+  background-position -3px -96px
+.dt-contentlayout-D
+  background-position -3px -189px
+
+.dt-sitelayout-A,
+.dt-sitelayout-B,
+.dt-sitelayout-C,
+.dt-sitelayout-D,
+.dt-sitelayout-E,
+.dt-sitelayout-F
+  background-position -3px -3px
+  background-image url(dt-sitelayouts)
+.dt-sitelayout-B
+  background-position -3px -96px
+.dt-sitelayout-C
+  background-position -3px -189px
+.dt-sitelayout-D
+  background-position -3px -282px
+.dt-sitelayout-E
+  background-position -3px -375px
+.dt-sitelayout-F
+  background-position -3px -468px
+
+.dt-color-swatch,
+.dt-trigger
+  display inline-block
+  width 30px
+  height 30px
+  box-sizing(border-box)
+  box-shadow(none)
+  border solid 1px #ccc
+  margin 0
+
+.dt-color-swatch
+  background-repeat no-repeat
+  background-position 50% 50%
+  &.none
+    background-image url(cp-color-none)
+
+.dt-trigger
+  margin-left -1px
+  border-color #666
+  background url(dt-arrow-dropdown) 50% 50% no-repeat
+  &.selected
+    border-color white
+  &:focus
+    outline 0
+  &.clone
+    margin-left 0
+    display block
+    position absolute
+    z-index 1
+    background-color #000
+    &.below
+      background-color #333
+
+.dtcpm-swatch-and-trigger
+  display inline-block
+
+.dt-color-picker-popup
+  position absolute
+  top 0px
+  left 0px
+  z-index 2
+  box-sizing(border-box)
+  box-shadow(2px 2px 5px 0px rgba(0,0,0, .4))
+  height 421px
+  width 432px
+  border solid 1px #fff
+  padding 15px 15px 0 105px
+  background #000
+  color #ccc
+  &.hidden
+    display block
+    left -9999px
+  &.above
+    box-shadow(none)
+  .dp-footer
+    border 0
+    position absolute
+    bottom 0
+    left 0
+    right 0
+    text-align right
+    padding-right 96px
+    button
+      padding 0 10px
+  .dt-cpm-current-related
+    position absolute
+    top 18px
+    left 20px
+    width 70px
+    .dt-cp-current-color
+      width 65px
+      height 65px
+      margin-bottom 10px
+    .dt-related
+      .dt-color-swatch
+        cursor pointer
+        display block
+        float left
+        margin 0 0 5px 5px
+        &.odd
+          margin-left 0
+  .select
+    position absolute
+    top 37px
+    left 190px
+    width 200px
+  .cp-content
+    float none
+    min-width 0
+  .cp-section
+    margin-top 0
+    position absolute
+    top 18px
+    left 105px
+    padding 0
+    width 325px
+    height 390px
+    &.offscreen
+      left -9999px
+  .cp-selection
+    position absolute
+    top 0
+    left 0
+    width 65px
+    .dt-color-swatch
+      width 65px
+      height 65px
+  .cp-chooser
+    background transparent
+    border 0
+    margin 0
+    padding 0
+  .color-wheel
+    width 200px
+    height 200px
+    position absolute
+    left 0
+    top 102px
+    background-image url(dt-color-wheel)
+  .color-slider
+    width 200px
+    position absolute
+    left 85px
+    top 47px
+    .hsl-slider-mask
+      width 200px
+  .cp-select
+    position absolute
+    z-index 1
+    top 356px
+    right 20px
+    padding 0 10px
+  .dt-color-inputs
+    position absolute
+    width 75px
+    top 100px
+    right 10px
+    label
+      text-transform uppercase
+    .hex,
+    .rgb
+      padding 0
+      float none
+      width auto
+      min-height 0
+      border 0
+    input
+      position static
+      display block
+      margin 4px 0 8px
+      height 30px
+      line-height 1
+      font-size font-size-12
+  .ui-helper
+    line-height 0
+    font-size 0
+    height 1px
+    width 28px
+    background #000
+    position absolute
+    top -1px
+    left -9999px
+    &.t
+      top -1px
+    &.b
+      top auto
+      bottom -1px
+      background #333
+    &.l
+      left 0px
+    &.r
+      left auto
+      right 0px
+
+.dt-bwcp-dropdown
+  border solid 1px #fff
+  background #000
+  width 100px
+  height 30px
+  padding 12px 15px
+  display block
+  position absolute
+  left -69px
+  z-index 1
+  margin-top -5px
+  .click-trap
+    margin-top 0
+  &.hidden
+    display block
+    left -9999px
+  label
+    line-height 1
+    top 28px
+  label.slider-min
+    left 15px
+  label.slider-max
+    right 13px
+  .mask
+    position absolute
+    top -1px
+    right 0
+    height 1px
+    width 28px
+    background #000
+
+.dt-bw-picker-container
+  padding-bottom 15px
+
+.dt-bwcp-dropdown
+  width 58px
+  height auto
+  left 9px
+  padding 0
+  .dt-color-swatch
+    border 0
+    width 29px
+    cursor pointer
+  .dt-bwcp-black
+    background #000
+    float left
+  .dt-bwcp-white
+    background #fff
+    float right
+  
+.slider
+  .pixel-val
+    position absolute
+    top -15px
+    font-size font-size-9
+    font-family Helvetica, Arial, sans-serif
+    line-height 12px
+    text-align center
+    width 34px
+    margin-left -16px
+
+.dt-font-select
+  .selection,
+  label
+    background-image url('/fonts.png')
+
+.dt-font-select
+  .selection
+    height 30px
+    line-height 30px
+    box-sizing(border-box)
+    padding 0 10px
+    white-space nowrap
+    overflow hidden
+    text-indent 150%
+    background-color #333
+    border solid 1px #666
+    position relative
+    background-repeat no-repeat
+    &.open
+      border-color #999
+  .trigger
+    position absolute
+    left 0
+    top 0
+    right 0
+    bottom 0
+    background url(dt-arrow-dropdown) 95% 50% no-repeat
+  & .selection.open .trigger
+      background-image url(dt-arrow-dropdown-open)
+  .choices
+    overflow hidden
+    border solid 1px #666
+    border-top 0
+    margin-bottom 20px
+  label
+    text-indent 150%
+    display block
+    width auto
+    margin 0
+    white-space nowrap
+    overflow hidden
+    padding 6px 10px 5px 10px
+    text-align left
+    background-repeat no-repeat
+    &:active,
+    &:hover
+      cursor pointer
+
+.dt-theme-picker
+  .scrollList
+    margin-bottom 20px
+  img
+    display block
+    margin-bottom 10px
+  #dt-themes-list li,
+  #dt-themes-save-help
+    margin-bottom 20px
+    position relative
+  #dt-themes-list
+    p,
+    div
+      cursor pointer
+    p
+      white-space nowrap
+      overflow hidden
+      text-overflow ellipsis
+      width 200px
+      font-size font-size-11
+    P.dt-theme-name
+      box-sizing(border-box)
+      padding-right 30px
+      position relative
+      font-size font-size-14
+    a.close
+      top 4px
+      right 0
+
+.dt-styles
+  .slider.dt-items-columns
+    label
+      font-size font-size-12
+
+
+#dt-themes-save-help
+  img
+    max-width 100%
+    max-height 237px
+
+.dt-theme-img
+  box-sizing(border-box)
+  width 200px
+  height 150px
+  margin-bottom 10px
+  background-position 0 0
+  background-repeat no-repeat
+  background-origin border-box
+  border solid 1px #3f3f3f
+  position relative
+  .dt-selected-theme-icon
+    visibility hidden
+    position absolute
+    top 10px
+    right 10px
+    width 30px
+    height 30px
+    background url(green-circled-check-large) 50% 50% no-repeat
+  .selected &
+    border-color white
+  .selected & .dt-selected-theme-icon
+    visibility visible
+
+.typekit-credit
+  display block
+  width 116px
+  height 36px
+  text-indent 100%
+  margin 0 auto
+  background url(typekit-credit) 0 0 no-repeat
+  overflow hidden
+  white-space nowrap
+
+/* My sites */
+#my-sites
+  .container
+    padding 20px
+    ul.site-list
+      margin-bottom 20px
+      li
+        border-bottom solid 1px #dedede
+        padding-bottom 15px
+        position relative
+        margin-top 15px
+        overflow hidden
+        white-space nowrap
+        text-overflow ellipsis
+        font-size font-size-12
+        &:first-child
+          margin-top 0
+        ul
+          display inline-block
+          &.site-name
+            width 38.6%
+          &.site-details
+            width 49.4%
+          li
+            margin 0 0 4px 0
+            padding 0
+            border none
+            &.site-name
+              font-size font-size-14
+              bold()
+        button.publish
+          float right
+      strong
+        bold()
+      em
+        font-size font-size-11
+        font-style normal
+
+.show-password
+  input[type=checkbox]
+    margin-top 12px
+    margin-bottom 0
+  .password-field
+    margin-bottom 0
+    position relative
+    input[type=password],
+    input[type=text]
+      width 100%
+    p.hint
+      position absolute
+      width auto
+      color #666
+      right 7px
+    label
+      margin-left 7px
+
+/* Add link */
+.add-link-content
+  min-height 270px
+  .form-replacement
+    margin 0
+  fieldset.sub-group
+    text-align left
+    border-bottom 0
+    ul
+      margin-bottom 20px
+      input[type=radio]
+        margin-left 1px
+  .add-link-type-external
+    label
+      position relative
+      margin 0
+    input[type=url]
+      margin 8px 0 0 0
+  &.next-to-last
+    fieldset
+      border-bottom 0
+
+/* Image logo */
+.image-logo.sub-group
+    overflow hidden
+
+/* Item List */
+ul.item-list
+  list-style none
+  li
+    list-style none
+    padding 15px 20px
+    background url(item-list-carat-icon) 94% center no-repeat;
+    border-top solid 1px #ccc
+    &:first-child
+      border-top none
+    &.accent
+      font-size font-size-12
+      line-height 22px
+      background #EEFEE2
+      strong
+        font-weight bold
+  &.new-features
+    li:last-child
+      bold()
+
+/* Support */
+.support
+  .accent
+    font-size font-size-16
+    line-height 26px
+    color #4d4d4d
+    background #eefee2
+    padding 20px
+    border-bottom solid 1px #ccc
+    strong
+      bold()
+  .links
+    overflow hidden
+    padding 20px 0
+    ul
+      float left
+      width 49%
+      min-width 300px
+      &:first-child
+        border-right solid 1px #ccc
+      li
+        padding 0 20px
+        line-height 18px
+        min-height 18px
+        &:first-child
+          bold()
+
+/* seo */
+#seo-fields
+  overflow hidden
+  fieldset:first-child
+    padding-top 15px
+
+/* Dashboard */
+.dashboard
+  h1
+    margin 22px 0
+  h3
+    font-size font-size-18
+    color #61bf1a
+    text-transform uppercase
+    font-weight bold
+  .main-content
+    h2,
+    h3
+      display inline-block
+    .container
+      margin-bottom 30px
+  .get-started
+    background #f3f3f3
+    .title
+      background transparent
+      border-bottom none
+      h2
+        margin-right 30px
+      .close
+        height auto
+        width auto
+        text-indent 0
+        text-align right
+        background none
+        top 28px
+  .tasks
+    background #fff
+    border solid 1px #ccc
+    rounded-corners()
+    margin 0 20px 20px
+    padding 0 0 20px
+    overflow hidden
+    ul
+      float left
+      margin 0
+      padding 0
+      li
+        float left
+        margin 20px 0 0 0
+        min-width 190px
+        min-height 300px
+        width 33.33%
+        box-sizing(border-box)
+        padding 0 2% 0
+        border-right solid 1px #ccc
+        padding-bottom 55px
+        position relative
+        &:last-child
+          border-right none
+        h3
+          font-size font-size-16
+          text-transform none
+          color #737373
+          display block
+          text-align center
+          padding-bottom 150px
+        .link-button,
+        span.call-prompt
+          display block
+          position absolute
+          bottom 0
+          box-sizing(border-box)
+          left 6%
+          right 6%
+          margin 20px auto 0
+          padding 0 4px
+          white-space nowrap
+        span.call-prompt
+          height 37px
+          line-height 34px
+          regular()
+          text-align center
+          font-size font-size-20
+      li.tasks-content
+        h3
+          background url(dashboard-content-img) 50% 65% no-repeat
+      li.tasks-design
+        h3
+          background url(dashboard-design-img) 50% 65% no-repeat
+      li.tasks-help
+        h3
+          position relative
+          padding-bottom 15px
+        .help-bubble
+          position relative
+          box-sizing(border-box)
+          min-height 115px
+          padding 10px 5px 5px
+          margin-bottom 20px
+          text-align center
+          color #fff
+          background #336699
+          karnak()
+          font-size font-size-24
+          rounded-corners()
+          &:after
+            content ''
+            display block
+            position absolute
+            bottom -12px
+            left 20px
+            width 23px
+            height 12px
+            background url(dashboard-help-bottom-carat) 0 0 no-repeat
+  .publish-status
+    padding 20px 20px 0 20px
+    p,
+    button
+      margin-bottom 20px
+    strong
+      font-weight bold
+    p.status
+      line-height 26px
+      span
+        display inline-block
+        margin-left 5px
+    button
+      width 100%
+    .status-item
+      display none
+    &.no-domain
+      p.no-domain
+        display block
+    &.can-publish
+      button
+        display block
+    &.published
+      p.last-published
+        display block
+    &.published,
+    &.can-publish,
+    &.no-domain
+      p.status
+        span
+          padding-left 30px
+          background-position 0 0
+          background-repeat no-repeat
+    &.published
+      .status
+        span
+          background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAZCAYAAAAv3j5gAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDdCMzBGNTU0MkZBMTFFMTgyREVDRDkwMDVFMjgzQUYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDdCMzBGNTY0MkZBMTFFMTgyREVDRDkwMDVFMjgzQUYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0N0IzMEY1MzQyRkExMUUxODJERUNEOTAwNUUyODNBRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0N0IzMEY1NDQyRkExMUUxODJERUNEOTAwNUUyODNBRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Ptp2TA0AAAH4SURBVHjarJYhcMIwFIZTLAaFBs9uTDG3jmoKFjW4wzMsM5sYlqHpHTjkaNEw5oZjN3zRKAyavddLe68tTdNu/927pDTkS15e3qtyPp+ZoihMRjVdz0FT5o/bhWUdZf7nMOJAMHkLmjqYCpYLvEbQGswE6DQVCAANaIZgBSanPVgPgHNpEEAm0LRYOr0BrBcL+iPE1RRg7UgQQNBVj+x/9AKw5xAIIHjYH0lmyufzrNPpsNVyyb42m0tDbgC2RUaG/DhJuuRms8luKxXW7/ejhgzdToa7TE0QXd5utGrV6UfsBqXC3GUPxO9JImma5vXBPaKhDQoqJ4Fks1mm12pO/3A4sJ/dTjT8joJUkYvQqPBcEIaazWZx6ypQUCTEGI8dKxaLviBAnU4n0fnIg9xVo54gsvD5qlTydrhcrRyYjDIkOYZk2zazFgtvd91uFyPUe2+Jg8DVmoK2UaMMw3CA7tmgubvBQJBMth7IFI18HQxCLsJsIKlPCpqLRuLKR6ORz6UxIU3rlTM3zXWxWRszAV7UMXGnTGINJlWsnvaFKppWe55Uj5fKROIMLnDZPWZuX5mg0uv1VppMHoRYpumL5BCIuxFz33vSjM6vSdutQbEg8mmF1fZBArjnBz+l5VsKFPhYUXnivSbBgi76xvB1zyL4QUL1K8AA65ECs+9c0RoAAAAASUVORK5CYII=')
+    &.can-publish,
+    &.no-domain
+      .status
+        span
+          color #f60
+          background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAZCAYAAAAv3j5gAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NjgyNzVDNjI0MkZBMTFFMTgyREVDRDkwMDVFMjgzQUYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NjgyNzVDNjM0MkZBMTFFMTgyREVDRDkwMDVFMjgzQUYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0N0IzMEY1NzQyRkExMUUxODJERUNEOTAwNUUyODNBRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0N0IzMEY1ODQyRkExMUUxODJERUNEOTAwNUUyODNBRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PiOBp8QAAAF/SURBVHjaYvz//z8DPQALiGBkZCRaw6d0JQMg9YFv5r0HxOoBeYaJFFcBLREAUvuBeD6pPmIiUX0BEIMscwBaWkCKRkaQt4gJOqDBCkDqPpLQByBWBAbhB2oHHXpwgXzWT9WgA/omABRcjFx8DMxq5gxMspowqQSgnAPRqY6IBAB2OXtoDQOrZTBY/GurD8O/x9cZoHKG1PARKNIVwIqFZRCRy8kHYxoQkzCYiEgA9UQ4ph7qc9wWEUhxxOYXvAkDZAcTHt+AItmBhFSJN2EwUcE3yKCfJIuALmuAJQASgQFUL2GLoAkgn4KCOh9qBkEf9UMjFwP8fXINUay8fUpSwmDEkgD243MuqGQAWfLv7RNCPnMEloMHcPkIbwIAZVgWNQsGFgNXkstGFlISAGfRUnjp8P/bJ4bfx9fiU64AMhPoqwa4j4hNAMhFEDKbmIQBC7p6XAkAGfxYWAam/z25Tsg3GAmDkZgEQAUQCIujRhpb9IGRXs0tJgY6AYAAAwDVSnaqBAxF0wAAAABJRU5ErkJggg==')
+
+//-----------------------------------------------------------
+// apply for viewports below 1024px
+//-----------------------------------------------------------
+@media screen and (max-width: 1023px)
+  
+  .dashboard
+    .tasks
+      ul
+        float none
+        li
+          float none
+          display block
+          width auto
+          max-width 350px
+          min-height 0
+          margin 20px auto 0
+          border-right none
+          padding-top 15px
+          border-top solid 1px #ccc
+          &:first-child
+            padding-top 0px
+            border-top none
+
+  .dashboard
+    .support
+      .links
+        padding-bottom 0
+        ul
+          float none
+          width auto
+          margin 0 20px
+          border-right none
+          padding 15px 0 20px 0
+          border-top solid 1px #ccc
+          &:first-child
+            padding-top 0px
+            border-top none
+        li
+          padding 0
+
+// end media query styles — back to normal
+
+.publish-progress
+  position relative
+  height 342px
+  text-align center
+  h2
+    position relative
+    top 70%
+
+/* Header publish button */
+#utility
+  .publish
+    display none
+    position absolute
+    top 7px
+    left -80px
+    padding-left 10px
+    padding-right 10px
+    &[disabled]
+      border-color #474747
+      color #666
+      gradient-fill(#252525, #000000) 
+      cursor wait
+
+/* Block Content */
+.block-content-editor,
+.connections
+  .title
+    color #4d4d4d
+    padding-top 15px
+    h3
+      font-size font-size-14
+      text-shadow 1px 1px 1px #fff
+      margin-bottom 15px
+  div.help
+    width 100%
+  a.help-link
+    bottom 1px
+  .main-content
+    .controls
+      display none
+    .container
+      margin-bottom 30px
+      .title
+        position relative
+        h3
+          background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NkIyNkFFNUY0RUU1MTFFMUFGNEFGODExNUY4REE1RkQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NkIyNkFFNjA0RUU1MTFFMUFGNEFGODExNUY4REE1RkQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2QjI2QUU1RDRFRTUxMUUxQUY0QUY4MTE1RjhEQTVGRCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2QjI2QUU1RTRFRTUxMUUxQUY0QUY4MTE1RjhEQTVGRCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PriYYYoAAAB+SURBVHjaYvz//z8DsYAlPT19HZAOJELtAiYgkQ7ErwkofArExUxQhYkEFIPk3zFBOVuBeC4OhdOBeDeIwYQkWADEd9AU3gfiMhgHWfEXII4D4r9Q/l+o9V+wKQaB40DcAWVPBOKDKEGHxY1NQKwIxJXoEoykRAoTAwkAIMAAWu4bzzjzjvoAAAAASUVORK5CYII=') 0 center no-repeat
+          padding-left 15px
+          cursor pointer
+        .block-controls
+          position absolute
+          top 4px
+          right 20px
+      .block-content
+        display block
+      &.closed
+        .title
+          border-bottom none
+          overflow hidden
+          rounded-corners()
+          h3
+            background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OEQ4Q0I3Rjg0RUU1MTFFMUFGNEFGODExNUY4REE1RkQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OEQ4Q0I3Rjk0RUU1MTFFMUFGNEFGODExNUY4REE1RkQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2QjI2QUU2MTRFRTUxMUUxQUY0QUY4MTE1RjhEQTVGRCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2QjI2QUU2MjRFRTUxMUUxQUY0QUY4MTE1RjhEQTVGRCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Ppq16WAAAACESURBVHjaYvz//z9Denr6fAYGhmIgfseABcycORNMM0H5CUB8CYhdGfAAJiS2NBDvAuJpQMxDSDEMZEJtsSdGMQgoAvFeIO4FYjZCikGAGYiLgHg+MYr/AnErECfCBFhwKLwDxHFAfJyQm+cCsSG6QnSTX0Ot3EoonNcDsTY+hSAAEGAAfcgYDdr/10IAAAAASUVORK5CYII=')
+        .block-content,
+        .connections-list
+          display none
+  ul.item-list
+    li
+      background none
+  .add-content
+    display block
+    overflow hidden
+    padding-top 0
+    padding-bottom 0
+    min-height 46px
+    a.add-icon 
+      display inline-block
+      background url(add-icon) left center no-repeat
+      padding 3px 0 3px 26px
+    a.add-block
+      line-height 46px
+      padding 0 0 0 26px
+    ul
+      position relative
+      top -46px
+      margin-bottom -46px
+      padding 0 0 10px 0
+      overflow hidden
+      background-color #fff
+      li
+        border-top none
+        &.close-add
+          text-align right
+        &.add-content-item
+          padding 12px 0
+
+connection-spacing = 40
+connection-padding = (connection-spacing / 2)px
+connection-connected = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHcAAAB0CAYAAAC/ra0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTMyMzZEQkVBODNBMTFFMUI5NUY5MjdGNENERkU1MkYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTMyMzZEQkZBODNBMTFFMUI5NUY5MjdGNENERkU1MkYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1MzIzNkRCQ0E4M0ExMUUxQjk1RjkyN0Y0Q0RGRTUyRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1MzIzNkRCREE4M0ExMUUxQjk1RjkyN0Y0Q0RGRTUyRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PrBCPO4AAAfISURBVHja7J1NaFxV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'
+connection-error = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHcAAAB0CAYAAAC/ra0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTMyMzZEQzJBODNBMTFFMUI5NUY5MjdGNENERkU1MkYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTMyMzZEQzNBODNBMTFFMUI5NUY5MjdGNENERkU1MkYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1MzIzNkRDMEE4M0ExMUUxQjk1RjkyN0Y0Q0RGRTUyRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1MzIzNkRDMUE4M0ExMUUxQjk1RjkyN0Y0Q0RGRTUyRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pnk+2N8AAAU5SURBVHja7J0vdNtIEMalviAf7AXLoAU2PWMfPWNhl8boQFjfa1BAWbBLa2zs0hi71CEFMfZdoam744zyVNeOJWvl+pv9vvf2qfkjNaufZnZmVuuN1+t1FMdxdI76P3lz6Q7SWvqt7Jh9v6hWrj3qvx9yx+XrxbdlZFTxucB1IBvu0HYtUYhN1xon+u/nri0U+NwBXxFudaAC868c1HPRQoE/ONAzwi0OtOMOWWsA3COxYgE8QwN9Erg6dv7j2t8gQA+BnjjQi6DhOqhdd+iq27UmcdtTB3kaFFyFmpaMaFEl0fYX1+7PLRDzCjcwqLtctrjrsSm4GiT1A4W6y5LH5+CuK8F1UBOF2ibTnenUyEGeQ8HVgoO43x4ZHtRELXl19nC18HBFF1zaVX86tRWXguvA9mmtOFZcCK4WIa6j8yoRIo/Fw1MUQQ7C1Uh4EGFXls4xbfpcd0T9IlwHNtXAiarJTTvAo5PDdWDFWru8/7Vrpm56VTtcTXOumbuefBy+9Q34J7gK9oaBkw3Az3BBwS7VrX3N55BaOUsivBkpr4A3cL833yKCHRcp0mvRpQ/UN2+AM7gfgTq/0s4XzhPVK0mA2AkJ8Cs9IlnsbdkCgNwk1+70piFIeNzoQ1kZLpIrrgLoDqiviXqbIOBuJsOrXEDfUZ4C9bmj9XzzcGeeoshJhKWevuFiGq6X8RLhrcUdeqfpHeEa1CbaLxtgvYoopAArJVy76mlRhnCN6qqoeyZcPF0Wdc+Ei+ueE8K1qz7h2lX7UHGDcLGVEq7h4Ool6yVcw9ZLuIatl3CNpEaEa1fJrrIk4dpRl3ANw92uOROuLXUINxDXTLi21Na11IRrVC3CDWDcJVyDrplw7aqRFTQI1/C4S7g2lRCu8XGXcO2Ouw3Ctasm4RoOqgjXsAiXlkvRcikGVNRp0iHCpVumCJciXIpwKcKlCJdwKcKlCJf6rVoRrl09IsFt+bhI1U8fp1uuR74+qr8TCNsHJLid/CKnCgpllzO4MfeqoksWqw1lp7MFGty2bh55DNjKG0IwoKpfqW4iWQasWKtsihVKMLWU/SAuQP/4rlri6KWtwnWMTqPwdhPdbBlwAdwBgfvBAcz28/tPO/Vn9PSZxK0o3J1EH9DhZhKQvYjKa46W51IFU6Bsex3CNWq1hGtTM8IlXAoNbH6/Q8I1arWEayxKJtxAXLLowsDTeh89VWTyHZMaslSoZBboMhC4v+wLfAEM9bN7UqcHxp+Rfv5/ahzyfNe+wIhuWaD9ewDss/T33kdY25mX1c6+oVnu1MEalj1Jx6Khs2L50toM0XLfg45kufNjwG5BHm5HlAY03vcDFLhieZ88XWu4FXyZtFokuPeuE0sfF1IXPTEC98UHHgXul7rTBtAIeY4Od+nLaresd2HZamHg1nRdZLjjIg98yOXHJfDfXWhYYW0Z0B1v15CR4f5R03VbgGAnh4IoNLhJTSvzmmBgFw7sqMwJKG7Z68o8nUxAWn0gbviu7EkocFPP1ov2nvPwmHQQBW62LMSH1QrYBAispD1H1cORouXevr3ZS4CV5SV9oD7LLNj42JPRUqHBsYD1vGuwAKrSLFg2n7sAclUDXUQ9KjIO6Vidgo2zwuO26kXi9XodfW++lRtwAzYWbdxW9DQ/O99O7NUFdzXSbqCBLVqoOAg3juPsCUcEnE8XHjV/RV1k7Q3sT3BzLgwZMLK8gv0Fbs6lDaLwVqP/TklJ8c4n2L1wCfjk6c6wjgvvhZtLHwa8/7VJIv7a3grZwKVs6ocAAwD8aQzSQ8z+QAAAAABJRU5ErkJggg=='
+connection-recommended = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFsAAABbCAYAAAAcNvmZAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ODUwMTREREJBODU0MTFFMUJEREQ4NjMxMzYyNjIwQUMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6ODUwMTRERENBODU0MTFFMUJEREQ4NjMxMzYyNjIwQUMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4NTAxNEREOUE4NTQxMUUxQkRERDg2MzEzNjI2MjBBQyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4NTAxNEREQUE4NTQxMUUxQkRERDg2MzEzNjI2MjBBQyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsXPZ+kAAAZdSURBVHja7Jw9iB5F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'
+
+connections-recommended = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAwCAYAAABwrHhvAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDhCMTdDREJBOEQwMTFFMTkxMDJCRTAwOTNERkVDRTIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDhCMTdDRENBOEQwMTFFMTkxMDJCRTAwOTNERkVDRTIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpEOEIxN0NEOUE4RDAxMUUxOTEwMkJFMDA5M0RGRUNFMiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpEOEIxN0NEQUE4RDAxMUUxOTEwMkJFMDA5M0RGRUNFMiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Ph0CZpIAAAJTSURBVHjaxFjtbYMwECUWC9ARyAhkBPIz/QcjwAhkBBghjJCMUEYoI4QRmhFaUz2rFqrtO9tRTjqBEsf3cp/P3p1O74lDcqml1ALv6zOT+pA6S13wvOEzlqSW71ajjdTK8H2GNUouUkcAmfDZt+G3O/UiDBtfpX5YjJukwe967MP2QAHjeRIm3cY7JAAF0GdJHCkoi8QmhrGMk0VoLiuSF4jAv+4Ia9cSO0s9IIuV7qW2WuazAVQE188wNOBdlwXld4QuXAAu1y/YmNJkJnhojglgYHa4BwMwCcDNI7QqX1hlaNvMR8ZYAEK64kQB4FpUPbMPpISy6QBy9vTA5ALg2jjDjGg9EnKghIBCJPQRXcYMgYDxgbi+BIhPzP4sBgBVMpxyKzA9v/CsQgGsxmvPPRqE546EzX0AqIxtA7yZg4rd4ZXcpxGNnD7u8AoJiLBMtClCkjdI2I7bitUIbrnz3VDCvYlvumbBqDGeUCAlvFFwh5EO5EidcpZEveqeEMwNVKW84TkHgPACoHOEEcl68Ghk6tjnDWBLWFuE6MwA0sUCoHtlYJDS35N2TADbEqaAqFLU6H/E9BjojRrd0DrUUhgvn+SJm2NSWkNQRkpQa5cUryKjlD7QRLiocDGmh6sKroEAXF6cXQBCbk0o7Gim9IES5dQwjfeU2SIYsbxovK80eEsxoZ5YplPqyftiSBt7FnBPztOrAMw6+xah53um3LYzRjhiVEfggvqNSb3lC4KAeB9AvxYY3pvOnylx7I5QdXWvX9sXmrEl+bvGJ90p/AgwAD+dj+pvVTV7AAAAAElFTkSuQmCC'
+connections-analytics = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAxCAYAAACGYsqsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDhCMTdDREZBOEQwMTFFMTkxMDJCRTAwOTNERkVDRTIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDhCMTdDRTBBOEQwMTFFMTkxMDJCRTAwOTNERkVDRTIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpEOEIxN0NEREE4RDAxMUUxOTEwMkJFMDA5M0RGRUNFMiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpEOEIxN0NERUE4RDAxMUUxOTEwMkJFMDA5M0RGRUNFMiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Puwd0E4AAADrSURBVHja7NrBCcIwFIDhpHjxpEM4gAcHcIHm4gIO4ihOkQ7gpYN0BA+CCEJ9hYLFQxNQ6mvyP3iUQFL60Yb3ArWlc3vzjqbyvjEzjbZtg3MKycsgjybxKD7G69zA29zABjBgwIA1x2IODynN0Vkum8C0k2SdBFjiENEj7GLA7GHAgAEDTqYOx9bDyvs6CfAv6yGfNGDAgAED/uPxUEsNn/I8rKKGs4cBAwYMGDDgDDqtKcJayxsGDBgwYMCAAStqTkrnhn9kPiVvI/NX3ZrAPe+SD0VrR1vLbvzt/5bLPlWuzfLwcM0J/BJgADOKJ1yiPWUuAAAAAElFTkSuQmCC'
+connections-comments = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADoAAAAsCAYAAAA0NKuuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpGODdGMTE3NDA3MjA2ODExOTdBNUIwOEYyNEQzMUYxQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1QjMwNTBEMUE4RDExMUUxOTEwMkJFMDA5M0RGRUNFMiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1QjMwNTBEMEE4RDExMUUxOTEwMkJFMDA5M0RGRUNFMiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkY4N0YxMTc0MDcyMDY4MTE5N0E1QjA4RjI0RDMxRjFDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkY4N0YxMTc0MDcyMDY4MTE5N0E1QjA4RjI0RDMxRjFDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+aWr7yAAAAd1JREFUeNrsmcFxwjAQRSVCAS7BPvlKCeaWSyCpAKiAUAHjCkIqgFQQhxRgjjlyJZe4BKcCZzeIjIdxHAhitZb4MxozDFh63pX0tZaipJteL4LLABpefaFfGbQVtPh1ucwEoWQJ8gEu94R9TwB2RtXZlSFI1HUYhp/vm80bSURVuqbCnAKKNG6pOWlSY4pOEPTWMGiHCtQzDBpRgTqhC6htwu2lYDCOWNN91ui8YLvKuYLq1kI5r9z21B1C+4AgdlyYo7htpjtY2xcjhJ3bPEf3NXJle+m7AhohaOIAqIegL044I1VhSKlOEaa97p3YFq3sjuhOEFl0FFNxngogH9ASsK9s1LTmv5gBT2Jbwhyo37NVu+pLLFYBbB0g1mVXpQfDfn63jzwRkBeeqUBzBfjYVMBDQBFwVnWItQq06RH8bR+1Xq2iKMSp7RJRC0HXzDkzXaDcfXIidcwxKSW6ozljGxjonKOxMhjchF4g0xZR5XmxtIhnW48J5AIgR99j1Alagn1mcNTDSE5+xqgbdO9s2xe0L5rRzSVV3vxsoKcKHpSnFrfxAdmBL5a6tWPkCnpk5eNP0EY4I4DARSWAj93/7tmNiGhFhLGiUS7f2JG6NcC+SukhgNYO4kuAAQCjN9I5ZircGwAAAABJRU5ErkJggg=='
+connections-forms = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAsCAYAAAAwwXuTAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NUIzMDUwRDRBOEQxMTFFMTkxMDJCRTAwOTNERkVDRTIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NUIzMDUwRDVBOEQxMTFFMTkxMDJCRTAwOTNERkVDRTIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1QjMwNTBEMkE4RDExMUUxOTEwMkJFMDA5M0RGRUNFMiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1QjMwNTBEM0E4RDExMUUxOTEwMkJFMDA5M0RGRUNFMiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PkdCqdYAAACmSURBVHja7JbRDUAwFEUf6QBGMQIDsIsJMIFdagBGsBHPBwmJf65zkjZN/25u+nqSqq5zMxtMkyb4lvkqRANm4XbRiwRrj8Ml4Bhjp5DOn90ZMDVx5AOGW7UrDX6wwcVXKZpvMYB3k/jk3DVtEs1X/usfFJqm05OLziIu+p+PHhelQVwUFwXARXFRXBQXxWRwURrERQFwUVwUF8VFcVFclAZfxSbAAEv5KdmDD9aGAAAAAElFTkSuQmCC'
+connections-social = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAAAsCAYAAADb9sCQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NUIzMDUwRDhBOEQxMTFFMTkxMDJCRTAwOTNERkVDRTIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NUIzMDUwRDlBOEQxMTFFMTkxMDJCRTAwOTNERkVDRTIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1QjMwNTBENkE4RDExMUUxOTEwMkJFMDA5M0RGRUNFMiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1QjMwNTBEN0E4RDExMUUxOTEwMkJFMDA5M0RGRUNFMiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgguUZQAAAKRSURBVHja5JmLcYJAEEAPJgVQAnZAB5IColiBUoFYgVoBpgK1Ao0pQFOBdiAl0IHZcxbnhgACe3cg2ZkdnUGOe+zndlfjdruxLDEMg5WRj8HAgg8P1Abtpy7/gF5AT9+HQ8w0ShaXURcWIB34mIJOSjybg+5BlwAdvQwsWnIOGtTcBwdetB4WQY+gDnEvJ9CRStcmwSLoGWNThvBYflcFnMVlVrj/KBGUoXesdSatUrBg1YUE180SD9YOdME+dWPYDLfmVeEeuBv3ZLtzXTeeKn7hVsnjS4sb69jIuHFYLBwsDftwMNs3allXY7J0moa1ugT7xtojVsWQiiGDX14VNq88DTCB2RnXeVOxBV2VObrMFrFFKRAXy9N5QeVm4/Ur/p4Ee9EIexFAJxXL03uDgve1HvYRfxibYc111nh/dVhstHUA74XvIfEUCCkx+6kBditYlXq2u3nx+xQWrLtRbF0+nzpJLhvHlGw8U9jx+AoKC7s2LL55XwGsnxrAyRoOuBTLJu68kgy6b92kQgCeoYVjouuO8OUVFhaUPCCrgoqJm1oWWFRWIoxIsDydg/LxzI6YSEK+Tk618yUJNnOdMjMofsDzKaCn4thJJyl43pn4MiNYr1d5BoWH/FkRaJI1z/AccX1q1vcrJygElT0rzivid4lbY41cF9gXCpS/3voEVOekItnsRuh8ytbJPGnOcjJ8fvOOc+ImQJOuJcJs2q+wh7iMBxoZsNQEIaOErPuioyJXNlOgQcOgjOhRdlETb6TmPdeG3Fdp/GdZNugQaBL/Xh7slHVP1uI/DSa6sNcxq4rxH6YtO2TdlUliXbOo2e0S8B0Wqe2Oww4Tyzqs++LWbd5fVsx/4MKP4cOvAAMA4HD7cZ9SXMwAAAAASUVORK5CYII='
+connections-reservations = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAYAAACiu5n/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6N0REQzRENUJBOEYxMTFFMUEzNDBBQzAxODI4OUJGOUYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6N0REQzRENUNBOEYxMTFFMUEzNDBBQzAxODI4OUJGOUYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3RERDNEQ1OUE4RjExMUUxQTM0MEFDMDE4Mjg5QkY5RiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3RERDNEQ1QUE4RjExMUUxQTM0MEFDMDE4Mjg5QkY5RiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgiRQnMAAATGSURBVHjazJo7U9tAEMcPWhqnoY3oyUR8AmRSx48uVJhPALRQGBfQWuqZsamgw5g6semSKsoMvZVvoIaa7Cr/M2tF1lsmO3Mjy3r4fvu429vz2svLi1pbW1NVyudGw6CDRe0jNTPiFo/ab2rTh/F4WlU/AtaqgAHZoXZAzcjwqE9tRO26bPhKgAm0Roc+YLUwwCM1lxuB+KFnTFh+l1qLWg2XGLhXFnjpwNTxYzp00WGGcqjZEpDusSIedUP3aM+whMIOw4p6M2BYdQDrsPQ0KFz7CJ03Y17jwaL39NwI723BWwxcb9M1tzBws9nijvjj8b3XaDS58zX+zDfRuUmf3QTYCWBcWMKFm/aFlbKIB1cehkLEB3Sii1O/O1AUc9kaeB3XZcwdw1r8EHf2ZwbYOmD7eC4SdmNjQ33Y3g6OS4Q7OqD38Ltr9M5DViRC5Q7KjIPtg4HDq0/nE31tvWDY3gGWp5MdKOEnlLZULi8u1AU1PiZIoHB2bba2gJ4sg4aHhn/fYk+VwFaOuD3Hc2zZdsjasbK1tbVwTBBt1Q6ge/husOR+M+Y9kRb+mALWhLsEMYWvU8EWEHZxk6DPMbiZUHomWV+miQTL9/VoTB3wcF4lrJYJPOkQyu5iFigEnGRdC4rwCNbGeUetRoIRG0p28F23UmDMqXquVTGxVJV0oGQbVu7A6pmBd2kkO8eUYODzbsQ01IJ1h0gMDLV6OUDWNcR5Kw+wBfcw0LoRMdwSqZ5C+vcWoq16jfNmVS6tLX6fVbMVSAtpppfHwmmT8sB9ObVbsghYpWjlu2KqTA3sxNxjh9zezZuslCx67PgVMZ3GA1NyzQPUDtxDJvBtunYSsUD/H8QU/UxtgHkMY0W0AEzfjcruZcp0Mu2crEJ9rmQezi2bm5sLC4bn5+dV/ry/UmBeCp6dni4sCU/PzgoDiFiODTW9pl8vMFhkimWGle7sOI6azWZFgN1Qf9wqXHqa9QeCXPToSG3Tgl/L1dWV+vrtW1Gn8UKrO78KYD3nWWkrifv7++rT3t78nEHHDw9lRMmjGJ19UevyYRivDODHUCo3ShqR9798mZ8/PT0FrlySjJBs1AA4j1VqdZF2FnZpJZaDqXvP8XpxeVkW7BCLh4NQqluuS4sVSg0ll6nUbhTkJUHe3N4GI3KJ01APi4eOet2pqGwevg4tvHtxN3//8UPd3NyUCWujAHAMdx5mKdBnBhZWNbimhHN7RdO5B+saKET4SQovK9PSNaUjFNZOskxTBRKNNqw5gHWdrNsvuYDhUvNyKeKpXiE0Q+ki/0Cv2lDBVEWArQzQNgYwnhp0Zb8eN4iVANsRA1U7z8uK5tLalefQ1LE6rF/GMpKVtyW2bwZCAd7KgRE/dQE9Qxam19fDAqB1KI8zuzuMynNr5+1z4dUSQ2Nfaahe9336SPd4cHsHT0hydRej/Q6DoozE7jtDzcotCsuysD/caDTvREGsh0pIakHZVo+gOklxpPthSjFkjEoIUQruivtYEb0sIzI2zyboi82Vm382xMXO23xPNaugw8eYJ2vCelPk4l4IUCtA/uVBuvZJUatqqfpPLTr1O1DZ9p08pIpO3oHpTYAj4C2Avw+7tPpbefQwt1aWwDDrHwEGAMtoXVA7iLeNAAAAAElFTkSuQmCC'
+
+.connections
+  .intro
+    font-size font-size-18
+    margin 30px 0
+    padding 0 connection-padding
+    min-height 50px
+    p
+      display none
+      margin-bottom 20px
+      &.current
+        display block
+
+ul.connection-list
+  list-style none
+  padding 0
+  margin 0
+  li.connection
+    list-style none
+    float left
+    width 33%
+    min-width 340px
+    box-sizing(border-box)
+    padding 0 connection-padding
+    margin 0 0 40px 0
+    .wrapper
+      position relative
+      height 400px
+      perspective(600px)
+      .front,
+      .back
+        position absolute
+        top 0
+        left 0
+        width 100%
+        transform-style(preserve-3d)
+        backface-visibility(hidden)
+        transition(all .4s ease-in-out)
+      p
+        font-size font-size-13
+      h3
+        light()
+        font-size font-size-22
+        line-height 50px
+        height 50px
+        text-align center
+        border-bottom solid 1px #e7e7e7
+        overflow hidden
+    .front
+      z-index 800
+      transform(rotateY(0deg))
+      .description
+        height 114px
+        overflow hidden
+        padding 20px 40px
+        border-bottom solid 1px #e7e7e7
+      .features
+        margin 20px 40px
+        height 90px
+        overflow hidden
+        list-style disc
+        padding-left 20px
+        li
+          list-style disc
+          margin-bottom 6px
+          font-size font-size-13
+      .status
+        height 130px
+        overflow hidden
+        display none
+        p
+          margin 34px 20px 0 144px
+          strong
+            font-weight bold
+    .back
+      z-index 700
+      transform(rotateY(-180deg))
+      .instructions
+        margin 20px 40px
+        height 80px
+        overflow hidden
+      .credentials
+        height 165px
+        overflow hidden
+        border-top solid 1px #e7e7e7
+        padding 0 20px
+        input[type=text]
+          margin 10px 0
+          &:first-child
+            margin-top 30px
+        p.error,
+        p.error1,
+        p.error2
+          font-size 91.7%
+          padding-left 10px
+          margin 10px 0
+          min-height 13px
+          color error-color
+    &.flip
+      .front
+        transform(rotateY(180deg))
+      .back
+        z-index 1000
+        transform(rotateY(0deg))
+    .buttons
+      border-top solid 1px #e7e7e7
+      text-align center
+      padding 10px 20px
+      overflow hidden
+      button
+        width 100%
+        &.left
+          float left
+          width 48% 
+        &.right
+          float right
+          width 46%
+    button.edit,
+    button.delete
+      display none
+    &.connected,
+    &.error
+      .features
+        display none
+      .status
+        display block
+        background-position bottom left
+        background-repeat no-repeat
+      button.edit,
+      button.delete
+        display block
+      button.connect
+        display none
+    &.connected
+      .status
+        background-image url(connection-connected)
+    &.error
+      .status
+        background-image url(connection-error)
+        .service-status
+          color error-color
+    &.recommended
+      .front,
+      .back
+        :before
+          position absolute
+          top 0
+          left 0
+          width 91px
+          height 91px
+          background: url(connection-recommended) 0 0 no-repeat
+          content: ''
+
+.connection-groups
+  -webkit-tap-highlight-color rgba(0,0,0,0.00)
+  position relative
+
+.connection-group
+  width 125px
+  height 125px
+  position relative
+  border solid 1px #ccc
+  box-sizing(border-box)
+  background-color #E9E9E9
+  background-position 50% 50%
+  background-repeat no-repeat
+  .connection-title
+    text-align center
+    regular()
+    font-size font-size-13
+    position absolute
+    bottom 10px
+    left 10px
+    right 10px
+  &.current
+    background-color #fff
+    box-shadow(inset 0 0 14px rgba(0,0,0,.35))
+  .carousel &
+    border-left-width 0
+  .carousel.inactive :first-child &
+    border-left-width 1px
+  &[data-category="recommended"]
+    background-image url(connections-recommended)
+  &[data-category="analytics"]
+    background-image url(connections-analytics)
+  &[data-category="comments"]
+    background-image url(connections-comments)
+  &[data-category="forms"]
+    background-image url(connections-forms)
+  &[data-category="social"]
+    background-image url(connections-social)
+  &[data-category="reservations"]
+    background-image url(connections-reservations)
+
+
+.connection-groups-carousel
+  display block
+  position absolute
+  left 150px
+  right 0
+  top 0
+
+.carousel
+  -webkit-tap-highlight-color rgba(0,0,0,0.00)
+  white-space nowrap
+  overflow hidden
+  > ul
+    position relative
+    float left
+    white-space nowrap
+    overflow hidden
+    margin-left 35px
+    width 2000px
+    li
+      float left
+      white-space normal
+      cursor pointer
+  &.inactive
+    ul
+      margin-left 0
+    .carousel-trigger
+      display none
+  
+a.carousel-trigger
+  display block
+  position absolute
+  z-index 1
+  top 0
+  bottom 0
+  width 35px
+  background #ccc 
+  .icon
+    position absolute
+    width 35px
+    height 30px
+    top 50%
+    margin-top -14px
+    background url(double-arrows-right) 50% 0 no-repeat
+  &[data-dir="forward"]
+    right 0
+  &[data-dir="back"]
+    left 0
+    .icon
+      background-image url(double-arrows-left)
+      background-position 25% 0
+
+.meta-content-editor
+  .main-content
+    .container
+      .title
+        h3
+          background none
+          padding-left 0
+          cursor default
+  .buttonToggle
+    padding-bottom 20px
+  .currentValue
+    margin-right 1em
+  .block-content
+    .controls
+      padding 0 0 20px 0
+      display block
+  .block-controls .content-vis,
+  .buttonbar
+    display none
+
+#settings-subdomain
+  display inline-block
+  width 60%
+
+.subdomain-block
+  .domain
+    display inline-block
+    width 37%
+    margin-left 1%
+    white-space nowrap
+    overflow hidden
+
+.subdomain-block-controls
+  margin-top -5px
+  .progress
+    float left
+    text-align left
+    width 50%
+    padding-left 40px
+    margin-top 5px
+    .progress-spinner
+      margin 0
+      top 0
+      left 0
+    &.available
+      background url(green-circled-check-large) top left no-repeat
+    &.unavailable
+      color error-color
+      background: url(unavailable-exclamation-point) top left no-repeat
+    &.available,
+    &.unavailable
+      .progress-spinner
+        display none
+    span
+      line-height 32px
+      display inline-block
+
+.sub-domain
+  .note
+    margin-bottom 20px
+  .sub-editor
+    position relative
+    border solid 1px #ccc
+    background-color #ebebeb
+    width 54.3%
+    padding 20px
+    margin 0
+    input[type=text]
+      width 81%
+      margin 0
+    span.domain
+      position absolute
+      top 30px
+      right 20px
+      font-size inherit 
+    .controls
+      margin 20px auto 0 auto
+      text-align right
+    .progress
+      position absolute
+      bottom 20px
+      left 20px
+      height 30px
+      text-align left
+      background none
+      &.available
+        background url(green-circled-check-large) top left no-repeat
+      &.unavailable
+        color error-color
+        background: url(unavailable-exclamation-point) top left no-repeat
+      .progress-spinner
+        left 15px        
+      span
+        font-size inherit
+        line-height 32px
+        display inline-block
+        margin-left 34px
+
+/* roles editor */
+
+#settings-roles
+  padding-bottom 20px
+  .generated-list
+    li.roles-editor-temp-li
+      padding 0
+      border-top 0
+      overflow visible
+      white-space normal
+      .roles-editor
+        margin-top -15px
+        .controls
+          padding-bottom 0
+      .help
+        .close
+          bottom auto
+          top -1px
+          right -1px
+          padding 0
+    .scrollList li
+      font-size 100%
+      line-height 100%
+      padding 9px 10px
+      margin 0
+      border 0
+    .form-input
+      font-size 18px
+    .errors
+      padding-top 10px
+    .errors li,
+    .errors li:first-child
+      padding-top 0
+      margin-top 10px
+      border 0
+
+#settings-roles-add
+  margin 0 0 10px 0
+
+.roles-editor
+  position relative
+  z-index 1
+  .roles-select
+    padding-bottom 20px
+  .controls
+    display block
+  fieldset div.help p
+    padding-left 0
+
+
+/* Your Account */
+
+.account
+  .main-content
+    min-width 768px
+
+.account-termination-help
+  margin-left 1em
+
+[data-id='plan-summary']
+  .block-content
+    padding 10px 0
+    > p
+      padding 10px 20px
+  form
+    overflow hidden
+  fieldset
+    box-sizing(border-box)
+    float left
+    width 100%
+    vertical-align baseline
+    padding 10px 20px
+    &.current-site
+      background #f6ffed
+      .site-name
+        padding-right 22px
+        background url(icon-pencil) right center no-repeat
+  .site-name
+    line-height 30px
+    display inline-block
+    bold()
+    max-width 40%
+    float left
+    overflow hidden
+    white-space nowrap
+    text-overflow ellipsis
+    vertical-align baseline
+    box-sizing(border-box)
+  .details
+    line-height 30px
+    float right
+    width 58%
+    text-align right
+    vertical-align baseline
+    .ie8 &
+      width 50%
+    button,
+    .link-button
+      margin 0 0 0 1em
+    span
+      margin-left 1em
+    span:first-child
+      margin-left 0
+    .expiration-note
+      color #f60
+    .expired
+      color error-color
+  .payment-details
+    clear both
+    line-height 20px
+  & .trial-site
+    .site-name,
+    .details
+      line-height 34px
+    .details
+      bold()s
+  .no-sites
+    p
+      bold()
+      padding 0
+      margin 0 0 1.5em 0
+
+.update-payment-info
+  margin-top 10px
+  padding-top 20px !important
+  padding-bottom 0
+  border-top solid 1px #ccc
+  .button-wrap
+    display inline-block
+    margin-right 2%
+  span
+    margin-right 1em
+
+div.help.delete-confirmation
+  margin-bottom 0
+  p
+    padding-left 0
+    bold()
+    font-size font-size-18
+  .buttons
+    padding 0 20px 20px
+    text-align right
+    button
+      margin 0
+      &.cancel
+        float left
+  .trial-site &
+    margin-top 50px
+
+/* New Help Link Style */
+a.help-link
+  position relative
+  margin-left 5px
+  bold()
+  font-size 12px
+  color #369
+  &:hover
+    text-decoration none
+
+/* Block button bar */
+.block-buttonbar
+  position relative
+  display inline-block
+  margin-top 6px
+  margin-right 7px
+
+
+li.visibility,
+li.shownav,
+li.service-toggle
+  position relative
+  .content-vis-slider
+    position absolute
+    top 0
+    right 10px
+.content-vis.offscreen
+  position absolute
+  left -9999px
+  top auto
+.content-vis-slider,
+.toggle-slider
+  display inline-block
+  width 80px
+  height 30px
+  .track
+    top 0
+    border 0
+    width 50px
+    height 30px
+    box-shadow(none)
+  .click-trap
+    gradient-fill(#676767, #989898) 
+    gradient-rounded-corners(border-radius-size)
+    width 80px
+    height 30px
+    border solid 1px #ccc
+    box-sizing(border-box)
+  .thumb
+    width 30px
+    height 30px
+    margin -1px 0 0 -1px
+    padding 0
+    border 0
+    background transparent url(content-vis-slider-thumb) 0 0 no-repeat
+  .status
+    display block
+    position absolute
+    font-size font-size-11
+    top 10px
+    bold()
+    color #fff
+    text-shadow 0 -1px 0 #000
+    line-height 1
+    padding 0
+    opacity 1
+    transition(opacity 150ms ease-in-out)
+  .status.hide
+    left auto
+    right 10px
+  .status.show
+    right auto
+    left 10px
+  .status.hidden
+    opacity 0
+    .ie8 &
+      display none
+li.service-toggle
+  .status.show
+    left 18px
+  .status.hide
+    right 18px
+
+/* Image List */
+ol.image-list
+  background #fff
+  box-sizing(border-box)
+  box-shadow(0px 0px 4px #ccc)
+  padding 0
+  margin 20px 0 0 0 
+  li
+    position relative
+    height 60px
+    padding 10px
+    margin 0
+    overflow hidden
+    &.even
+      background-color #f1f1f1
+    div.image
+      float left
+      width 60px
+      height 60px
+      overflow hidden
+      display inline-block
+      background #333
+      text-align center
+      img
+        max-width 60px
+        max-height 100%
+    p
+      float left
+      display inline-block
+      line-height 64px
+      padding 0
+      margin 0 0 0 10px
+      font-size font-size-14
+      color #4d4d4d
+    .expanding-buttonbar
+      right 10px
+      top 25px
+    
+/* Items List */
+div.items-list
+  background #fff
+  box-sizing(border-box)
+  box-shadow(0px 0px 4px #ccc)
+  padding 0
+  margin 20px 0 0 0 
+  ol
+    padding 0
+    margin 0
+  li
+    position relative
+    height 40px
+    line-height 42px
+    margin 0
+    padding 0 10px
+    overflow hidden
+    a
+      font-size font-size-14
+    &.even
+      background-color #f1f1f1
+    .expanding-buttonbar
+      right 10px
+      top 5px
+  .items-filter
+    background-color #f1f1f1
+    padding 10px
+
+/* Link block */
+.link-block
+  .link-type
+    margin-bottom 10px
+    input[type=radio]
+      margin-left 10px
+    label
+      display inline-block
+    div
+      padding 0
+      margin 0
+  .link-internal
+    .section
+      margin-bottom 20px
+
+/* Featured content */
+.featured-content
+  padding 10px 0
+  .internal-url
+    position relative
+    padding-top 25px
+    margin-top 25px
+    &:first-child
+      border-top none
+      margin-top 0
+      padding-top 0
+    .select
+      .control
+        background #fff
+
+/* Featured content list */
+ol.featured-content-list,
+ol.resource-list
+  background #fff
+  box-sizing(border-box)
+  box-shadow(0px 0px 4px #ccc)
+  padding 0
+  margin 20px 0 0 0 
+  li
+    position relative
+    height 40px
+    line-height 42px
+    margin 0
+    padding 0 10px
+    overflow hidden
+    a
+      font-size font-size-14
+    &.even
+      background-color #f1f1f1
+    &.pdf
+      background-position 10px 11px
+      background-repeat no-repeat
+      background-image url(pdf_icon_16x16)
+      p
+        display inline-block
+        line-height 42px
+        margin 0 0 0 20px
+    .expanding-buttonbar
+      right 10px
+      top 5px
+
+/* Connections list */
+google_icon = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAACWCAYAAADEzUhQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTcxOTdERUE2MzY0MTFFMUFGOEFGNTYyQjg1NDEyMjkiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTcxOTdERUI2MzY0MTFFMUFGOEFGNTYyQjg1NDEyMjkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxNzE5N0RFODYzNjQxMUUxQUY4QUY1NjJCODU0MTIyOSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxNzE5N0RFOTYzNjQxMUUxQUY4QUY1NjJCODU0MTIyOSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqMOZrIAAAXwSURBVHja7Fp/TFtVFD4tBSmMBeqUTMAgjKlkAzozEEkUsrBpNBloTJwsAeaSEePIFg3/uISRaGJItAGN4Y9l6xaJS4wbiyaKMNOZTMeWQFcMkglahTpxozRjgf1A6jl3t137+u6jpa0J5N7kpn33vfd9555zz7m3X6rzer0Qz6aHODdJIAkkgSQIo+m0bu5vPpiLHzXYn8Oejr2E37Jj92A/h936cafFExEBB27F3hCmoVbsbUjkVN5IUAEn0NPYn47AEzSzhrKy8qmLAxfsQgIEt+DHB9iTl+FueqcGSdKRpDfERdzyY6K3jUYjZGdl+a8nXS6Yn58XPd6I7rL6CRCcpjik9mRZ2VbYvHkTuKdnYHj4ZzaWlf0IG0tB0oGLl8Bm+0HtVTOS2A38wqJm8d69jQy4u/tkkLW/jo0xUCJ/ubYGjMlG+ObbXiUEYVbp1Kwn8Ob9b8K02w1HjhzTdHxl5bOiGbBZUKLVK0dfeH4HZKG/yfKlmgY4tXoiqAwcMZlMzCrH8LBWEMNtlfqA7GStqGgT+3RN/hWLSlESUotMGaYVXk3dM+4gV8WCwBY44HDwZMJVRAEXNcoBWm2HWw9BZ8dHomdtel56788A175v6dXVvSYkGBi4xJKLcsX3nkqzE0GHcvTU6R5wYa0p2LAB6l7fFY2HOhKw8nmwAuYql+vgoB0yMx+Gp7aYWTz+mbqmamUV5kxiYiL0938fskdgLTquC9hghviuFdRoFqWlW6GgIJ+VEKqivjyh67HxMRY3RVJ6eLFzBpbrGr7RxKLVInhP0IaDrhpFV/3B9+BoGu0FJ4V7Ms6kkm88uRECO7nlds09GWfixJkcx6+3OUl6GMAd3HJnRMeWgBlRLw4goyBepkRCUJvmuUj+CJQEkkASSAJJIAkkgSRYJQQG0Y09Z3cAP5suqXjx70Ht6LZe8dERwZelePGDcBCBXgW8gf/aaYjAE8J39ApwC/9tkL4Md6fzdy2qMeCWHxC9nWJYA4+m5fmv/5z9DeYWbqo9eoAf7a3+GCC4UPGqWL8dzA+Vw/StKRi69iMby1mTj2PPIGkqnL/aB30Tqj/tzBgHseJFFr9V1IrAf8PRkQ+DrB2dcTBQIt+1cR8jOvP7Z+qKV2P/9hDrCbxlSztcR6s/cbRpOr46p1Y0A7HitTNvN/o7n1m+VNMAV1e81iVnMqsG0d+CIEaneFHwqE3MjsdH8VpnzFzh1fT6/FSQq2KuePmSiVYRBVzUKAd2PrYb2itOsMImeDZU8aK171t6ewrfERKcv/odSy7fjOm9sBWvz690Ya0ZhycyiuCNwrejUrz0OD2nrzAFtvbBFpYL5IrDpZ8yMvUimCrKFyth+4qdUPEi4Ir11fB4RjEDoyrK8uTmOLsenRlmcVOQeHixc/p3NCSJqeKF4D1By5QPNMYAnDB6VPMASSgWVYF7a4SKl1kZT73KacDGH2wLk8jJnzUrl7ymIMWPLcCrrVDxUiZqWMcWeXSUBJJAEkgCSSAJJIEkWE2K12xTflSKV1rXuPjoiOBRK14+Ar0KePwULwSPn+LFLRcqXrqUtaDPftJ/vTj5C3jnboSneCG4UPFKLH8FDMXVsDg9CQuX+9hYQk4hG9MZ0+DuhVNw56zqv6jMGAex4kUWG5u6GPCtEy1B1v57ZYCBEvkDrx4CQKI7X3eqK1439uWFWE/gKQe7EdwF811Nmo5P2tYomgGbhUFN8Up6sRn06IY5S92SkdUAV1e89A9mM6sW7H2iIEaneBlKqu/5eXIkPoqXzpS1wqup133v7z2JxdXxUbwouOwGriIKuKhRDiS91Ayp759jhU3wbKjiRYnlW3rJ9e1Cgrs/fcmSyzvt8r8XtuJ1+4v3YHFiBBI2lmmShKV44fRUFS9KMnIXuSL13a8YmWoRxDIhyBcrYfuKnVDxImAioU+dcS2roixPcIZUUqguURFUkHh4sbuveCFJTBUvBA9WvPhAfBUvJIm/4oUk/4/ixY8ty1a8NI8t8ugoCSSBJFhtBP8JMADuRZEInSdV2QAAAABJRU5ErkJggg=='
+twitter_icon = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAACWCAYAAADEzUhQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QzBFODU4Qzc2MzYyMTFFMUFGOEFGNTYyQjg1NDEyMjkiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QzBFODU4Qzg2MzYyMTFFMUFGOEFGNTYyQjg1NDEyMjkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDMEU4NThDNTYzNjIxMUUxQUY4QUY1NjJCODU0MTIyOSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDMEU4NThDNjYzNjIxMUUxQUY4QUY1NjJCODU0MTIyOSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PoBF3xkAAAU0SURBVHja7FpdaBxVFD47XWrTH9kYRLAtbJrdVh+Sdn1JVLBbSmsLRdNn0W58UQS1vuRFoQnkoQbKYgrSF20C2gpiE0Fo00bZIDVNAmYTS6xpYkc3G4kmm9DGJK1J1nOmd5OZ2XunM7M7guUeuMwyd+b77jnn3nPvfKwvm82Cl6aAxyYJJIEkkAQ2zGfV+fY77wXxUottL7YAtj2sK4ltFls3ttbTLfFZRwQM+AS2mM2BtmJrRCLV3LGOA06g7dhqHESCPItVVz872dd7LSkkQPA4Xk5i2+Ai3PROLZIEkKQzj4CN/GQR8lqDJL/lPPExcHJxwPxkOBSCQ4cPQnp8Ai60dzglimBOkrlpGuc9QeBEEo2+oF0dmoapsNFHeU/oQUOhCqcEUcL2449jdp4OhSvgMLxouJeZycDQ0HVYWFgQvXbMLxo9zxtemEIV/fD5ufNCLxTd6nRl4bBl6LQQ2bJMJgPT2MzWnfje8j3bBL29/XDxUqd31TSdnnBdrhOizpujo4VMU7KEn5Ve7kwavTm2OnNosT1WVqqtakPo+vq1/Ags6WOl+Ravt6SkBBpOfKBdrZLf0Ngk6i5XWA1v5fXSAmo5/THGPy0ksCCnjUjNzaJGtnMF8pObhg+bT0FVZSVs3fpkHsrQT9d54LMMc21Hw1DVso2mGHYUR99h2A+wft+gOs48KcTqEPwL4Z6MntCMOost6BBYZSNPWu7J6ImKnrThz7uMJGAD+CM2ctXRsUXnEbXdOjJK4iAtJARNWJ6L5EegJJAEkkASSAJJIAkkwUNCIPzKfP1b7as+CDYUL/bbYJ/u7xQfHRGcgB0rXuwgbCBQOOAxJu3EHERC+I5iAo+zb4OAi3AH2LtxLgEb+fEi5PW43hMtBwjOVbyeKq2Cl8pfhdTcGJwfOeOUKIJ5sFa8CJxIDmw/ql0d2n3Fi42e+6WvB90VcEwQJWzbiteu0t3wsune1OKfMPDXDzC/NCd6zb7iRd7wwnT1j0r4ZPiU0IuCFS/yzMLsK15Ti5MwtTCZd78r1e6uFuWFYuIyfH3rM++qaWruV9flWvghfWNmSBfrKjf41orXLzODqzOHFlvZhicgdWfMNIuuaPkRWNJX13WQSjNX8dro3wzNz7dpV6vk1199TdRdrmC9UEGgeNECav6xHn43jdo4iE3CPYKwH6h4EXhD31vwzOPPwfbNO/JQBqZ6eOBrilduR8O6UVTFC0ffYZim7EZdEcAJo4O7DpCEcrFPv7c6MHonYs6nwjkNJNiDjTaJVPZshE15gwkFKXZsAbZGqHEVL9FCtTy2yKOjJJAEkkASSAJJIAkkwf+QQPiVeedN7V8IQXCpeG05MyY+OiI4ARekeOUIFA54DLxSvBDcO8WLjdwbxQvBuYrXup3V8MiRd2E5NQx3v2xyShTBPFgrXgROJOv312lXh3Zf8WKj537p60FdEEQJ27bi5d9ZA3DEeC87nYalwSuQnb8tes2+4kUe8Lz4p+crWGyrF3pRsOL1gNDZV7xWpse1kJjt3ndn3dUiXijufdPiXTVdGf/ZdblOiDqXR3rXYh2udoNvrXgtjVxbTSItNqVsGyyPDxuf6bmg5UdgSd/tN3ZQaeYqXr6Nj8Kmpm7tapX8v9/fK+ouV7BeqCBQvGgBzcdfgZXUsJDAVyIkbyXsXLELsmInLNP+PQdA2fZ0fhgHu3gDmGXFTl3d0ZCkqIoXghsVL3bDW8ULSSgX3ipeSJKA/0LxYscWAJeKl+WxRR4dJYEkkAQPG8G/AgwARa8G2mlr5oEAAAAASUVORK5CYII='
+
+ul.connections-list
+  margin 20px
+  li
+    position relative
+    gradient-fill(#f1f1f1, #e9e9e9) 
+    gradient-rounded-corners(border-radius-size)
+    border solid 1px #ccc;
+    box-shadow(0px 0px 4px #ccc)
+    padding 0
+    margin 20px 0 0 0 
+    p.name
+      display block
+      height 50px
+      line-height 52px
+      font-size font-size-14
+      color #4d4d4d
+      padding 0 0 0 44px
+      background-position 10px 0
+      background-repeat no-repeat
+    &.token-connection,
+    &.dual-token-connection
+      overflow hidden
+      .token
+        position relative
+        margin 10px
+        display none
+      p.error
+        font-size 91.7%
+        padding-left 10px
+        margin 10px 0
+        min-height 1px
+        color error-color
+    &.token-connection
+      a.link-button
+        position absolute
+        top 5px
+        right 5px
+    &.dual-token-connection
+      input[type=text]
+        margin-top 30px
+        &:first-child
+          margin-top 0
+      .token
+        margin-bottom 0
+        div.save
+          margin-top 10px
+          text-align right
+    .buttons
+      position absolute
+      right 10px
+      top 10px
+      margin 0
+      display block
+      button
+        margin 0 0 0 10px
+        display none
+      button.connect
+        display block
+    input[type=text],
+    input[type=email],
+    input[type=password],
+    input[type=url],
+    select,
+    textarea,
+    .form-box
+      &.error
+        border-color error-color
+    &.connected
+      p.name
+        background-position 10px -50px
+    &.error
+      p.name
+        background-position 10px -100px
+    &.connected,
+    &.error
+      button.connect
+        display none
+      button.edit,
+      button.delete
+        display inline-block
+    &.twitter
+      p.name
+        background-image url(twitter_icon)
+    &.google-analytics
+      p.name
+        background-image url(google_icon)
+
+.domain-container
+  p.intro-text
+    padding 20px 20px 0 20px
+  button.subflow-btn
+    margin 0 20px 20px 0
+  .controls
+    padding-top 0
+  fieldset
+    padding-top 0
+    &.editor,
+    &.controls
+      display none
+      margin-bottom 20px
+    &.editor
+      input[type=text]
+        display inline-block
+        width 100%
+      span.suffix
+        display none
+        width 37%
+        margin-left 1%
+        white-space nowrap
+        overflow hidden
+      &.subdomain
+        input[type=text]
+          width 60%
+        span.suffix
+          display inline-block
+  ul.generated-list
+    padding  0 20px 20px 20px
+
+.shadow-pulse-setup
+  transition(all 750ms ease-in-out)
+
+.shadow-pulse
+  box-shadow(0 0 30px #32669c)
+
+.subCategory-block
+  // Hide the subcategory
+  display none
+

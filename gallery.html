@@ -1,0 +1,779 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Image Library -- Prototype</title>
+    <link type="text/css" href="css/image-gallery.css" rel="stylesheet" />
+    <link type="text/css" href="css/jquery.Jcrop.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/gallery.js"></script>
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="js/jquery.Jcrop.js"></script>
+  </head>
+  <body>
+    <div id="main" class="outer">
+      <div class="inner">
+
+        <div class="gallery-heading"><h1>Image Library</h1></div>
+        <div id="gallery-wrapper" class="group">
+
+          <div id="sidebar-container">
+            <div class="sidebar">
+              <div class="expand-my-images">
+                <img src="images/home-logo.png" />
+                <div class="connect-name">My Images</div>
+              </div>
+              <ul class="image-tags">
+                <li id="all-images">
+                  <img src="images/tag-logo.png" />
+                  <div class="set-name">All Images</div>
+                </li>
+                <li>
+                  <img src="images/tag-logo.png" />
+                  <div class="set-name">Tag A</div>
+                </li>
+                <li>
+                  <img src="images/tag-logo.png" />
+                  <div class="set-name">Tag B</div>
+                </li>
+                <li>
+                  <img src="images/tag-logo.png" />
+                  <div class="set-name">Tag C</div>
+                </li>
+                <li>
+                  <img src="images/tag-logo.png" />
+                  <div class="set-name">Tag D</div>
+                </li>
+                <li class="add-tag">
+                  <img src="images/tag-logo.png" />
+                  <input type="text" class="form-text" value=""/>
+                  <button class="small">Add Tag</button>
+                </li>
+              </ul>
+              <div class="add-tag-item">
+                  <img src="images/add-tag.png" />
+                  <div class="tag-name">Add Tag</div>
+              </div>
+
+              <div class="expand-flickr">
+                <img src="images/flickr-logo.png" />
+                <div class="connect-name">Flickr</div>
+              </div>
+              <ul class="flickr-contents">
+                <li>
+                  <img src="images/img-logo.png" />
+                  <div class="set-name">Beach Front</div>
+                </li>
+                <li>
+                  <img src="images/img-logo.png" />
+                  <div class="set-name">Halloween 2011</div>
+                </li>
+                <li>
+                  <img src="images/img-logo.png" />
+                  <div class="set-name">Holiday in New York</div>
+                </li>
+                <li>
+                  <img src="images/img-logo.png" />
+                  <div class="set-name">UT Graduation</div>
+                </li>
+              </ul>
+
+              <div class="expand-facebook">
+                <img src="images/facebook-logo.png" />
+                <div class="connect-name">Facebook</div>
+              </div>
+              <ul class="facebook-contents">
+                <li>
+                  <img src="images/folder-logo.png" />
+                  <div class="set-name">Office Party</div>
+                </li>
+                <li>
+                  <img src="images/folder-logo.png" />
+                  <div class="set-name">Paris Vacation</div>
+                </li>
+                <li>
+                  <img src="images/folder-logo.png" />
+                  <div class="set-name">Swimming</div>
+                </li>
+                <li>
+                  <img src="images/folder-logo.png" />
+                  <div class="set-name">Wall Photos</div>
+                </li>
+              </ul>
+
+             <div class="expand-google">
+                <img src="images/google-logo.png" />
+                <div class="connect-name">Google+</div>
+              </div>
+              <ul class="google-contents">
+                <li>
+                  <img src="images/google-plus-logo.png" />
+                  <div class="set-name">Desk photos</div>
+                </li>
+                <li>
+                  <img src="images/google-plus-logo.png" />
+                  <div class="set-name">Gary's Party</div>
+                </li>
+                <li>
+                  <img src="images/google-plus-logo.png" />
+                  <div class="set-name">Fireworks Show</div>
+                </li>
+              </ul>
+            </div>
+          </div> <!-- end of sidebar-container -->
+
+          <div id="main-container">
+            <div class="library-panel">
+              <div class="sort-container">
+                <p>Sort by Name: </p>
+                <div class="sort-a-btn selected">Ascending</div>
+                <div class="sort-z-btn">Descending</div>
+              </div>
+            </div>
+            <div class="main">
+              <ol class="images group">
+                <li>
+                  <div class="library-item-dragwell">
+                    <img src="images/drag-images.png"/>
+                    <p>Drag images here from your desktop to upload.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="meter animate">
+                    <span style="width:75%"><span></span></span>
+                    <p>75%</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="overlay-status">
+                    <img class="overlay-thumb" src="images/gallery/goldengate300.jpg" />
+                    <div class="white-splash-overlay"></div>
+                    <div class="upload-circle-indicator">
+                      <!--<img src="images/arrow-indicator.gif" />-->
+                      <div class="overlay-percentage"><p>53%</p></div>
+                      <div class="spinner-outer">
+                        <img src="images/progress/progress-bg-ring.png" />
+                        <div class="spinner-dividers">
+                          <img src="images/progress/progress-dividers.png" />
+                          <div class="spinner-inner">
+                            <img src="images/progress/progress-inner-ring.png" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="image-item">
+                    <a href="#"><img src="images/steve_profile.jpg" /></a>
+                    
+                    <div class="image-controls group">
+                      <div class="edit-img"><a id="image-edit-1" href="#">Edit</a></div>
+                      <div class="close-img"><img src="images/close.png"/></div>
+                    </div>
+
+                    <div class="img-delete-msg">
+                      <!--<img class="on-site-status" src="images/onsite-status3.png" />-->
+                      <p class="on-site-status">2</p>
+                      <div class="site-list-container">
+                        <!--<div class="site-list-arrow-border"></div>-->
+                        <!--<div class="site-list-arrow"></div>-->
+
+                        <div class="site-list-panel">
+                          <div class="site-list group">
+                            <img src="images/white-spaceship.png" />
+                            <p>Organic Foods</p>
+                          </div>
+                          <div class="site-list group">
+                            <img src="images/white-spaceship.png" />
+                            <p>Geek Neat</p>
+                          </div>
+                        </div>
+                      </div>
+                      <h2>Are you sure you want to remove this image?</h2>
+                      <div class="image-delete-controls">
+                        <div class="img-removal">
+                          <button class="small">Delete It</button>
+                        </div>
+                        <div class="img-cancel-delete">
+                          <!--<button class="small">Cancel</button>-->
+                          or <a href="#">Cancel</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="img-meta">
+                      <h2>gardens-pic.jpg</h2>
+                      <p>Took a walk through the water gardens at the palace.</p>
+                      <p><span>Tags: </span>Tag A, Tag C</p>
+                    </div>
+                  </div>
+                  <div class="edit-meta-container">
+                    <div class="edit-arrow-border"></div>
+                    <div class="edit-arrow"></div>
+                    <div class="edit-meta">
+                      <fieldset>
+                        <label for="title">Title <a href="#">(?)</a></label>
+                        <input type="text" id="title" class="form-text" value="gardens-pic.jpg"/>
+                      </fieldset>
+                      <fieldset>
+                        <label for="description">Description <a href="#">(?)</a></label>
+                        <input type="text" id="description" class="form-text" value="Took  a walk through the water gardens at the palace." />
+                      </fieldset>
+                      <fieldset>
+                        <label for="tag">Tag <a href="#">(?)</a></label>
+                        <input type="text" id="tag" class="form-text" value="Tag A, Tag C" />
+                      </fieldset>
+                      <fieldset>
+                        <label for="attribution">Photo credit: <a href="#">(?)</a></label>
+                        <input type="text" id="attribution" class="form-text" value="Steve Hernandez" />
+                      </fieldset>
+                      <fieldset class="form-actions">
+                        <input type="submit" value="Save" />
+                        <input id="cancel-edit" type="submit" value="Cancel" />
+                      </fieldset>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="image-item">
+                    <img src="images/gallery/carrots300.jpg" />
+                    <div class="image-controls group">
+                      <div class="edit-img"><a href="#">Edit</a></div>
+                      <div class="close-img"><img src="images/close.png"/></div>
+                    </div>
+
+                    <div class="img-delete-msg">
+                      <!--<img class="on-site-status" src="images/onsite-status3.png" />-->
+                      <p class="on-site-status">1</p>
+
+                      <div class="site-list-container">
+                        <!--<div class="site-list-arrow-border"></div>-->
+                        <!--<div class="site-list-arrow"></div>-->
+                        <div class="site-list-panel">
+                          <div class="site-list group">
+                            <img src="images/white-spaceship.png" />
+                            <p>Organic Foods</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <h2>Are you sure you want to remove this image?</h2>
+                      <div class="image-delete-controls">
+                        <div class="img-removal">
+                          <button class="small">Delete It</button>
+                        </div>
+                        <div class="img-cancel-delete">
+                          <!--<button class="small">Cancel</button>-->
+                          or <a href="#">Cancel</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="img-meta">
+                      <h2>Chopped Vegtables</h2>
+                      <p>Veggies that are sliced and diced and ready for a salad.</p>
+                      <p><span>Tags: </span>Foods</p>
+                    </div>
+
+                    <div class="image-name">
+                      <h2>Chopped Vegtables</h2>
+                    </div>
+
+                    <div class="edit-meta-container">
+                      <div class="edit-arrow-border"></div>
+                      <div class="edit-arrow"></div>
+                      <div class="edit-meta">
+                        <fieldset>
+                          <label for="title">Title <a href="#">(?)</a></label>
+                          <input type="text" id="title" class="form-text" value="Chopped Vegtables"/>
+                        </fieldset>
+                        <fieldset>
+                          <label for="description">Description <a href="#">(?)</a></label>
+                          <input type="text" id="description" class="form-text" value="Vegtables are sliced and diced and ready for a salad." />
+                        </fieldset>
+                        <fieldset>
+                          <label for="tag">Tag <a href="#">(?)</a></label>
+                          <input type="text" id="tag" class="form-text" value="Foods" />
+                        </fieldset>
+                        <fieldset>
+                          <label for="attribution">Photo credit: <a href="#">(?)</a></label>
+                          <input type="text" id="attribution" class="form-text" value="Steve Hernandez" />
+                        </fieldset>
+                        <fieldset class="form-actions">
+                          <input type="submit" value="Save" />
+                          <input id="cancel-edit" type="submit" value="Cancel" />
+                        </fieldset>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="action-container">
+                    <div class="meta-arrow-border"></div>
+                    <div class="meta-arrow"></div>
+                    <div class="meta-container">
+                      <p class="photo-title"><span>Title:</span> Spring Flower</p>
+                      <p class="photo-description"><span>Description:</span> Took this photo while exploring the country side of France. Full bloom in the back country</p>
+                      <p class="photo-tag"><span>Tag: </span>Tag A</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="image-item">
+                    <img src="images/high-view.jpg" />
+                    <div class="image-controls group">
+                      <div class="edit-img"><a id="image-edit-2" href="#">Edit</a></div>
+                      <div class="close-img"><img src="images/close.png"/></div>
+                    </div>
+                    <div class="img-delete-msg">
+                      <h2>Are you sure you want to remove this image?</h2>
+                      <div class="image-delete-controls">
+                        <div class="img-removal">
+                          <button class="small">Delete It</button>
+                        </div>
+                        <div class="img-cancel-delete">
+                          <!--<button class="small">Cancel</button>-->
+                          or <a href="#">Cancel</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="img-meta">
+                      <h2>Arc de Triomphe</h2>
+                      <p>View from Arc de Triomphe. Paris, France</p>
+                      <p><span>Tags: </span>Vacation, Paris</p>
+                    </div>
+                    <!--<span><strong>View from Arc de Triomphe</strong></span>-->
+                    <div class="edit-meta-container">
+                      <div class="edit-arrow-border"></div>
+                      <div class="edit-arrow"></div>
+                      <div class="edit-meta">
+                        <fieldset>
+                          <label for="title">Title <a href="#">(?)</a></label>
+                          <input type="text" id="title" class="form-text" value="Arc de Triomphe"/>
+                        </fieldset>
+                        <fieldset>
+                          <label for="description">Description <a href="#">(?)</a></label>
+                          <input type="text" id="description" class="form-text" value="View from Arc de Triomphe. Paris, France." />
+                        </fieldset>
+                        <fieldset>
+                          <label for="tag">Tag <a href="#">(?)</a></label>
+                          <input type="text" id="tag" class="form-text" value="Vacation, Paris" />
+                        </fieldset>
+                        <fieldset>
+                          <label for="attribution">Photo credit: <a href="#">(?)</a></label>
+                          <input type="text" id="attribution" class="form-text" value="Steve Hernandez" />
+                        </fieldset>
+                        <fieldset class="form-actions">
+                          <input type="submit" value="Save" />
+                          <input id="cancel-edit" type="submit" value="Cancel" />
+                        </fieldset>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="image-item">
+                    <a href="#"><img src="images/gallery/goldengate300.jpg" /></a>
+                    <div class="image-controls group">
+                      <div class="edit-img"><a href="#">Edit</a></div>
+                      <div class="close-img"><img src="images/close.png"/></div>
+                    </div>
+                    <div class="img-delete-msg">
+                      <!--<img class="on-site-status" src="images/onsite-status3.png" />-->
+                      <p class="on-site-status">3</p>
+                      <div class="site-list-container">
+                        <!--<div class="site-list-arrow-border"></div>-->
+                        <!-- <div class="site-list-arrow"></div> -->
+                        <div class="site-list-panel">
+                          <div class="site-list group">
+                            <img src="images/white-spaceship.png" />
+                            <p>Organic Foods</p>
+                          </div>
+                          <div class="site-list group">
+                            <img src="images/white-spaceship.png" />
+                            <p>Geek Neat</p>
+                          </div>
+                          <div class="site-list group">
+                            <img src="images/white-spaceship.png" />
+                            <p>Going Broke</p>
+                          </div>
+                        </div>
+                      </div>
+                       
+                      <h2>Are you sure you want to remove this image?</h2>
+                      <div class="image-delete-controls">
+                        <div class="img-removal">
+                          <button class="small">Delete It</button>
+                        </div>
+                        <div class="img-cancel-delete">
+                          <!--<button class="small">Cancel</button>-->
+                          or <a href="#">Cancel</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="img-meta">
+                      <h2>Golden Gate Bridge</h2>
+                      <p>My favorite photo from my trip to San Francisco!</p>
+                      <p><span>Tags: </span>jQuery, Conference</p>
+                    </div>
+
+                    <div class="edit-meta-container">
+                      <div class="edit-arrow-border"></div>
+                      <div class="edit-arrow"></div>
+                      <div class="edit-meta">
+                        <fieldset>
+                          <label for="title">Title <a href="#">(?)</a></label>
+                          <input type="text" id="title" class="form-text" value="Golden Gate Bridge"/>
+                        </fieldset>
+                        <fieldset>
+                          <label for="description">Description <a href="#">(?)</a></label>
+                          <input type="text" id="description" class="form-text" value="My favorite photo from my trip to San Francisco!" />
+                        </fieldset>
+                        <fieldset>
+                          <label for="tag">Tag <a href="#">(?)</a></label>
+                          <input type="text" id="tag" class="form-text" value="jQuery, Conference" />
+                        </fieldset>
+                        <fieldset>
+                          <label for="attribution">Photo credit: <a href="#">(?)</a></label>
+                          <input type="text" id="attribution" class="form-text" value="Steve Hernandez" />
+                        </fieldset>
+                        <fieldset class="form-actions">
+                          <input type="submit" value="Save" />
+                          <input id="cancel-edit" type="submit" value="Cancel" />
+                        </fieldset>
+                      </div>
+                    </div>
+
+                  </div>
+                </li>
+                <li>
+                  <div class="image-item">
+                    <a id="image-modal-launch" href="#"><img class="edit-border" src="images/gallery/rockybay300.jpg" /></a>
+                    <div class="image-controls group">
+                      <div class="edit-img"><a href="#">Edit</a></div>
+                      <div class="close-img"><img src="images/close.png"/></div>
+                    </div>
+                    <div class="img-delete-msg">
+                      <!--<img class="on-site-status" src="images/onsite-status3.png" />-->
+                      <p class="on-site-status">3</p>
+                      <div class="site-list-container">
+                        <!--<div class="site-list-arrow-border"></div>-->
+                        <!--<div class="site-list-arrow"></div>-->
+                        <div class="site-list-panel">
+                          <div class="site-list group">
+                            <img src="images/white-spaceship.png" />
+                            <p>Organic Foods</p>
+                          </div>
+                          <div class="site-list group">
+                            <img src="images/white-spaceship.png" />
+                            <p>Geek Neat</p>
+                          </div>
+                          <div class="site-list group">
+                            <img src="images/white-spaceship.png" />
+                            <p>Going Broke</p>
+                          </div>
+                        </div>
+                      </div>
+                      <h2>Are you sure you want to remove this image?</h2>
+                      <div class="image-delete-controls">
+                        <div class="img-removal">
+                          <button class="small">Delete It</button>
+                        </div>
+                        <div class="img-cancel-delete">
+                          <!--<button class="small">Cancel</button>-->
+                          or <a href="#">Cancel</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="edit-details">
+                      <fieldset>
+                        <label for="title">Title...</label>
+                        <input type="text" id="title" class="form-text" value=""/>
+                      </fieldset>
+                      <fieldset>
+                        <label for="description">Description...</label>
+                        <input type="text" id="description" class="form-text" value="" />
+                      </fieldset>
+                      <fieldset>
+                        <label for="tag">Tag...</label>
+                        <input type="text" id="tag" class="form-text" value="" />
+                      </fieldset>
+                      <fieldset>
+                        <label for="attribution">Photo credit...</label>
+                        <input type="text" id="attribution" class="form-text" value="" />
+                      </fieldset>
+                      <fieldset class="form-actions">
+                        <input type="submit" value="Done" />
+                      </fieldset>
+                    </div>
+                  </div>
+
+                  <div class="edit-meta-container">
+                    <div class="edit-arrow-border"></div>
+                    <div class="edit-arrow"></div>
+                    <div class="edit-meta">
+                      <fieldset>
+                        <label for="title">Title <a href="#">(?)</a></label>
+                        <input type="text" id="title" class="form-text" value="rockybay300.jpg"/>
+                      </fieldset>
+                      <fieldset>
+                        <label for="description">Description <a href="#">(?)</a></label>
+                        <input type="text" id="description" class="form-text" value="Early morning shot of the waves hitting the outer bay." />
+                      </fieldset>
+                      <fieldset>
+                        <label for="tag">Tag <a href="#">(?)</a></label>
+                        <input type="text" id="tag" class="form-text" value="California" />
+                      </fieldset>
+                      <fieldset>
+                        <label for="attribution">Photo credit: <a href="#">(?)</a></label>
+                        <input type="text" id="attribution" class="form-text" value="Steve Hernandez" />
+                      </fieldset>
+                      <fieldset class="form-actions">
+                        <input type="submit" value="Save" />
+                        <input id="cancel-edit" type="submit" value="Cancel" />
+                      </fieldset>
+                    </div>
+                  </div>
+
+                </li>
+                <li>
+                  <div class="image-item">
+                    <img src="images/flower23.jpg" />
+                    <div class="image-controls group">
+                      <div class="edit-img"><a href="#">Edit</a></div>
+                      <div class="close-img"><img src="images/close.png"/></div>
+                    </div>
+
+                    <div class="img-delete-msg">
+                      <h2>Are you sure you want to remove this image?</h2>
+                      <div class="image-delete-controls">
+                        <div class="img-removal">
+                          <button class="small">Delete It</button>
+                        </div>
+                        <div class="img-cancel-delete">
+                          <!--<button class="small">Cancel</button>-->
+                          or <a href="#">Cancel</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="img-meta">
+                      <h2>Yellow-Flowers.jpg</h2>
+                      <p></p>
+                      <p><span>Tags: </span>Outdoors, Nature</p>
+                    </div>
+                  </div>
+
+                  <div class="edit-meta-container">
+                    <div class="edit-arrow-border"></div>
+                    <div class="edit-arrow"></div>
+                    <div class="edit-meta">
+                      <fieldset>
+                        <label for="title">Title <a href="#">(?)</a></label>
+                        <input type="text" id="title" class="form-text" value="Yellow-Flowers.jpg"/>
+                      </fieldset>
+                      <fieldset>
+                        <label for="description">Description <a href="#">(?)</a></label>
+                        <input type="text" id="description" class="form-text" value="" />
+                      </fieldset>
+                      <fieldset>
+                        <label for="tag">Tag <a href="#">(?)</a></label>
+                        <input type="text" id="tag" class="form-text" value="Outdoors, Nature" />
+                      </fieldset>
+                      <fieldset>
+                        <label for="attribution">Photo credit: <a href="#">(?)</a></label>
+                        <input type="text" id="attribution" class="form-text" value="Steve Hernandez" />
+                      </fieldset>
+                      <fieldset class="form-actions">
+                        <input type="submit" value="Save" />
+                        <input id="cancel-edit" type="submit" value="Cancel" />
+                      </fieldset>
+                    </div>
+                  </div>
+
+                </li>
+                <li>
+                  <div class="image-item">
+                    <img src="images/gallery/naturetrees300.jpg" />
+                    <div class="image-controls group">
+                      <div class="edit-img"><a href="#">Edit</a></div>
+                      <div class="close-img"><img src="images/close.png"/></div>
+                    </div>
+
+                    <div class="img-delete-msg">
+                      <h2>Are you sure you want to remove this image?</h2>
+                      <div class="image-delete-controls">
+                        <div class="img-removal">
+                          <button class="small">Delete It</button>
+                        </div>
+                        <div class="img-cancel-delete">
+                          <!--<button class="small">Cancel</button>-->
+                          or <a href="#">Cancel</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="img-meta">
+                      <h2>Autumn Trees</h2>
+                      <p>Nice photo of autumn trees at my local park.</p>
+                      <p><span>Tags: </span>Outdoors, Nature</p>
+                    </div>
+                  </div>
+
+                  <div class="edit-meta-container">
+                    <div class="edit-arrow-border"></div>
+                    <div class="edit-arrow"></div>
+                    <div class="edit-meta">
+                      <fieldset>
+                        <label for="title">Title <a href="#">(?)</a></label>
+                        <input type="text" id="title" class="form-text" value="Autumn Trees"/>
+                      </fieldset>
+                      <fieldset>
+                        <label for="description">Description <a href="#">(?)</a></label>
+                        <input type="text" id="description" class="form-text" value="Nice photo of autumn trees at my local park." />
+                      </fieldset>
+                      <fieldset>
+                        <label for="tag">Tag <a href="#">(?)</a></label>
+                        <input type="text" id="tag" class="form-text" value="Outdoors, Nature" />
+                      </fieldset>
+                      <fieldset>
+                        <label for="attribution">Photo credit: <a href="#">(?)</a></label>
+                        <input type="text" id="attribution" class="form-text" value="Steve Hernandez" />
+                      </fieldset>
+                      <fieldset class="form-actions">
+                        <input type="submit" value="Save" />
+                        <input id="cancel-edit" type="submit" value="Cancel" />
+                      </fieldset>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="image-item">
+                    <img src="images/gallery/peoplebike300.jpg" />
+                    <div class="image-controls group">
+                      <div class="edit-img"><a href="#">Edit</a></div>
+                      <div class="close-img"><img src="images/close.png"/></div>
+                    </div>
+
+                    <div class="img-delete-msg">
+                      <h2>Are you sure you want to remove this image?</h2>
+                      <div class="image-delete-controls">
+                        <div class="img-removal">
+                          <button class="small">Delete It</button>
+                        </div>
+                        <div class="img-cancel-delete">
+                          <!--<button class="small">Cancel</button>-->
+                          or <a href="#">Cancel</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="img-meta">
+                      <h2>Family Time</h2>
+                      <p>Happy family out for a Sunday bike ride in the park.</p>
+                      <p><span>Tags: </span>Park, Outdoors, People</p>
+                    </div>
+                    <div class="edit-meta-container">
+                      <div class="edit-arrow-border"></div>
+                      <div class="edit-arrow"></div>
+                      <div class="edit-meta">
+                        <fieldset>
+                          <label for="title">Title <a href="#">(?)</a></label>
+                          <input type="text" id="title" class="form-text" value="Family Time"/>
+                        </fieldset>
+                        <fieldset>
+                          <label for="description">Description <a href="#">(?)</a></label>
+                          <input type="text" id="description" class="form-text" value="Happy family out for a Sunday bike ride in the park." />
+                        </fieldset>
+                        <fieldset>
+                          <label for="tag">Tag <a href="#">(?)</a></label>
+                          <input type="text" id="tag" class="form-text" value="Park, Outdoors, People" />
+                        </fieldset>
+                        <fieldset>
+                          <label for="attribution">Photo credit: <a href="#">(?)</a></label>
+                          <input type="text" id="attribution" class="form-text" value="Steve Hernandez" />
+                        </fieldset>
+                        <fieldset class="form-actions">
+                          <input type="submit" value="Save" />
+                          <input id="cancel-edit" type="submit" value="Cancel" />
+                        </fieldset>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div> <!-- end of main-container -->
+          
+          <div class="image-controls-container-gallery group">
+            <div class="library-buttons">
+              <!-- <button id="librarySelectionCancel" class="large">Cancel</button> -->
+              <!-- <button id="librarySelectionSave" class="large accent">Add images</button> -->
+              <button id="libraryUploadImages" class="large accent">Upload new images</button>
+              <div class="gallary-image-uploader">
+                <input type="file" accept="image/jpeg,image/png,image/gif" multiple="multiple" autocomplete="off" class="active" />
+              </div>
+            </div>
+          </div> <!-- image-controls-container -->
+          <div id="modal-container">
+            <div id="modal-mask"></div>
+            <div id="modal-content">
+              <header class="single-image-heading">
+                <h2>Select Focal Point</h2> 
+                <!--<a id="close-image-modal" href="#" style="display:block;">Close</a>-->
+                <img id="close-image-modal" src="images/close-white.png" />
+              </header>
+              <section class="modal-content">
+                
+                <div class="single-image-container">
+                  <img id="target" src="images/steve_profile_large.jpg" />
+                  <div class="focal-point-panel">
+                    <img src="images/focal_point.png" />
+                    <p>Edit Focal Point</p>
+                  </div>
+                </div>
+
+                <div class="image-meta-container">
+                  <form action="/">
+                    <fieldset>
+                        <label for="name">Title</label>
+                        <input type="text" id="name" class="form-text" value="gardens-pic.jpg" />
+                    </fieldset>
+                    <fieldset>
+                        <label for="email">Description</label>
+                        <!-- <input type="email" id="email" class="form-text" /> -->
+                        <textarea row="10" cols="20">Took this photo while exploring the country side of France. Full bloom in the back country.</textarea>
+                    </fieldset>
+                    <fieldset>
+                        <label for="email">Tag</label>
+                        <input type="email" id="email" class="form-text" value="Tag A, Vacation" />
+                    </fieldset>
+                    <fieldset>
+                        <label for="email">Photo credit</label>
+                        <input type="email" id="email" class="form-text" value="Steve Hernandez" />
+                    </fieldset>
+                  </form>	
+                </div>
+
+                <div class="image-modal-controls group">
+                  <div class="cancel-image">
+                    <!-- <a href="#">Cancel</a> -->
+                    <button class="large">Cancel</button>
+                  </div>
+                  <div class="select-image">
+                    <!--<a href="#">Select</a>-->
+                    <button class="large">Select</button>
+                  </div>
+                </div>
+              </section>
+            </div> <!-- modal-content -->
+          </div> <!-- modal container -->
+
+        </div> <!-- end of gallery-wrapper -->
+      </div>
+    </div>
+  </body>
+</html>
